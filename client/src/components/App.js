@@ -10,6 +10,7 @@ import Beni from "./Beni"
 import CareTaker from "./CareTaker"
 import Gifts from "./Gifts"
 import Thoughts from "./Thoughts"
+import "../styles/adminPage.css"
 
 function App(props) {
   return (
