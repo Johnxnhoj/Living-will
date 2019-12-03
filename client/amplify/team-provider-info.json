@@ -1,0 +1,27 @@
+{
+    "login": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-livingwill-login-145027-authRole",
+            "UnauthRoleArn": "arn:aws:iam::283049709931:role/amplify-livingwill-login-145027-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::283049709931:role/amplify-livingwill-login-145027-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "amplify-livingwill-login-145027-deployment",
+            "UnauthRoleName": "amplify-livingwill-login-145027-unauthRole",
+            "StackName": "amplify-livingwill-login-145027",
+            "StackId": "arn:aws:cloudformation:us-west-2:283049709931:stack/amplify-livingwill-login-145027/23b70870-1556-11ea-b667-02578391ed14",
+            "AmplifyAppId": "d1kckdtltv2tnp"
+        },
+        "categories": {
+            "function": {
+                "livingwill1dc308d2CustomMessage": {
+                    "REDIRECTURL": "",
+                    "EMAILSUBJECT": "",
+                    "EMAILMESSAGE": ""
+                }
+            },
+            "auth": {
+                "livingwill1dc308d2": {}
+            }
+        }
+    }
+}
