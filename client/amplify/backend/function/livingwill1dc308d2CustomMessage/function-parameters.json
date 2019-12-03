@@ -1,0 +1,14 @@
+{
+    "trigger": true,
+    "modules": [
+        "verification-link"
+    ],
+    "parentResource": "livingwill1dc308d2",
+    "functionName": "livingwill1dc308d2CustomMessage",
+    "parentStack": "auth",
+    "triggerEnvs": "[{\"key\":\"RESOURCENAME\",\"value\":\"resourceName\"}]",
+    "triggerTemplate": "CustomMessage.json.ejs",
+    "roleName": "livingwill1dc308d2CustomMessage",
+    "skipEdit": true,
+    "resourceName": "livingwill1dc308d2CustomMessage"
+}
