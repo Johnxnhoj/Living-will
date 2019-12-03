@@ -13,6 +13,7 @@ import Gifts from "./Gifts"
 import Thoughts from "./Thoughts"
 
 
+
 //// Side Bar Routes///
 import Will from "./Will"
 import Documents from "./Documents"
@@ -22,6 +23,10 @@ import Notifications from "./Notifications"
 import Help from "./Help"
 import Settings from "./Settings"
 ///shey
+
+import "../styles/adminPage.css"
+
+
 import Amplify from "aws-amplify"
 import aws_exports from "../aws-exports"
 import { withAuthenticator } from "aws-amplify-react"

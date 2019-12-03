@@ -1,0 +1,19 @@
+.FormBubble {
+  display: flex;
+  flex-wrap: wrap;
+}
+.FormBubble p {
+  text-decoration: none;
+  border: solid black 1px;
+  border-radius: 318px;
+  height: 318px;
+  width: 318px;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* align-self: center; */
+  line-height: 318px;
+  margin: auto;
+  text-align: center;
+  /* padding-left: 27px; */
+  margin-top: 68px;
+}
