@@ -10,7 +10,14 @@ import Beni from "./Beni"
 import CareTaker from "./CareTaker"
 import Gifts from "./Gifts"
 import Thoughts from "./Thoughts"
+
 import "../styles/adminPage.css"
+
+import Amplify from "aws-amplify"
+import aws_exports from "../aws-exports"
+import { withAuthenticator } from "aws-amplify-react"
+Amplify.configure(aws_exports)
+
 
 function App(props) {
   return (
@@ -63,4 +70,4 @@ function App(props) {
   )
 }
 
-export default App
+export default withAuthenticator(App, true)
