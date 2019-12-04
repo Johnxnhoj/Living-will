@@ -70,7 +70,7 @@ export function Forms(props) {
     }
   }
 
-  // export default (props) => {
+  //EXPORT DEFAULT (PROPS) => {
   return (
     <div className="container">
       <h1>Tell Us About Yourself</h1>
@@ -85,6 +85,21 @@ export function Forms(props) {
           type="text"
           placeholder="Full Name"
         />
+
+        <div>
+          Mobile Number (Optional)
+          <input type="text" placeholder="+1(808)702-2019"></input>
+        </div>
+
+        <div>
+          <label>Marital Status</label>
+          <select>
+            <option value="marital status">Choose A Marital Status</option>
+            <option value="marital status">Single</option>
+            <option value="marital status">Married</option>
+            <option value="marital status">Divorced</option>
+          </select>
+        </div>
 
         <label className="error" className={cityNameError === "" ? "" : "err"}>
           City{cityNameError}
@@ -132,6 +147,41 @@ export function Forms(props) {
           type="email"
           placeholder="email@gmail.com"
         />
+
+        <div className="formCheckBI">
+          <label className="basicInfoCheck">
+            <input type="checkbox" className="minorCheck" />I have minor
+            children (17 and under)
+          </label>
+        </div>
+
+        <div>
+          <label className="basicInfoCheck">
+            <input type="checkbox" className="adultCheck" />I have adult
+            children
+          </label>
+        </div>
+
+        <div>
+          <label className="basicInfoCheck">
+            <input type="checkbox" className="grandChildCheck" />I have
+            grandchildren
+          </label>
+        </div>
+
+        <div>
+          <label className="basicInfoCheck">
+            <input type="checkbox" className="petsCheck" />I have pets
+          </label>
+        </div>
+
+        <div>
+          <label className="basicInfoCheck">
+            <input type="checkbox" className="estateCheck" />I own a home or
+            other real estate
+          </label>
+        </div>
+
         <button type="submit" onClick={handleSubmit}>
           Save And Continue
         </button>
