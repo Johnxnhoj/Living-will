@@ -6,16 +6,3 @@
   background: rgb(95, 158, 252);
   transition: right 0.5s;
 }
-
-.Side .toggle {
-  position: absolute;
-  background: rgb(95, 158, 252);
-  width: 75;
-
-  top: 0;
-  color: white;
-}
-
-.Side .open {
-  right: 0;
-}

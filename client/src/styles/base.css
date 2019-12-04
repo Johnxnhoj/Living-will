@@ -20,3 +20,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.container-1 {
+  display: flex;
+  justify-content: center;
+}
+.box-1 {
+  display: flex;
+}
+.box-Person {
+  flex-wrap: wrap;
+  background: rgb(151, 230, 187);
+  width: 800px;
+
+  justify-content: center;
+}
