@@ -1,7 +1,7 @@
 .Side {
   position: fixed;
   width: 400px;
-
+  right: 0;
   color: white;
   background: rgb(95, 158, 252);
   transition: right 0.5s;
