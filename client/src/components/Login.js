@@ -1,4 +1,4 @@
 import React from "react"
-export default props => {
-  return <div>HELLO WORLD</div>
+export default (props) => {
+  return <div></div>
 }
