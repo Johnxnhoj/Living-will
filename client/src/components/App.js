@@ -2,7 +2,7 @@ import React from "react"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 // Main Page Routes///
-import Login from "./Login"
+
 import Sidebar from "./Sidebar"
 import Admin from "./Admin"
 import BasicInfo from "./BasicInfo"
@@ -12,8 +12,6 @@ import CareTaker from "./CareTaker"
 import Gifts from "./Gifts"
 import Thoughts from "./Thoughts"
 
-
-
 //// Side Bar Routes///
 import Will from "./Will"
 import Documents from "./Documents"
@@ -22,54 +20,33 @@ import Witness from "./Witness"
 import Notifications from "./Notifications"
 import Help from "./Help"
 import Settings from "./Settings"
-///shey
 
+///css
 import "../styles/adminPage.css"
-
-
+import "../styles/Sidebar.css"
+///Shey
 import Amplify from "aws-amplify"
 import aws_exports from "../aws-exports"
 import { withAuthenticator } from "aws-amplify-react"
 Amplify.configure(aws_exports)
 
-
 function App(props) {
   return (
     <Router>
       <div>
-        <ul className="Nav">
-          <li>
-            <Link to="/">Login</Link>
-          </li>
-          <li>
-            <Link to="/Sidebar">Sidebar</Link>
-          </li>
-          <li>
-            <Link to="/Admin">Admin</Link>
-          </li>
+        <header>
+          <ul className="Nav">
+            <li>
+              <Link to="/">Admin</Link>
+            </li>
+            <li>
+              <Link to="/Sidebar">Sidebar</Link>
+            </li>
+          </ul>
+        </header>
 
-          <li>
-            <Link to="/BasicInfo">BasicInfo</Link>
-          </li>
-          <li>
-            <Link to="/Assets">Assets</Link>
-          </li>
-          <li>
-            <Link to="/Beni">Beni</Link>
-          </li>
-          <li>
-            <Link to="/CareTaker">CareTaker</Link>
-          </li>
-          <li>
-            <Link to="/Gifts">Gifts</Link>
-          </li>
-          <li>
-            <Link to="/Thoughts">Thoughts</Link>
-          </li>
-        </ul>
-        <Route exact path="/" component={Login} />
-        <Route exact path="/Sidebar" component={Sidebar} />
-        <Route path="/Admin" component={Admin} />
+        <Route exact path="/" component={Admin} />
+        <Route path="/Sidebar" component={Sidebar} />
         <Route path="/BasicInfo" component={BasicInfo} />
         <Route path="/Assets" component={Assets} />
         <Route path="/Beni" component={Beni} />
