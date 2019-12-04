@@ -16,16 +16,17 @@ export default props => {
             <p>Relation</p>
             <input type="name" placeholder="Relation"></input>
           </div>
-          <div className="Input-1">
-            <p>Property</p>
-            <input type="name" placeholder="Property"></input>
-          </div>
         </div>
         <div className="box-Person">
           <div className="Input-1">
             <p>Type of Estate</p>
             <input type="name" placeholder="Type of Estate"></input>
+            <div className="Input-1">
+              <p>Property</p>
+              <input type="name" placeholder="Property"></input>
+            </div>
           </div>
+          <button type="sumbit">sumbit</button>
         </div>
       </div>
     </div>

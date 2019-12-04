@@ -15,11 +15,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.Nav {
+  background: rgb(117, 94, 248);
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+/* This is the css for Assets */
 .container-1 {
   display: flex;
   justify-content: center;
@@ -33,4 +37,11 @@ code {
   width: 800px;
 
   justify-content: center;
+}
+main {
+  height: 500px;
+  background: rgb(252, 207, 140);
+}
+footer {
+  background: rgb(199, 94, 248);
 }
