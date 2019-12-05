@@ -1,4 +1,5 @@
 const router = require("express").Router()
+const db = require("../db")
 
 const users = [
   { id: 1, name: "Mike" },
