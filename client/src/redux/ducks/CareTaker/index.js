@@ -33,7 +33,7 @@ export function postToCare(input) {
 }
 // export function asyncPostToCare(input) {
 //   return dispatch => {
-//     Axios.post("./CareTaker", { input }).then(resp => {
+//     Axios.post("/CareTaker", { input }).then(resp => {
 //       dispatch({
 //         type: POST_CARE,
 //         payload: resp.data

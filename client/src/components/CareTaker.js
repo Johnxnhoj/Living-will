@@ -3,10 +3,21 @@ import { useTakerInfo } from "../hooks/index"
 
 export default props => {
   const [childname, setChildname] = useState("")
+  const [guardianName, setGuardianName] = useState("")
+  const [altGuardianName, setAltGuardianName] = useState("")
+  const [extraGuardianName, setExtraGuardianName] = useState("")
   const { grabCareInfo } = useTakerInfo()
   function handleSubmit(e) {
-    e.preventDefualt()
-    grabCareInfo(childname)
+    e.preventDefault()
+    //console.log(childname, guardianName)
+    //console.log(guardianName)
+    //console.log(childname, guardianName, altGuardianName, extraGuardianName)
+    grabCareInfo({
+      childname: childname,
+      guardianName: guardianName,
+      altGuardianName: altGuardianName,
+      extraGuardianName: extraGuardianName
+    })
   }
   return (
     <div>
@@ -18,13 +29,25 @@ export default props => {
         </div>
         <div>
           {" "}
-          Guardian Full Name Full Name <input type="text"></input>
+          Guardian Full Name Full Name{" "}
+          <input
+            type="text"
+            onChange={e => setGuardianName(e.target.value)}
+          ></input>
         </div>
         <div>
-          Alternate Guardian Full Name<input type="text"></input>
+          Alternate Guardian Full Name
+          <input
+            type="text"
+            onChange={e => setAltGuardianName(e.target.value)}
+          ></input>
         </div>
         <div>
-          Extra Alternate Guardian Full Name<input type="text"></input>
+          Extra Alternate Guardian Full Name
+          <input
+            type="text"
+            onChange={e => setExtraGuardianName(e.target.value)}
+          ></input>
         </div>
         <button type="submit">submit</button>
       </form>
