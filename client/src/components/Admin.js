@@ -1,7 +1,8 @@
 import React from "react"
-
 import { Link } from "react-router-dom"
-export default props => {
+import Icon from "../lib/Icon"
+
+export default (props) => {
   return (
     <div className="Container">
       <div className="FormBubble">
@@ -29,6 +30,14 @@ export default props => {
         </p>
         <br></br>
       </div>
+      <footer className="foot">
+        <p>Exodus, Inc. All Rights Reserved.</p>
+        <div className="icons">
+          <Icon icon="facebook-square"></Icon>
+          <Icon icon="instagram"></Icon>
+          <Icon icon="twitter-square"></Icon>
+        </div>
+      </footer>
     </div>
   )
 }
