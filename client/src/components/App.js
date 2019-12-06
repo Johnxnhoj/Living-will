@@ -24,7 +24,7 @@ import Settings from "./Settings"
 ///css
 import "../styles/adminPage.css"
 import "../styles/Sidebar.css"
-///Shey
+
 import Amplify from "aws-amplify"
 import aws_exports from "../aws-exports"
 import { withAuthenticator } from "aws-amplify-react"
