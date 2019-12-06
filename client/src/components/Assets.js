@@ -1,5 +1,8 @@
 import React from "react"
 export default props => {
+  const create = useCreateBene()
+  const [Beni_name, setBeni_name]
+  
   return (
     <div className="container-1">
       <div className="box-1">

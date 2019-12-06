@@ -18,7 +18,7 @@ export function Forms(props) {
 
   function handleSubmit(e) {
     e.preventDefault()
-    props.history.push("/submitted")
+    props.history.push("/user_info")
     let err = false
 
     if (fullName === "") {
@@ -80,7 +80,7 @@ export function Forms(props) {
         </label>
         <input
           className={fullNameError === "" ? "" : "error"}
-          onChange={(e) => setFullName(e.target.value)}
+          onChange={e => setFullName(e.target.value)}
           value={fullName}
           type="text"
           placeholder="Full Name"
@@ -106,7 +106,7 @@ export function Forms(props) {
         </label>
         <input
           className={cityNameError === "" ? "" : "err"}
-          onChange={(e) => setCityNameError(e.target.value)}
+          onChange={e => setCityNameError(e.target.value)}
           value={cityName}
           type="text"
           placeholder="City Name"
@@ -120,7 +120,7 @@ export function Forms(props) {
         </label>
         <input
           className={countyNameError === "" ? "" : "err"}
-          onChange={(e) => setCountyNameError(e.target.value)}
+          onChange={e => setCountyNameError(e.target.value)}
           value={countyName}
           type="text"
           placeholder="County Name"
@@ -131,7 +131,7 @@ export function Forms(props) {
         </label>
         <input
           className={stateNameError === "" ? "" : "err"}
-          onChange={(e) => setStateNameError(e.target.value)}
+          onChange={e => setStateNameError(e.target.value)}
           value={stateName}
           type="text"
           placeholder="State Name"
@@ -142,7 +142,7 @@ export function Forms(props) {
         </label>
         <input
           className={emailError === "" ? "" : "error"}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={e => setEmail(e.target.value)}
           value={email}
           type="email"
           placeholder="email@gmail.com"
