@@ -11,9 +11,13 @@ router.post("/", (req, res, next) => {
   const marital_status = req.body.marital_status
   const children = req.body.children
   const home = req.body.home
-  const pet = req.body.pet
+  const pets = req.body.pets
 
-  const sql = `INSERT INTO user_info (full_name, city, county, state, email, mobile_number, marital_status, children, home, pet) VALUES (?,?,?,?,?,?,?,?,?,?) `
+  console.log("hello")
+
+  const sql = `
+  INSERT INTO user_info (full_name, city, county, state, email, mobile_number, marital_status, children, home, pets) 
+  VALUES (?,?,?,?,?,?,?,?,?,?) `
 
   db.query(
     sql,
@@ -27,7 +31,7 @@ router.post("/", (req, res, next) => {
       marital_status,
       children,
       home,
-      pet
+      pets
     ],
     (err, results, fields) => {
       if (err) {
@@ -50,15 +54,5 @@ router.get("/", (req, res, next) => {
     res.json(results)
   })
 })
-
-// router.post("/will", (req,res,next)=>{
-//   const FullName = req.body.FullName
-//   const City = req.body.City
-//   const County = req.body.County
-//   const State = req.body.State
-//   const Email = req.body.Email
-
-//   db.query("SELECT FullName")
-// })
 
 module.exports = router
