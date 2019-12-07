@@ -11,10 +11,8 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use("/users", userRouter)
 app.use("/user_info", basicRouter)
-
 app.use("/care_taker", guardianRouter)
-
-// app.use("/estate", estateRouter)
+app.use("/estate", estateRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

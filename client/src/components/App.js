@@ -2,7 +2,6 @@ import React from "react"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 // Main Page Routes///
-
 import Sidebar from "./Sidebar"
 import Admin from "./Admin"
 import BasicInfo from "./BasicInfo"
@@ -27,7 +26,7 @@ import "../styles/Sidebar.css"
 
 import Amplify from "aws-amplify"
 import aws_exports from "../aws-exports"
-import { withAuthenticator } from "aws-amplify-react"
+
 Amplify.configure(aws_exports)
 
 function App(props) {

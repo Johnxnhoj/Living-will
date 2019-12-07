@@ -9,9 +9,6 @@ export default props => {
   const { grabCareInfo } = useTakerInfo()
   function handleSubmit(e) {
     e.preventDefault()
-    //console.log(childname, guardianName)
-    //console.log(guardianName)
-    //console.log(childname, guardianName, altGuardianName, extraGuardianName)
     grabCareInfo({
       childname: childname,
       guardianName: guardianName,
@@ -19,6 +16,7 @@ export default props => {
       extraGuardianName: extraGuardianName
     })
   }
+
   return (
     <div>
       <div>Guardian</div>

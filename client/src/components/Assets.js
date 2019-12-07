@@ -1,37 +1,75 @@
-import React from "react"
+import React, { useState } from "react"
+import { useEstate } from "../hooks/index"
+
 export default props => {
-  // const create = useCreateBene()
-  // const [Beni_name, setBeni_name]
+  const [namebeni, setNamebeni] = useState("")
+  const [addressbeni, setAddressbeni] = useState("")
+  const [relationbeni, setRelationbeni] = useState("")
+  const [typebeni, setTypebeni] = useState("")
+  const [property, setProperty] = useState("")
+  const { grabEstateInfo } = useEstate()
+  function handleSubmit(e) {
+    e.preventDefault()
+    grabEstateInfo({
+      namebeni: namebeni,
+      addressbeni: addressbeni,
+      relationbeni: relationbeni,
+      typebeni: typebeni,
+      property: property
+    })
+  }
 
   return (
     <div className="container-1">
-      <div className="box-1">
-        <div className="box-Person">
-          <div className="Input-1">
-            <p>Name of Beneficiary</p>
-            <input type="name" placeholder="Name of Beneficiary"></input>
-          </div>
-          <div className="Input-1">
-            <p>Beneficiary Address</p>
-            <input type="name" placeholder="Beneficiary Adress"></input>
-          </div>
-          <div className="Input-1">
-            <p>Relation</p>
-            <input type="name" placeholder="Relation"></input>
-          </div>
-        </div>
-        <div className="box-Person">
-          <div className="Input-1">
-            <p>Type of Estate</p>
-            <input type="name" placeholder="Type of Estate"></input>
+      <form onSubmit={handleSubmit}>
+        <div className="box-1">
+          <div className="box-Person">
             <div className="Input-1">
-              <p>Property</p>
-              <input type="name" placeholder="Property"></input>
+              Name of Beneficiary{" "}
+              <input
+                type="text"
+                placeholder="Name of Beneficiary"
+                onChange={e => setNamebeni(e.target.value)}
+              ></input>
+            </div>
+            <div className="Input-1">
+              Beneficiary Address{" "}
+              <input
+                type="text"
+                placeholder="Beneficiary Adress"
+                onChange={e => setAddressbeni(e.target.value)}
+              ></input>
+            </div>
+            <div className="Input-1">
+              Relation
+              <input
+                type="text"
+                placeholder="Relation"
+                onChange={e => setRelationbeni(e.target.value)}
+              ></input>
             </div>
           </div>
-          <button type="sumbit">sumbit</button>
+          <div className="box-Person">
+            <div className="Input-1">
+              Type of Estate
+              <input
+                type="text"
+                placeholder="Type of Estate"
+                onChange={e => setTypebeni(e.target.value)}
+              ></input>
+              <div className="Input-1">
+                Property
+                <input
+                  type="text"
+                  placeholder="Property"
+                  onChange={e => setProperty(e.target.value)}
+                ></input>
+              </div>
+            </div>
+          </div>
+          <button type="submit">submit</button>
         </div>
-      </div>
+      </form>
     </div>
   )
 }
