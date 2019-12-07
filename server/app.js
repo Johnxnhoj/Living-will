@@ -4,6 +4,7 @@ const userRouter = require("./routes/userRouter")
 const app = express()
 const guardianRouter = require("./routes/guardianRouter")
 const estateRouter = require("./routes/estateRouter")
+const giftsRouter = require("./routes/giftsRouter")
 const basicRouter = require("./routes/basicRouter")
 
 app.use(express.json())
@@ -11,7 +12,7 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use("/users", userRouter)
 app.use("/user_info", basicRouter)
-
+app.use("/gifts", giftsRouter)
 app.use("/care_taker", guardianRouter)
 
 // app.use("/estate", estateRouter)
