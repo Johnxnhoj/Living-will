@@ -65,4 +65,4 @@ function App(props) {
   )
 }
 
-export default App
+export default withAuthenticator(App, true)
