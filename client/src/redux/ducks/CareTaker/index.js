@@ -1,8 +1,6 @@
-///Name: CareTaker index
-// import { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import Axios from "axios"
-// import { actionButton } from "@aws-amplify/ui"
+
 // action definitions
 const POST_CARE = "CareTaker/POST_CARE"
 const DELE_CARE = "CareTaker/DELE_CARE"
@@ -11,6 +9,7 @@ const DELE_CARE = "CareTaker/DELE_CARE"
 const initialState = {
   info: []
 }
+
 export default (state = initialState, action) => {
   switch (action.type) {
     case POST_CARE:
@@ -21,9 +20,10 @@ export default (state = initialState, action) => {
       return state
   }
 }
+
 export function postToCare(input) {
-  return (dispatch) => {
-    Axios.post("/care_taker/CareTaker", { input }).then((resp) => {
+  return dispatch => {
+    Axios.post("/care_taker/CareTaker", { input }).then(resp => {
       dispatch({
         type: POST_CARE,
         payload: resp.data
@@ -31,6 +31,13 @@ export function postToCare(input) {
     })
   }
 }
+
+export function useTakerInfo() {
+  const dispatch = useDispatch()
+  const grabCareInfo = info => dispatch(postToCare(info))
+  return { grabCareInfo }
+}
+
 // export function asyncPostToCare(input) {
 //   return dispatch => {
 //     Axios.post("/CareTaker", { input }).then(resp => {
@@ -50,8 +57,9 @@ export function postToCare(input) {
 // reducer
 // action creators
 // custom hooks
+
 export function useTakerInfo() {
   const dispatch = useDispatch()
-  const grabCareInfo = (info) => dispatch(postToCare(info))
+  const grabCareInfo = info => dispatch(postToCare(info))
   return { grabCareInfo }
 }
