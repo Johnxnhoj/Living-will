@@ -1,147 +1,112 @@
 import React, { useState } from "react"
-import validator from "validator"
-import { truncateSync } from "fs"
+// import validator from "validator"
+import { useBasicInfo } from "../hooks/index"
 
 //ACTION DEFINITIONS
-export function Forms(props) {
+export default props => {
   const [fullName, setFullName] = useState("")
-  const [fullNameError, setFullNameError] = useState("")
   const [cityName, setCityName] = useState("")
-  const [cityNameError, setCityNameError] = useState("")
   const [countyName, setCountyName] = useState("")
-  const [countyNameError, setCountyNameError] = useState("")
   const [stateName, setStateName] = useState("")
-  const [stateNameError, setStateNameError] = useState("")
+  const [mobile_number, setMobile_number] = useState("")
   const [email, setEmail] = useState("")
-  const [emailError, setEmailError] = useState("")
-  const [submitted, setSubmitted] = useState("")
+  const [marital_status, setMarital_status] = useState("")
+  const [children, setChildren] = useState("")
+  const [home, setHome] = useState("")
+  const [pets, setPets] = useState("")
 
+  const { grabUserInfo } = useBasicInfo()
   function handleSubmit(e) {
     e.preventDefault()
-    props.history.push("/user_info")
-    let err = false
-
-    if (fullName === "") {
-      err = true
-      setFullNameError("- Cannot Be Blank")
-    } else {
-      setFullNameError("")
-    }
-
-    if (cityName === "") {
-      err = true
-      setCityNameError("- Cannot Be Blank")
-    } else {
-      setCityNameError("")
-    }
-
-    if (countyName === "") {
-      err = true
-      setCountyNameError("- Cannot Be Blank")
-    } else {
-      setCountyNameError("")
-
-      if (stateName === "") {
-        err = true
-        setStateNameError("- Cannot Be Blank")
-      } else {
-        setCountyNameError("")
-      }
-
-      if (email !== "") {
-        if (!validator.isEmail(email)) {
-          err = true
-          setEmailError(" - Must be a valid email")
-        } else {
-          err = true
-          setEmailError("")
-        }
-      } else {
-        err = true
-        setEmailError(" - Must be a valid email")
-      }
-
-      if (!validator)
-        if (!err) {
-          console.log("submitted")
-        } else {
-          console.log("not submitted")
-        }
-    }
+    //console.log(childname, guardianName)
+    //console.log(guardianName)
+    //console.log(childname, guardianName, altGuardianName, extraGuardianName)
+    grabUserInfo({
+      fullName: fullName,
+      cityName: cityName,
+      countyName: countyName,
+      stateName: stateName,
+      email: email,
+      mobile_number: mobile_number,
+      marital_status: marital_status,
+      children: children,
+      home: home,
+      pets: pets
+    })
   }
 
   //EXPORT DEFAULT (PROPS) => {
   return (
     <div className="container">
       <h1>Tell Us About Yourself</h1>
-      <form>
-        <label className="error" className={fullNameError === "" ? "" : "err"}>
-          Full Name{fullNameError}
-        </label>
+      <form onSubmit={handleSubmit}>
+        <label className="name">Full Name</label>
         <input
-          className={fullNameError === "" ? "" : "error"}
           onChange={e => setFullName(e.target.value)}
           value={fullName}
           type="text"
           placeholder="Full Name"
         />
+        {/* //<div>
+          Extra Alternate Guardian Full Name
+          <input
+            type="text"
+            onChange={e => setExtraGuardianName(e.target.value)}
+          ></input>
+        </div> */}
 
         <div>
           Mobile Number (Optional)
-          <input type="text" placeholder="+1(808)702-2019"></input>
+          <input
+            onChange={e => setMobile_number(e.target.value)}
+            value={mobile_number}
+            type="text"
+            placeholder="+1(808)702-2019"
+          ></input>
         </div>
 
         <div>
           <label>Marital Status</label>
-          <select>
+          <select
+            className="StatusChoices"
+            name="married"
+            value={marital_status}
+            onChange={e => setMarital_status(e.target.value)}
+          >
             <option value="marital status">Choose A Marital Status</option>
-            <option value="marital status">Single</option>
-            <option value="marital status">Married</option>
-            <option value="marital status">Divorced</option>
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+            <option value="divorced">Divorced</option>
+            <option value="widow">Widowed</option>
           </select>
         </div>
 
-        <label className="error" className={cityNameError === "" ? "" : "err"}>
-          City{cityNameError}
-        </label>
+        <label>City</label>
         <input
-          className={cityNameError === "" ? "" : "err"}
-          onChange={e => setCityNameError(e.target.value)}
+          onChange={e => setCityName(e.target.value)}
           value={cityName}
           type="text"
           placeholder="City Name"
         />
 
-        <label
-          className="error"
-          className={countyNameError === "" ? "" : "err"}
-        >
-          County{countyNameError}
-        </label>
+        <label>County</label>
         <input
-          className={countyNameError === "" ? "" : "err"}
-          onChange={e => setCountyNameError(e.target.value)}
+          onChange={e => setCountyName(e.target.value)}
           value={countyName}
           type="text"
           placeholder="County Name"
         />
 
-        <label className="error" className={stateNameError === "" ? "" : "err"}>
-          State{stateNameError}
-        </label>
+        <label>State</label>
         <input
-          className={stateNameError === "" ? "" : "err"}
-          onChange={e => setStateNameError(e.target.value)}
+          onChange={e => setStateName(e.target.value)}
           value={stateName}
           type="text"
           placeholder="State Name"
         />
 
-        <label className="error" className={emailError === "" ? "" : "err"}>
-          Email{emailError}
-        </label>
+        <label>Email</label>
         <input
-          className={emailError === "" ? "" : "error"}
           onChange={e => setEmail(e.target.value)}
           value={email}
           type="email"
@@ -149,44 +114,51 @@ export function Forms(props) {
         />
 
         <div className="formCheckBI">
-          <label className="basicInfoCheck">
-            <input type="checkbox" className="minorCheck" />I have minor
-            children (17 and under)
-          </label>
+          <label className="basicInfoCheck">Do You Have Children?</label>
+          <select
+            className="Children"
+            name="kids"
+            value={children}
+            onChange={e => setChildren(e.target.value)}
+          >
+            <option value="child">Select One</option>
+            <option value="si">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <div>
+          <label className="basicInfoCheck">Do You Have Pets?</label>
+          <select
+            className="pets"
+            name="pets"
+            value={pets}
+            onChange={e => setPets(e.target.value)}
+          >
+            <option value="pets">Select One</option>
+            <option value="y">Yes</option>
+            <option value="n">No</option>
+          </select>
         </div>
 
         <div>
           <label className="basicInfoCheck">
-            <input type="checkbox" className="adultCheck" />I have adult
-            children
+            Do You Own a Home or Other Real Estate?
           </label>
+          <select
+            className="home"
+            name="homies"
+            value={home}
+            onChange={e => setHome(e.target.value)}
+          >
+            <option value="home">Select One</option>
+            <option value="yeah">Yes</option>
+            <option value="nah">No</option>
+          </select>
         </div>
 
-        <div>
-          <label className="basicInfoCheck">
-            <input type="checkbox" className="grandChildCheck" />I have
-            grandchildren
-          </label>
-        </div>
-
-        <div>
-          <label className="basicInfoCheck">
-            <input type="checkbox" className="petsCheck" />I have pets
-          </label>
-        </div>
-
-        <div>
-          <label className="basicInfoCheck">
-            <input type="checkbox" className="estateCheck" />I own a home or
-            other real estate
-          </label>
-        </div>
-
-        <button type="submit" onClick={handleSubmit}>
-          Save And Continue
-        </button>
+        <button type="submit">Save And Continue</button>
       </form>
     </div>
   )
 }
-export default Forms
