@@ -6,3 +6,5 @@ export { useEstate } from "../redux/ducks/estate"
 export { useBasicInfo } from "../redux/ducks/basicInfo"
 
 export { useUserThoughts } from "../redux/ducks/thoughts"
+
+export { useWitness } from "../redux/ducks/witness"

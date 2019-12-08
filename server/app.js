@@ -7,7 +7,8 @@ const estateRouter = require("./routes/estateRouter")
 const giftsRouter = require("./routes/giftsRouter")
 const basicRouter = require("./routes/basicRouter")
 const thoughtsRouter = require("./routes/thoughtsRouter")
-const giftsRouter = require("./routes/thoughtsRouter")
+
+const witnessRouter = require("./routes/witnessRouter")
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -20,6 +21,7 @@ app.use("/estate", estateRouter)
 
 app.use("/thoughts", thoughtsRouter)
 app.use("/gifts", giftsRouter)
+app.use("/witness", witnessRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

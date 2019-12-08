@@ -57,9 +57,3 @@ export function useTakerInfo() {
 // reducer
 // action creators
 // custom hooks
-
-export function useTakerInfo() {
-  const dispatch = useDispatch()
-  const grabCareInfo = info => dispatch(postToCare(info))
-  return { grabCareInfo }
-}
