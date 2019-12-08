@@ -19,11 +19,6 @@ body {
   background: rgb(117, 94, 248);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 /* This is the css for Assets */
 .container-1 {
   display: flex;
@@ -35,15 +30,28 @@ code {
 .box-Person {
   flex-wrap: wrap;
   background: rgb(151, 230, 187);
-  width: 800px;
+  width: 600px;
 
   justify-content: center;
 }
 
-main {
-  height: 500px;
-  background: rgb(252, 207, 140);
-}
 footer {
-  background: rgb(199, 94, 248);
+  background: rgb(243, 131, 224);
+}
+.head {
+  display: flex;
+  margin: 5px;
+  place-items: center;
+  justify-content: space-between;
+  background: rgb(248, 250, 147);
+  right: 0;
+  height: 50px;
+}
+main {
+  background: rgb(116, 248, 237);
+  height: 1000px;
+}
+
+.aside {
+  right: 0;
 }
