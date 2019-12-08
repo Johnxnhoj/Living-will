@@ -22,8 +22,8 @@ export default (state = initialState, action) => {
 }
 
 export function postToCare(input) {
-  return dispatch => {
-    Axios.post("/care_taker/CareTaker", { input }).then(resp => {
+  return (dispatch) => {
+    Axios.post("/care_taker/CareTaker", { input }).then((resp) => {
       dispatch({
         type: POST_CARE,
         payload: resp.data
@@ -34,7 +34,7 @@ export function postToCare(input) {
 
 export function useTakerInfo() {
   const dispatch = useDispatch()
-  const grabCareInfo = info => dispatch(postToCare(info))
+  const grabCareInfo = (info) => dispatch(postToCare(info))
   return { grabCareInfo }
 }
 
@@ -57,9 +57,3 @@ export function useTakerInfo() {
 // reducer
 // action creators
 // custom hooks
-
-export function useTakerInfo() {
-  const dispatch = useDispatch()
-  const grabCareInfo = info => dispatch(postToCare(info))
-  return { grabCareInfo }
-}
