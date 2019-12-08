@@ -2,15 +2,16 @@ const router = require("express").Router()
 const db = require("../db")
 
 router.post("/gifts", (req, res, next) => {
-  const user_id = req.body.user_id
-  const gift = req.body.gifts
+  const gift = req.body.gift
   const gift_recipient = req.body.gift_recipient
   const relationship_to_user = req.body.relationship_to_user
   const alternate_gift_recipient = req.body.relationship_to_user
+  const id = 40
+  const user_id = 40
 
   console.log(req.body)
 
-  const sql = `INSERT INTO Gifts (user_id,gift,gift_recipient ,reationship_to_user, alternate_gift_recipient)
+  const sql = `INSERT INTO Gifts (user_id,gift,gift_recipient ,relationship_to_user, alternate_gift_recipient)
 VALUES (?,?,?,?,?)`
 
   db.query(
@@ -23,19 +24,15 @@ VALUES (?,?,?,?,?)`
       alternate_gift_recipient
     ],
     (err, results, fields) => {
-      if (err) {
-        throw new Error(err)
-      } else {
-        res.json({
-          messaage: "Completed Gifts",
-          results
-        })
-      }
+      res.json({
+        messaage: "Completed Gifts",
+        results
+      })
     }
   )
 })
 
-router.get("/giftRouter", (req, res, next) => {
+router.get("/giftsRouter", (req, res, next) => {
   axios.get("/gifts").then(resp => {
     const user = resp.data.results[0]
   })

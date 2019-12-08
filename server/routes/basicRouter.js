@@ -4,7 +4,7 @@ const db = require("../db")
 router.post("/user_info", (req, res, next) => {
   const full_name = req.body.fullName
   const city = req.body.cityName
-  const county = req.body.countytName
+  const county = req.body.countyName
   const state = req.body.stateName
   const email = req.body.email
   const mobile_number = req.body.mobile_number
@@ -48,7 +48,7 @@ router.post("/user_info", (req, res, next) => {
 })
 
 router.get("/basicRouter", (req, res, next) => {
-  axios.get("/user_info").then(resp => {
+  axios.get("/user_info").then((resp) => {
     const user = resp.data.results[0]
   })
 
