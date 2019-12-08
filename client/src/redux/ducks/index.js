@@ -5,4 +5,8 @@ export { default as AssetsState } from "./estate"
 
 export { default as basicInfoState } from "./basicInfo"
 
+
 export { default as GiftsState } from "./Gifts"
+
+export { default as executorState } from "./executor"
+

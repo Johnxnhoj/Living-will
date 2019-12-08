@@ -14,7 +14,7 @@ export default (props) => {
     <div>
       <form onSubmit={handleSubmit}>
         <h1>Thoughts</h1>
-        <p>Jot your personal thoughts or messages here.</p>
+        <p>Jot your final thoughts or messages here.</p>
         <textarea
           rows="10"
           cols="50"
