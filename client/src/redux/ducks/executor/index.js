@@ -1,5 +1,5 @@
 import Axios from "axios"
-import { useSelector, useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
 
 //ACTION DEFINITIONS
 const POST_EXECUTOR = "executor/POST_EXECUTOR"
@@ -30,10 +30,10 @@ export function postToExecutor(input) {
     })
   }
 }
-export function useUserExecutor() {
+
+export function useExecutor() {
   const dispatch = useDispatch()
-  const grabUserExecutor = (userExecutor) =>
-    dispatch(postToExecutor(userExecutor))
+  const grabUserExecutor = (info) => dispatch(postToExecutor(info))
 
   return { grabUserExecutor }
 }

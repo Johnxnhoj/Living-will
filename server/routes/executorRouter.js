@@ -2,23 +2,23 @@ const router = require("express").Router()
 const db = require("../db")
 const axios = require("axios")
 
-router.post("/", (req, res, next) => {
+router.post("/executor", (req, res, next) => {
   const full_name = req.body.fullName
-  const city = req.body.city
-  const county = req.body.county
-  const state = req.body.state
+  const city = req.body.cityName
+  const county = req.body.countyName
+  const state = req.body.stateName
   const id = 10
   const user_id = 30
 
   console.log(req.body)
 
   const sql = `
-  INSERT INTO executor (id, user_id, full_name, city, county, state) 
-  VALUES (?,?,?,?,?,?) `
+  INSERT INTO executor ( user_id, full_name, city, county, state) 
+  VALUES (?,?,?,?,?) `
 
   db.query(
     sql,
-    [id, user_id, full_name, city, county, state],
+    [user_id, full_name, city, county, state],
     (err, results, fields) => {
       if (err) {
         throw new Error(err)
