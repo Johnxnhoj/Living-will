@@ -4,3 +4,7 @@ export { useUserThoughts } from "../redux/ducks/thoughts"
 export { useEstate } from "../redux/ducks/estate"
 export { useExecutor } from "../redux/ducks/executor"
 export { useBasicInfo } from "../redux/ducks/basicInfo"
+
+
+export { useGifts } from "../redux/ducks/Gifts"
+
