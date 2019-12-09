@@ -21,8 +21,8 @@ export default (state = initialState, action) => {
 
 //ACTION CREATORS
 export function postToExecutor(input) {
-  return (dispatch) => {
-    Axios.post("/executor/Executor", input).then((resp) => {
+  return dispatch => {
+    Axios.post("/executor/executor", input).then(resp => {
       dispatch({
         type: POST_EXECUTOR,
         payload: resp.data
@@ -33,7 +33,7 @@ export function postToExecutor(input) {
 
 export function useExecutor() {
   const dispatch = useDispatch()
-  const grabUserExecutor = (info) => dispatch(postToExecutor(info))
+  const grabUserExecutor = info => dispatch(postToExecutor(info))
 
   return { grabUserExecutor }
 }
