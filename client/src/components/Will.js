@@ -1,6 +1,8 @@
 import React from "react"
+import { useBasicInfo } from "../hooks/index"
 
 export default props => {
+  const { grabUserInfo, get } = useBasicInfo()
   return (
     <div>
       <div>will</div>
