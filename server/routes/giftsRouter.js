@@ -5,7 +5,7 @@ router.post("/gifts", (req, res, next) => {
   const gift = req.body.gift
   const gift_recipient = req.body.gift_recipient
   const relationship_to_user = req.body.relationship_to_user
-  const alternate_gift_recipient = req.body.relationship_to_user
+  const alternate_gift_recipient = req.body.alternate_gift_recipient
   const id = 40
   const user_id = 40
 
@@ -33,7 +33,7 @@ VALUES (?,?,?,?,?)`
 })
 
 router.get("/giftsRouter", (req, res, next) => {
-  axios.get("/gifts").then(resp => {
+  axios.get("/gifts").then((resp) => {
     const user = resp.data.results[0]
   })
 })
