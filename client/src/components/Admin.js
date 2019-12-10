@@ -16,15 +16,19 @@ import Notifications from "./Notifications"
 import Help from "./Help"
 import Settings from "./Settings"
 import { useSide } from "../hooks"
-//
+
 import { useAdmin } from "../hooks"
+
+//Logo and Carousel Imports
 import exoduslogo from "../assets/exoduslogo.png"
+import AwesomeSlider from "react-awesome-slider"
+import "react-awesome-slider/dist/styles.css"
 import friends from "../assets/friends.jpg"
 import oldcouple from "../assets/oldcouple.jpg"
 import sunset from "../assets/sunset.jpg"
 import lonelyman from "../assets/lonelyman.jpg"
 
-export default props => {
+export default (props) => {
   const { visible, toggle } = useSide()
 
   const { signout } = useAdmin()
@@ -40,7 +44,7 @@ export default props => {
             Sign Out
           </button> */}
           <div className={visible ? "Side open" : "Side"}>
-            <div className="toggle" onClick={e => toggle()}>
+            <div className="toggle" onClick={(e) => toggle()}>
               <Icon icon="bars" />
             </div>
             <div className="Form-links">
@@ -80,6 +84,12 @@ export default props => {
             <Route path="/Help" component={Help} />
             <Route path="/Settings" component={Settings} />
           </div>
+          <AwesomeSlider>
+            <div data-src={lonelyman} />
+            <div data-src={friends} />
+            <div data-src={sunset} />
+            <div data-src={oldcouple} />
+          </AwesomeSlider>
         </main>
         <footer className="foot">
           Exodus, Inc. All Rights Reserved.

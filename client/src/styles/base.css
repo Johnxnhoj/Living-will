@@ -85,6 +85,7 @@ main {
   top: 0;
   right: -400px;
   bottom: 0;
+  z-index: 10;
 }
 
 .Side .toggle {

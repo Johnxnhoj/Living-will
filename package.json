@@ -17,12 +17,11 @@
   "dependencies": {
     "axios": "^0.19.0",
     "concurrently": "^5.0.0",
-
+    "js-sha512": "^0.8.0",
     "jsonwebtoken": "^8.5.1",
-
     "react-awesome-slider": "^2.2.1",
-    "react-responsive-carousel": "^3.1.51"
-
+    "react-responsive-carousel": "^3.1.51",
+    "uuid": "^3.3.3"
   },
   "boilerplate": {
     "name": "boilerplate",
