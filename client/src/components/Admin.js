@@ -16,42 +16,39 @@ import Witness from "./Witness"
 import Notifications from "./Notifications"
 import Help from "./Help"
 import Settings from "./Settings"
+import { useSide } from "../hooks"
 
 export default props => {
+  const { visible, toggle } = useSide()
   return (
     <Router>
       <div className="Container">
         <header className="head">
-          Logo
-          <aside>
-            <Icon icon="bars" className="line-bars"></Icon>
-          </aside>
+          LOGO
+          <div className={visible ? "Side open" : "Side"}>
+            <div className="toggle" onClick={e => toggle()}>
+              <Icon icon="bars" />
+            </div>
+            <div className="Form-links">
+              <p>
+                <Link to="/">Home</Link>
+              </p>
+              <p>
+                <Link to="/Assets">Assets</Link>
+              </p>
+              <p>
+                <Link to="/CareTaker">CareTaker</Link>
+              </p>
+              <p>
+                <Link to="/Gifts">Gifts</Link>
+              </p>
+              <p>
+                <Link to="/Thoughts">Thoughts</Link>
+              </p>
+            </div>
+          </div>
         </header>
         <main>
-          <div className="Form-links">
-            <p>
-              <Link to="/BasicInfo">Basic Info</Link>
-            </p>
-            <p>
-              <Link to="/Assets">Assets</Link>
-            </p>
-            <br></br>
-            <p>
-              <Link to="/CareTaker">CareTaker</Link>
-            </p>
-            <br></br>
-            <p>
-              <Link to="/Gifts">Gifts</Link>
-            </p>
-            <br></br>
-            <p>
-              <Link to="/Thoughts">Thoughts</Link>
-            </p>
-            <br></br>
-            <p>
-              <Link to="/Sidebar">Sidebar</Link>
-            </p>
-          </div>
           <div className="change">
             <Route path="/BasicInfo" component={BasicInfo} />
             <Route path="/Assets" component={Assets} />

@@ -2,7 +2,7 @@ const router = require("express").Router()
 const db = require("../db")
 const axios = require("axios")
 
-router.post("/Thoughts", (req, res, next) => {
+router.post("/thoughts", (req, res, next) => {
   const user_thoughts = req.body.userThoughts
   const user_id = 20
 
