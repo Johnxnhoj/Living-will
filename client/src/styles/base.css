@@ -60,6 +60,7 @@ a:-webkit-any-link {
 
 footer {
   background: white;
+  display: flex;
 }
 .head {
   display: flex;
@@ -71,7 +72,7 @@ footer {
   height: 50px;
 }
 main {
-  background: rgb(116, 248, 237);
+  background: rgb(161, 250, 220);
   height: 860px;
 }
 
@@ -101,4 +102,8 @@ main {
 }
 .Side.open {
   right: 0;
+}
+.logoa {
+  width: 200px;
+  height: 50px;
 }

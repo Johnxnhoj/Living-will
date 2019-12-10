@@ -18,6 +18,7 @@ function App(props) {
       <Router>
         <Switch>
           <Route exact path="/" component={Admin} />
+
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="*" component={CheckLogin} />

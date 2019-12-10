@@ -38,7 +38,7 @@ export default (props) => {
       <div className="Container">
         <header className="head">
           <div className="logo">
-            <img src={exoduslogo} />
+            <img className="logoa" src={exoduslogo} />
           </div>
           {/* <button id="signOut" onClick={e => signout()}>
             Sign Out
@@ -67,6 +67,10 @@ export default (props) => {
           </div>
         </header>
         <main>
+          <div className="middle-b">
+            <button>Your Will</button>
+            <button onClick={e => toggle()}>Create a Will</button>
+          </div>
           <div className="change">
             <Route path="/BasicInfo" component={BasicInfo} />
             <Route path="/Assets" component={Assets} />
