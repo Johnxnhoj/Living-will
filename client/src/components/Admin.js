@@ -4,7 +4,6 @@ import Icon from "../lib/Icon"
 import Sidebar from "./Sidebar"
 import BasicInfo from "./BasicInfo"
 import Assets from "./Assets"
-
 import CareTaker from "./CareTaker"
 import Gifts from "./Gifts"
 import Thoughts from "./Thoughts"
@@ -17,12 +16,21 @@ import Notifications from "./Notifications"
 import Help from "./Help"
 import Settings from "./Settings"
 
-export default props => {
+//Logo and Slider Photos
+import exoduslogo from "../assets/exoduslogo.png"
+import friends from "../assets/friends.jpg"
+import oldcouple from "../assets/oldcouple.jpg"
+import sunset from "../assets/sunset.jpg"
+import lonelyman from "../assets/lonelyman.jpg"
+
+export default (props) => {
   return (
     <Router>
       <div className="Container">
         <header className="head">
-          Logo
+          <div className="logo">
+            <img src={exoduslogo} />
+          </div>
           <aside>
             <Icon icon="bars" className="line-bars"></Icon>
           </aside>
@@ -52,6 +60,12 @@ export default props => {
               <Link to="/Sidebar">Sidebar</Link>
             </p>
           </div>
+          {/* <AwesomeSlider>
+            <div data-src={lonelyman} />
+            <div data-src={friends} />
+            <div data-src={sunset} />
+            <div data-src={oldcouple} />
+          </AwesomeSlider> */}
           <div className="change">
             <Route path="/BasicInfo" component={BasicInfo} />
             <Route path="/Assets" component={Assets} />
@@ -76,6 +90,12 @@ export default props => {
             <Icon icon="facebook-square"></Icon>
             <Icon icon="instagram"></Icon>
             <Icon icon="twitter-square"></Icon>
+          </div>
+          <div>
+            Disclaimer: We are not a law firm or a substitute for an attorney or
+            law firm. We cannot provide any kind of advice, explanation,
+            opinion, or recommendation about possible legal rights, remedies,
+            defenses, options, selection of forms or strategies.{" "}
           </div>
         </footer>
       </div>
