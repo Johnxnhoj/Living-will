@@ -15,12 +15,16 @@ import Witness from "./Witness"
 import Notifications from "./Notifications"
 import Help from "./Help"
 import Settings from "./Settings"
+import { useSide } from "../hooks"
 
 
 //Denia
 import { useAdmin } from "../hooks"
 
 export default props => {
+
+  const { visible, toggle } = useSide()
+
   const { signout } = useAdmin()
 
 //Logo and Slider Photos
@@ -32,52 +36,92 @@ import lonelyman from "../assets/lonelyman.jpg"
 
 export default (props) => {
 
+
   return (
     <Router>
       <div className="Container">
         <header className="head">
 
-          
-
+          //LOGO
+    
           <div className="logo">
             <img src={exoduslogo} />
           </div>
 
-  
+  //sign out 
   <button id="signOut" onClick={e => signout()}>
             Sign Out
           </button>
   
   
-          <aside>
-            <Icon icon="bars" className="line-bars"></Icon>
-          </aside>
+          <div className={visible ? "Side open" : "Side"}>
+            <div className="toggle" onClick={e => toggle()}>
+              <Icon icon="bars" />
+            </div>
+            <div className="Form-links">
+              <p>
+                <Link to="/">Home</Link>
+              </p>
+              <p>
+                <Link to="/Assets">Assets</Link>
+              </p>
+              <p>
+                <Link to="/CareTaker">CareTaker</Link>
+              </p>
+              <p>
+                <Link to="/Gifts">Gifts</Link>
+              </p>
+              <p>
+                <Link to="/Thoughts">Thoughts</Link>
+              </p>
+            </div>
+          </div>
         </header>
         <main>
-          <div className="Form-links">
-            <p>
-              <Link to="/BasicInfo">Basic Info</Link>
-            </p>
-            <p>
-              <Link to="/Assets">Assets</Link>
-            </p>
-            <br></br>
-            <p>
-              <Link to="/CareTaker">CareTaker</Link>
-            </p>
-            <br></br>
-            <p>
-              <Link to="/Gifts">Gifts</Link>
-            </p>
-            <br></br>
-            <p>
-              <Link to="/Thoughts">Thoughts</Link>
-            </p>
-            <br></br>
-            <p>
-              <Link to="/Sidebar">Sidebar</Link>
-            </p>
-          </div>
+
+
+          
+
+//           <div className="logo">
+//             <img src={exoduslogo} />
+//           </div>
+
+  
+//   <button id="signOut" onClick={e => signout()}>
+//             Sign Out
+//           </button>
+  
+  
+//           <aside>
+//             <Icon icon="bars" className="line-bars"></Icon>
+//           </aside>
+//         </header>
+//         <main>
+//           <div className="Form-links">
+//             <p>
+//               <Link to="/BasicInfo">Basic Info</Link>
+//             </p>
+//             <p>
+//               <Link to="/Assets">Assets</Link>
+//             </p>
+//             <br></br>
+//             <p>
+//               <Link to="/CareTaker">CareTaker</Link>
+//             </p>
+//             <br></br>
+//             <p>
+//               <Link to="/Gifts">Gifts</Link>
+//             </p>
+//             <br></br>
+//             <p>
+//               <Link to="/Thoughts">Thoughts</Link>
+//             </p>
+//             <br></br>
+//             <p>
+//               <Link to="/Sidebar">Sidebar</Link>
+//             </p>
+//           </div>
+
 
           <div className="change">
             <Route path="/BasicInfo" component={BasicInfo} />

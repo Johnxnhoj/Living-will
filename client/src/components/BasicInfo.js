@@ -37,7 +37,7 @@ export default props => {
 
   //EXPORT DEFAULT (PROPS) => {
   return (
-    <div className="container">
+    <div className="container-2">
       <h1>Tell Us About Yourself</h1>
       <form onSubmit={handleSubmit}>
         <label className="name">Full Name</label>

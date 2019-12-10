@@ -20,7 +20,7 @@ export default props => {
     })
   }
   return (
-    <div className="containerGifts">
+    <div className="container-2">
       <h1>Gifts</h1>
       <p>
         Specify items, such as heirlooms, jewelry or cash amounts that you want

@@ -1,39 +1,5 @@
+
+=======
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
-body {
-  font-family: "Roboto", sans-serif;
-  font-size: 20px;
-}
 
-.Form-links {
-  display: flex;
-  flex-wrap: wrap;
-  background: rgb(122, 122, 122);
-}
-.Form-links p {
-  /* text-decoration: none; */
-  background: rgba(235, 235, 235, 0.418);
-  border-radius: 5px;
-  border: 0.5px solid rgb(173, 172, 196);
-  height: 30px;
-  width: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-
-  margin: auto;
-  text-align: center;
-
-  box-shadow: 5px 5px 5px rgba(7, 109, 226, 0.363);
-}
-.FormBubble p:hover {
-  background: rgba(0, 119, 255, 0.575);
-  transition: 0.5s;
-  color: gray;
-}
-a:-webkit-any-link {
-  color: white;
-  cursor: pointer;
-  text-decoration: none;
-}

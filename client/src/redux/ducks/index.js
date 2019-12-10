@@ -11,6 +11,10 @@ export { default as GiftsState } from "./Gifts"
 
 export { default as executorState } from "./executor"
 
+
+export { default as sideState } from "./Side"
+
 export { default as ThoughtsState } from "./thoughts"
 
 export { default as adminState } from "./admin"
+
