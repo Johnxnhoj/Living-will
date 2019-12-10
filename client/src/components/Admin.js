@@ -17,12 +17,19 @@ import Notifications from "./Notifications"
 import Help from "./Help"
 import Settings from "./Settings"
 
+//Denia
+import { useAdmin } from "../hooks"
+
 export default props => {
+  const { signout } = useAdmin()
   return (
     <Router>
       <div className="Container">
         <header className="head">
           Logo
+          <button id="signOut" onClick={e => signout()}>
+            Sign Out
+          </button>
           <aside>
             <Icon icon="bars" className="line-bars"></Icon>
           </aside>
