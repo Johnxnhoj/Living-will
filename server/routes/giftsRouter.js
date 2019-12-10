@@ -33,7 +33,7 @@ VALUES (?,?,?,?,?)`
 })
 
 router.get("/giftsRouter", (req, res, next) => {
-  axios.get("/gifts").then(resp => {
+  axios.get("/gifts").then((resp) => {
     const user = resp.data.results[0]
   })
 })
