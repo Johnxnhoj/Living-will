@@ -1,7 +1,5 @@
 import React from "react"
 
-
-
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 import Admin from "./Admin"
@@ -9,9 +7,9 @@ import Login from "./Login"
 import Register from "./Register"
 
 ///css
-import "../styles/adminPage.css"
+// import "../styles/adminPage.css"
 
-import "../styles/Sidebar.css"
+// import "../styles/Sidebar.css"
 import CheckLogin from "./CheckLogin"
 
 function App(props) {
