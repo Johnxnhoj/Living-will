@@ -10,8 +10,19 @@ const thoughtsRouter = require("./routes/thoughtsRouter")
 const witnessRouter = require("./routes/witnessRouter")
 const executorRouter = require("./routes/executorRouter")
 
+const protectedRouter = require("./routes/protectedRouter")
+
+const jwt = require("express-jwt")
+// const server = require("http").Server(app)
+// const io = require("socket.io")(server)
+const config = require("config")
+// require("./Chat")(io)
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+
+app.use("/users", userRouter)
+app.use("/", jwt({ secret: config.get("secret") }), protectedRouter)
 
 app.use("/users", userRouter)
 app.use("/user_info", basicRouter)

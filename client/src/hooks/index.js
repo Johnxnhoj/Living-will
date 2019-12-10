@@ -8,3 +8,5 @@ export { useBasicInfo } from "../redux/ducks/basicInfo"
 export { useWitness } from "../redux/ducks/witness"
 
 export { useGifts } from "../redux/ducks/Gifts"
+
+export { useAdmin } from "../redux/ducks/admin"

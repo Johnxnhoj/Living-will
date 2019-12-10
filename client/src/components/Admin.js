@@ -16,6 +16,13 @@ import Notifications from "./Notifications"
 import Help from "./Help"
 import Settings from "./Settings"
 
+
+//Denia
+import { useAdmin } from "../hooks"
+
+export default props => {
+  const { signout } = useAdmin()
+
 //Logo and Slider Photos
 import exoduslogo from "../assets/exoduslogo.png"
 import friends from "../assets/friends.jpg"
@@ -24,13 +31,24 @@ import sunset from "../assets/sunset.jpg"
 import lonelyman from "../assets/lonelyman.jpg"
 
 export default (props) => {
+
   return (
     <Router>
       <div className="Container">
         <header className="head">
+
+          
+
           <div className="logo">
             <img src={exoduslogo} />
           </div>
+
+  
+  <button id="signOut" onClick={e => signout()}>
+            Sign Out
+          </button>
+  
+  
           <aside>
             <Icon icon="bars" className="line-bars"></Icon>
           </aside>
