@@ -4,7 +4,6 @@ import Icon from "../lib/Icon"
 import Sidebar from "./Sidebar"
 import BasicInfo from "./BasicInfo"
 import Assets from "./Assets"
-
 import CareTaker from "./CareTaker"
 import Gifts from "./Gifts"
 import Thoughts from "./Thoughts"
@@ -18,13 +17,43 @@ import Help from "./Help"
 import Settings from "./Settings"
 import { useSide } from "../hooks"
 
+
+//Denia
+import { useAdmin } from "../hooks"
+
 export default props => {
+
   const { visible, toggle } = useSide()
+
+  const { signout } = useAdmin()
+
+//Logo and Slider Photos
+import exoduslogo from "../assets/exoduslogo.png"
+import friends from "../assets/friends.jpg"
+import oldcouple from "../assets/oldcouple.jpg"
+import sunset from "../assets/sunset.jpg"
+import lonelyman from "../assets/lonelyman.jpg"
+
+export default (props) => {
+
+
   return (
     <Router>
       <div className="Container">
         <header className="head">
-          LOGO
+
+          //LOGO
+    
+          <div className="logo">
+            <img src={exoduslogo} />
+          </div>
+
+  //sign out 
+  <button id="signOut" onClick={e => signout()}>
+            Sign Out
+          </button>
+  
+  
           <div className={visible ? "Side open" : "Side"}>
             <div className="toggle" onClick={e => toggle()}>
               <Icon icon="bars" />
@@ -49,6 +78,51 @@ export default props => {
           </div>
         </header>
         <main>
+
+
+          
+
+//           <div className="logo">
+//             <img src={exoduslogo} />
+//           </div>
+
+  
+//   <button id="signOut" onClick={e => signout()}>
+//             Sign Out
+//           </button>
+  
+  
+//           <aside>
+//             <Icon icon="bars" className="line-bars"></Icon>
+//           </aside>
+//         </header>
+//         <main>
+//           <div className="Form-links">
+//             <p>
+//               <Link to="/BasicInfo">Basic Info</Link>
+//             </p>
+//             <p>
+//               <Link to="/Assets">Assets</Link>
+//             </p>
+//             <br></br>
+//             <p>
+//               <Link to="/CareTaker">CareTaker</Link>
+//             </p>
+//             <br></br>
+//             <p>
+//               <Link to="/Gifts">Gifts</Link>
+//             </p>
+//             <br></br>
+//             <p>
+//               <Link to="/Thoughts">Thoughts</Link>
+//             </p>
+//             <br></br>
+//             <p>
+//               <Link to="/Sidebar">Sidebar</Link>
+//             </p>
+//           </div>
+
+
           <div className="change">
             <Route path="/BasicInfo" component={BasicInfo} />
             <Route path="/Assets" component={Assets} />
@@ -73,6 +147,12 @@ export default props => {
             <Icon icon="facebook-square"></Icon>
             <Icon icon="instagram"></Icon>
             <Icon icon="twitter-square"></Icon>
+          </div>
+          <div>
+            Disclaimer: We are not a law firm or a substitute for an attorney or
+            law firm. We cannot provide any kind of advice, explanation,
+            opinion, or recommendation about possible legal rights, remedies,
+            defenses, options, selection of forms or strategies.{" "}
           </div>
         </footer>
       </div>

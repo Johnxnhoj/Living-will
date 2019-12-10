@@ -7,10 +7,12 @@ import axios from "axios"
 // action definitions
 const POST_INFO = "basicInfo/POST_INFO"
 const DELE_INFO = "basicInfo/DELE_INFO"
+const GET_INFO = "basic/GET_INFO"
 
 // initial state
 const initialState = {
-  user_info: []
+  user_info: [],
+  info: []
 }
 
 // reducer
@@ -18,6 +20,8 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case POST_INFO:
       return { ...state, user_info: action.payload }
+    case GET_INFO:
+      return { ...state, info: action.payload }
     // case DELE_INFO:
     //   return { ...state, user_info: info.filter(info => info.id !== action.payload) }
     default:
@@ -38,16 +42,16 @@ export function postToInfo(input) {
   }
 }
 
-// const getBaicInfo = () => {
-//   return dispatch => {
-//     axios.get("/user_info").then(resp => {
-//       dispatch({
-//         type: GET_USER_INFO,
-//         payload: resp.data
-//       })
-//     })
-//   }
-// }
+export function getBasicInfo() {
+  return dispatch => {
+    axios.get("/user_info/will").then(resp => {
+      dispatch({
+        type: GET_INFO,
+        payload: resp.data
+      })
+    })
+  }
+}
 
 // export function asyncPostToInfo(input) {
 //   return dispatch => {
@@ -69,13 +73,11 @@ export function postToInfo(input) {
 export function useBasicInfo() {
   // const users = useSelector(appState => appState.userState.users)
   const dispatch = useDispatch()
+  const get = () => dispatch(getBasicInfo())
   const grabUserInfo = info => dispatch(postToInfo(info))
 
-  return { grabUserInfo }
+  useEffect(() => {
+    get()
+  }, [])
+  return { grabUserInfo, get }
 }
-
-// export function useTakerInfo() {
-//   const dispatch = useDispatch()
-//   const grabCareInfo = info => dispatch(postToCare(info))
-//   return { grabCareInfo }
-// }

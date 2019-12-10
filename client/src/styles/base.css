@@ -59,14 +59,14 @@ a:-webkit-any-link {
 }
 
 footer {
-  background: rgb(243, 131, 224);
+  background: white;
 }
 .head {
   display: flex;
   margin: 5px;
   place-items: center;
   justify-content: space-between;
-  background: rgb(248, 250, 147);
+  background: white;
   right: 0;
   height: 50px;
 }

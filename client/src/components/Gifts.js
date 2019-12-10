@@ -95,6 +95,7 @@ export default props => {
             value={alternate_gift_recipient}
             type="text"
           ></input>
+
           {/* 
           <p>Gift #2</p>
           <label>I want to give my...</label>

@@ -29,6 +29,7 @@ export default props => {
               <input
                 type="text"
                 placeholder="Name of Beneficiary"
+                value={namebeni}
                 onChange={e => setNamebeni(e.target.value)}
               ></input>
             </div>
@@ -37,6 +38,7 @@ export default props => {
               <input
                 type="text"
                 placeholder="Beneficiary Adress"
+                value={addressbeni}
                 onChange={e => setAddressbeni(e.target.value)}
               ></input>
             </div>
@@ -45,6 +47,7 @@ export default props => {
               <input
                 type="text"
                 placeholder="Relation"
+                value={relationbeni}
                 onChange={e => setRelationbeni(e.target.value)}
               ></input>
             </div>
@@ -55,6 +58,7 @@ export default props => {
               <input
                 type="text"
                 placeholder="Type of Estate"
+                value={typebeni}
                 onChange={e => setTypebeni(e.target.value)}
               ></input>
               <div className="Input-1">
@@ -62,6 +66,7 @@ export default props => {
                 <input
                   type="text"
                   placeholder="Property"
+                  value={property}
                   onChange={e => setProperty(e.target.value)}
                 ></input>
               </div>
