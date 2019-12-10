@@ -60,12 +60,7 @@ export default (props) => {
               <Link to="/Sidebar">Sidebar</Link>
             </p>
           </div>
-          {/* <AwesomeSlider>
-            <div data-src={lonelyman} />
-            <div data-src={friends} />
-            <div data-src={sunset} />
-            <div data-src={oldcouple} />
-          </AwesomeSlider> */}
+
           <div className="change">
             <Route path="/BasicInfo" component={BasicInfo} />
             <Route path="/Assets" component={Assets} />
