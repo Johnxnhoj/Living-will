@@ -18,37 +18,39 @@ export default props => {
   }
 
   return (
-    <div>
-      <div>Guardian</div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          Child Full Name{" "}
-          <input type="text" onChange={e => setChildname(e.target.value)} />
-        </div>
-        <div>
-          {" "}
-          Guardian Full Name Full Name{" "}
-          <input
-            type="text"
-            onChange={e => setGuardianName(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          Alternate Guardian Full Name
-          <input
-            type="text"
-            onChange={e => setAltGuardianName(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          Extra Alternate Guardian Full Name
-          <input
-            type="text"
-            onChange={e => setExtraGuardianName(e.target.value)}
-          ></input>
-        </div>
-        <button type="submit">submit</button>
-      </form>
+    <div className="container-1">
+      <div className="container-2">
+        <div>Guardian</div>
+        <form onSubmit={handleSubmit}>
+          <div>
+            Child Full Name{" "}
+            <input type="text" onChange={e => setChildname(e.target.value)} />
+          </div>
+          <div>
+            {" "}
+            Guardian Full Name Full Name{" "}
+            <input
+              type="text"
+              onChange={e => setGuardianName(e.target.value)}
+            ></input>
+          </div>
+          <div>
+            Alternate Guardian Full Name
+            <input
+              type="text"
+              onChange={e => setAltGuardianName(e.target.value)}
+            ></input>
+          </div>
+          <div>
+            Extra Alternate Guardian Full Name
+            <input
+              type="text"
+              onChange={e => setExtraGuardianName(e.target.value)}
+            ></input>
+          </div>
+          <button type="submit">submit</button>
+        </form>
+      </div>
     </div>
   )
 }

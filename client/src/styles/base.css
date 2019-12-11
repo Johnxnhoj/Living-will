@@ -38,26 +38,6 @@ a:-webkit-any-link {
   text-decoration: none;
 }
 
-.container-1 {
-  display: flex;
-  justify-content: center;
-}
-.container-2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.box-1 {
-  display: flex;
-}
-.box-Person {
-  flex-wrap: wrap;
-  background: rgb(151, 230, 187);
-  width: 600px;
-
-  justify-content: center;
-}
-
 footer {
   background: white;
   display: flex;
@@ -71,15 +51,10 @@ footer {
   right: 0;
   height: 50px;
 }
-main {
-  background: rgb(161, 250, 220);
-  height: 860px;
-}
 
 .Side {
   position: fixed;
   width: 400px;
-
   background: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   transition: right 0.5s;
@@ -106,4 +81,45 @@ main {
 .logoa {
   width: 200px;
   height: 50px;
+}
+/* css for all the forms */
+.container-1 {
+  background: pink;
+  display: flex;
+  justify-content: center;
+  height: 860px;
+}
+.container-2 {
+  background: rgb(255, 232, 156);
+
+  width: 1500px;
+  place-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* css for the divs in assets*/
+.box-1 {
+  display: flex;
+}
+.box-Person {
+  margin: 50px;
+}
+/* css for the main div / main page changing */
+.button-assets {
+  width: 50px;
+  height: 50px;
+}
+
+.change {
+  position: relative;
+}
+main {
+  height: 860px;
+}
+.container-main {
+  display: flex;
+  justify-content: center;
+  height: 860px;
+  background: rgb(252, 162, 129);
 }

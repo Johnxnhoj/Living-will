@@ -5,12 +5,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Admin from "./Admin"
 import Login from "./Login"
 import Register from "./Register"
-
-///css
-// import "../styles/adminPage.css"
-
-// import "../styles/Sidebar.css"
 import CheckLogin from "./CheckLogin"
+///
+import Slider from "../components/Slider"
 
 function App(props) {
   return (

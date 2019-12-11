@@ -12,7 +12,7 @@ export default props => {
   }
   return (
     <div className="container-1">
-      <div>
+      <div className="container-2">
         <form onSubmit={handleSubmit}>
           <h1>Thoughts</h1>
           <p>Jot your final thoughts or messages here.</p>
