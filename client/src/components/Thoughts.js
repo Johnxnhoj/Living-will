@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useUserThoughts } from "../hooks/index"
 
-export default props => {
+export default (props) => {
   const [userThoughts, setUserThoughts] = useState("")
   const { grabUserThoughts } = useUserThoughts()
   function handleSubmit(e) {
@@ -15,12 +15,15 @@ export default props => {
       <div className="container-2">
         <form onSubmit={handleSubmit}>
           <h1>Thoughts</h1>
-          <p>Jot your final thoughts or messages here.</p>
+          <p>
+            You may jot down general thoughts about your life or leave detailed
+            explanations about why you left specific gifts behind, etc.{" "}
+          </p>
           <textarea
             rows="10"
             cols="50"
             value={userThoughts}
-            onChange={e => setUserThoughts(e.target.value)}
+            onChange={(e) => setUserThoughts(e.target.value)}
           ></textarea>
           <div>
             <button type="submit">Save And Continue</button>
