@@ -2,6 +2,7 @@ const router = require("express").Router()
 const db = require("../db")
 
 router.post("/user_info", (req, res, next) => {
+  const user_id = req.body.user_id
   const full_name = req.body.fullName
   const city = req.body.cityName
   const county = req.body.countyName
@@ -17,12 +18,13 @@ router.post("/user_info", (req, res, next) => {
   console.log("hello")
 
   const sql = `
-  INSERT INTO user_info (full_name, city, county, state, email, mobile_number, marital_status, children, home, pets) 
-  VALUES (?,?,?,?,?,?,?,?,?,?) `
+  INSERT INTO user_info (user_id, full_name, city, county, state, email, mobile_number, marital_status, children, home, pets) 
+  VALUES (?,?,?,?,?,?,?,?,?,?,?) `
 
   db.query(
     sql,
     [
+      user_id,
       full_name,
       city,
       county,
@@ -47,23 +49,31 @@ router.post("/user_info", (req, res, next) => {
   )
 })
 
-router.get("/basicRouter", (req, res, next) => {
-  axios.get("/user_info").then((resp) => {
-    const user = resp.data.results[0]
+router.get("/users/id/:userName", (req, res, next) => {
+  const username = req.params.userName
+  const getsql = `SELECT id FROM users WHERE username =?`
+  db.query(getsql, [username], (err, results, fields) => {
+    res.json(results[0])
   })
+})
 
-  //   const getsql = `SELECT full_name, city, county, state, email
-  //   FROM user_info`
-
-  //   db.query(getsql, (err, results, fields) => {
-  //     res.json(results)
-  //   })
+router.get("/", (req, res, next) => {
+  // axios.get("/user_info").then(resp => {
+  // const user = resp.data.results[0]
   // })
 
-  // router.get("/guardianRouter", (req, res, next) => {
-  //   axios.get("/care_taker").then(resp => {
-  //     const user = resp.data.results[0]
-  //   })
+  const getsql = `SELECT full_name, city, county, state, email
+    FROM user_info`
+
+  db.query(getsql, (err, results, fields) => {
+    // let names = results.map(info => user_info
+    res.json(results)
+  })
 })
+
+// router.get("/guardianRouter", (req, res, next) => {
+//   axios.get("/care_taker").then(resp => {
+//     const user = resp.data.results[0]
+//   })
 
 module.exports = router

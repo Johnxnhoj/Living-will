@@ -71,9 +71,8 @@ router.post("/estate", (req, res, next) => {
   const property = req.body.property
   console.log(namebeni, addressbeni, relationbeni, typebeni, property)
   //console.log(req.body)
-  const id = 26
 
-  const user_id = 29
+  const user_id = req.body.user_id
   const sql = `INSERT INTO estate (user_id, beni_name, address, property, type_of)
    VALUES(?, ?, ?, ?, ?)`
 

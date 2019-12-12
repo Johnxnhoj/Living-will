@@ -1,5 +1,10 @@
 import React from "react"
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom"
 import Icon from "../lib/Icon"
 
 import BasicInfo from "./BasicInfo"
@@ -25,8 +30,11 @@ import MainP from "./MainP"
 
 export default (props) => {
   const { visible, toggle } = useSide()
-  const { signout } = useAdmin()
+  const { signout, isAuthenticated } = useAdmin()
   return (
+
+    <div>
+      {isAuthenticated ? (            
     <Router>
       <div className="Container">
         <header>
@@ -97,14 +105,16 @@ export default (props) => {
           </div>
         </header>
 
-        <main>
-          <Route exact path="/" component={MainP} />
-          <div className="change">
-            <Route path="/BasicInfo" component={BasicInfo} />
-            <Route path="/Assets" component={Assets} />
-            <Route path="/CareTaker" component={CareTaker} />
-            <Route path="/Gifts" component={Gifts} />
-            <Route path="/Thoughts" component={Thoughts} />
+
+            <main>
+              <Route exact path="/" component={MainP} />
+              <div className="change">
+                <Route path="/BasicInfo" component={BasicInfo} />
+                <Route path="/Assets" component={Assets} />
+                <Route path="/CareTaker" component={CareTaker} />
+                <Route path="/Gifts" component={Gifts} />
+                <Route path="/Thoughts" component={Thoughts} />
+
 
             <Route path="/Will" component={Will} />
             {/* routes for the side bar*/}
@@ -132,5 +142,10 @@ export default (props) => {
         </footer>
       </div>
     </Router>
+   ) : (
+        <Redirect to="/login" />
+      )}
+    </div>
+
   )
 }

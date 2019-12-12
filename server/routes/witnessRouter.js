@@ -14,8 +14,8 @@ router.post("/witness", (req, res, next) => {
   const DateW = req.body.DateW
 
   console.log(nameWit1, nameWit2, DateW)
-  const id = 26
-  const user_id = 28
+
+  const user_id = req.body.user_id
   const sql = `INSERT INTO witness (user_id, Wit_1, Wit_2, Date_W)
    VALUES(?, ?, ?, ?)`
   db.query(
