@@ -11,7 +11,6 @@ html {
 
 body {
   margin: 0;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Roboto", sans-serif;
@@ -23,6 +22,7 @@ body {
   flex-direction: column;
   background: rgba(122, 122, 122, 0);
 }
+
 .Form-links p {
   margin: 10px 20px;
   border-bottom: 2px solid rgb(179, 179, 179);
@@ -30,6 +30,7 @@ body {
   width: 350px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 a:-webkit-any-link {
@@ -42,11 +43,14 @@ footer {
   background: white;
 }
 
+
+
 .disclaimer {
   width: 300px;
   color: gray;
   font-size: 10px;
 }
+
 
 .head {
   display: flex;
@@ -95,22 +99,31 @@ footer {
   justify-content: center;
   height: 860px;
 }
+
 .container-2 {
   background: rgb(255, 232, 156);
-
   width: 1500px;
   place-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 /* css for the divs in assets*/
 .box-1 {
   display: flex;
+  flex-direction: column;
+  background: blue;
+  width: 1000px;
+  height: 300px;
 }
-.box-Person {
-  margin: 50px;
+
+.Input-1 {
+  background: greenyellow;
+  margin: 10px;
+  display: flex;
 }
+
 /* css for the main div / main page changing */
 .button-assets {
   width: 50px;
