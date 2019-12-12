@@ -1,10 +1,9 @@
 import React, { useState } from "react"
 import { useAdmin } from "../hooks"
 import { Link } from "react-router-dom"
-// import "../styles/main.css"
-// import "../styles/base.css"
+import LLogin from "../assets/LLogin.png"
 
-export default props => {
+export default (props) => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
@@ -14,35 +13,41 @@ export default props => {
     e.preventDefault()
 
     signin(username, password)
-      .then(resp => {
+      .then((resp) => {
         props.history.push("/")
       })
-      .catch(e => {})
+      .catch((e) => {})
   }
   return (
     <div className="mainLog">
-      <form className="fill" onSubmit={handleSubmit}>
-        <input
-          id="user"
-          placeholder="Username"
-          type="text"
-          name="username"
-          value={username}
-          onChange={e => setUsername(e.target.value)}
-        />
-        <input
-          id="pass"
-          placeholder="Password"
-          type="password"
-          name="password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-        />
-        <button className="go" type="submit">
-          Login
-        </button>
-      </form>
-      <Link to="/register">New User? Register Here!</Link>
+      <div className="loginLogo">
+        <img className="actualLogo" src={LLogin} />
+      </div>
+
+      <div className="formContainer">
+        <form className="fill" onSubmit={handleSubmit}>
+          <input
+            id="user"
+            placeholder="Username"
+            type="text"
+            name="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            id="pass"
+            placeholder="Password"
+            type="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button className="loginButton" type="submit">
+            Login
+          </button>
+          <Link to="/register">New User? Register Here!</Link>
+        </form>
+      </div>
     </div>
   )
 }

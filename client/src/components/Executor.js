@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useExecutor } from "../hooks/index"
-export default props => {
+export default (props) => {
   const [fullName, setFullName] = useState("")
   const [cityName, setCityName] = useState("")
   const [countyName, setCountyName] = useState("")
@@ -22,12 +22,17 @@ export default props => {
       <div className="container-2">
         <form onSubmit={handleSubmit}>
           <div className="Title">Executor</div>
+          <p>
+            Name an executor, who is responsible for tracking down assets,
+            paying creditors, and making sure beneficiaries named in the will
+            receive property to which they are entitled.
+          </p>
           <div>
             Full Name{" "}
             <input
               type="text"
               value={fullName}
-              onChange={e => setFullName(e.target.value)}
+              onChange={(e) => setFullName(e.target.value)}
               name="text"
             ></input>{" "}
           </div>
@@ -37,7 +42,7 @@ export default props => {
             <input
               type="text"
               value={cityName}
-              onChange={e => setCityName(e.target.value)}
+              onChange={(e) => setCityName(e.target.value)}
             ></input>{" "}
           </div>
           <div>
@@ -46,7 +51,7 @@ export default props => {
             <input
               type="text"
               value={countyName}
-              onChange={e => setCountyName(e.target.value)}
+              onChange={(e) => setCountyName(e.target.value)}
             ></input>{" "}
           </div>
           <div>
@@ -55,7 +60,7 @@ export default props => {
             <input
               type="text"
               value={stateName}
-              onChange={e => setStateName(e.target.value)}
+              onChange={(e) => setStateName(e.target.value)}
             ></input>{" "}
           </div>
           <button

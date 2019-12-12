@@ -28,54 +28,83 @@ import exoduslogo from "../assets/exoduslogo.png"
 // import Header from "../components/Header"
 import MainP from "./MainP"
 
-export default props => {
+export default (props) => {
   const { visible, toggle } = useSide()
   const { signout, isAuthenticated } = useAdmin()
   return (
-    <div>
-      {isAuthenticated ? (
-        <Router>
-          <div className="Container">
-            <header>
-              <div className="logo">
-                <img className="logoa" src={exoduslogo} />
-              </div>
 
-              <div className={visible ? "Side open" : "Side"}>
-                <div className="toggle" onClick={e => toggle()}>
-                  <Icon icon="bars" />
-                </div>
-                <div className="Form-links">
-                  <Link to="/">
-                    <p>Home</p>
-                  </Link>
-                  <Link to="/Assets">
-                    <p>Assets</p>
-                  </Link>
-                  <Link to="/CareTaker">
-                    <p>CareTaker</p>
-                  </Link>
-                  <Link to="/Gifts">
-                    <p>Gifts</p>
-                  </Link>
-                  <Link to="/Thoughts">
-                    <p>Thoughts</p>
-                  </Link>
-                  <Link to="/Executor">
-                    <p>Executor</p>
-                  </Link>
-                  <Link to="/Witness">
-                    <p>Witness</p>
-                  </Link>
-                  <Link to="/Will">
-                    <p>Will</p>
-                  </Link>
-                  <button id="signOut" onClick={e => signout()}>
-                    Sign Out
-                  </button>
-                </div>
-              </div>
-            </header>
+    <div>
+      {isAuthenticated ? (            
+    <Router>
+      <div className="Container">
+        <header>
+          <div className="logo">
+            <Link to="/">
+              <img className="logoa" src={exoduslogo} />
+            </Link>
+          </div>
+
+          <div className={visible ? "Side open" : "Side"}>
+            <div className="toggle" onClick={(e) => toggle()}>
+              <Icon icon="bars" />
+            </div>
+            <div className="Form-links">
+              <Link to="/">
+                <p>
+                  Home
+                  <Icon icon="home" />
+                </p>
+              </Link>
+              <Link to="/Will">
+                <p>
+                  Will
+                  <Icon icon="address-card" />
+                </p>
+              </Link>
+             
+              <Link to="/BasicInfo">
+                <p>Basic Info</p>
+              </Link>
+             
+              
+              <Link to="/Assets">
+                <p>Assets</p>
+              </Link>
+              <Link to="/CareTaker">
+                <p>Caretaker</p>
+              </Link>
+              <Link to="/Gifts">
+                <p>
+                  Gifts
+                  <Icon icon="gift" />
+                </p>
+              </Link>
+              <Link to="/Thoughts">
+                <p>
+                  Thoughts
+                  <Icon icon="comment" />
+                </p>
+              </Link>
+
+              <Link to="/Executor">
+                <p>Executor</p>
+              </Link>
+              <Link to="/Witness">
+                <p>
+                  Witness
+                  <Icon icon="address-book" />
+                </p>
+              </Link>
+             
+
+              <button id="signOut" onClick={(e) => signout()}>
+
+                Sign Out
+              </button>
+            </div>
+          </div>
+        </header>
+
 
             <main>
               <Route exact path="/" component={MainP} />
@@ -86,36 +115,37 @@ export default props => {
                 <Route path="/Gifts" component={Gifts} />
                 <Route path="/Thoughts" component={Thoughts} />
 
-                <Route path="/Will" component={Will} />
-                {/* routes for the side bar*/}
-                <Route path="/Documents" component={Documents} />
-                <Route path="/Executor" component={Executor} />
-                <Route path="/Witness" component={Witness} />
-                <Route path="/Notifications" component={Notifications} />
-                <Route path="/Help" component={Help} />
-                <Route path="/Settings" component={Settings} />
-              </div>
-            </main>
-            <footer className="foot">
-              Exodus, Inc. All Rights Reserved.
-              <div className="icons">
-                <Icon icon="facebook-square"></Icon>
-                <Icon icon="instagram"></Icon>
-                <Icon icon="twitter-square"></Icon>
-              </div>
-              <div>
-                Disclaimer: We are not a law firm or a substitute for an
-                attorney or law firm. We cannot provide any kind of advice,
-                explanation, opinion, or recommendation about possible legal
-                rights, remedies, defenses, options, selection of forms or
-                strategies.{" "}
-              </div>
-            </footer>
+
+            <Route path="/Will" component={Will} />
+            {/* routes for the side bar*/}
+            <Route path="/Documents" component={Documents} />
+            <Route path="/Executor" component={Executor} />
+            <Route path="/Witness" component={Witness} />
+            <Route path="/Notifications" component={Notifications} />
+            <Route path="/Help" component={Help} />
+            <Route path="/Settings" component={Settings} />
           </div>
-        </Router>
-      ) : (
+        </main>
+        <footer className="foot">
+          <div className="icons">
+            <Icon icon="facebook-square"></Icon>
+            <Icon icon="instagram"></Icon>
+            <Icon icon="twitter-square"></Icon>
+          </div>
+          <p className="rights">Exodus, Inc. All Rights Reserved.</p>
+          <p className="disclaimer">
+            Disclaimer: We are not a law firm or a substitute for an attorney or
+            law firm. We cannot provide any kind of advice, explanation,
+            opinion, or recommendation about possible legal rights, remedies,
+            defenses, options, selection of forms or strategies.
+          </p>
+        </footer>
+      </div>
+    </Router>
+   ) : (
         <Redirect to="/login" />
       )}
     </div>
+
   )
 }
