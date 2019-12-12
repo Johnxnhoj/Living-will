@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
 html {
   box-sizing: border-box;
 }
@@ -6,8 +8,6 @@ html {
 *::after {
   box-sizing: inherit;
 }
-@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 body {
   margin: 0;
@@ -41,8 +41,16 @@ a:-webkit-any-link {
 
 footer {
   background: white;
-  display: flex;
 }
+
+
+
+.disclaimer {
+  width: 300px;
+  color: gray;
+  font-size: 10px;
+}
+
 
 .head {
   display: flex;
@@ -132,5 +140,5 @@ main {
   display: flex;
   justify-content: center;
   height: 860px;
-  background: rgb(252, 162, 129);
+  background: white;
 }
