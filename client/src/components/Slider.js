@@ -6,7 +6,7 @@ import lonelyman from "../assets/lonelyman.jpg"
 import AwesomeSlider from "react-awesome-slider"
 import "react-awesome-slider/dist/styles.css"
 
-export default props => {
+export default (props) => {
   return (
     <div className="Slider-0">
       <AwesomeSlider>

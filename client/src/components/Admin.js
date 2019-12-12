@@ -23,7 +23,7 @@ import Slider from "../components/Slider"
 import Header from "../components/Header"
 import MainP from "./MainP"
 
-export default props => {
+export default (props) => {
   const { visible, toggle } = useSide()
   const { signout } = useAdmin()
   return (
@@ -31,28 +31,24 @@ export default props => {
       <div className="Container">
         <header>
           <div className="logo">
-            <img className="logoa" src={exoduslogo} />
+            <Link to="/">
+              <img className="logoa" src={exoduslogo} />
+            </Link>
           </div>
 
           <div className={visible ? "Side open" : "Side"}>
-            <div className="toggle" onClick={e => toggle()}>
+            <div className="toggle" onClick={(e) => toggle()}>
               <Icon icon="bars" />
             </div>
             <div className="Form-links">
               <Link to="/">
                 <p>Home</p>
               </Link>
-              <Link to="/Assets">
-                <p>Assets</p>
+              <Link to="/Will">
+                <p>Will</p>
               </Link>
-              <Link to="/CareTaker">
-                <p>CareTaker</p>
-              </Link>
-              <Link to="/Gifts">
-                <p>Gifts</p>
-              </Link>
-              <Link to="/Thoughts">
-                <p>Thoughts</p>
+              <Link to="/BasicInfo">
+                <p>Basic Info</p>
               </Link>
               <Link to="/Executor">
                 <p>Executor</p>
@@ -60,7 +56,20 @@ export default props => {
               <Link to="/Witness">
                 <p>Witness</p>
               </Link>
-              <button id="signOut" onClick={e => signout()}>
+              <Link to="/Assets">
+                <p>Assets</p>
+              </Link>
+              <Link to="/CareTaker">
+                <p>Caretaker</p>
+              </Link>
+              <Link to="/Gifts">
+                <p>Gifts</p>
+              </Link>
+              <Link to="/Thoughts">
+                <p>Thoughts</p>
+              </Link>
+
+              <button id="signOut" onClick={(e) => signout()}>
                 Sign Out
               </button>
             </div>
@@ -87,18 +96,18 @@ export default props => {
           </div>
         </main>
         <footer className="foot">
-          Exodus, Inc. All Rights Reserved.
           <div className="icons">
             <Icon icon="facebook-square"></Icon>
             <Icon icon="instagram"></Icon>
             <Icon icon="twitter-square"></Icon>
           </div>
-          <div>
+          <p className="rights">Exodus, Inc. All Rights Reserved.</p>
+          <p className="disclaimer">
             Disclaimer: We are not a law firm or a substitute for an attorney or
             law firm. We cannot provide any kind of advice, explanation,
             opinion, or recommendation about possible legal rights, remedies,
-            defenses, options, selection of forms or strategies.{" "}
-          </div>
+            defenses, options, selection of forms or strategies.
+          </p>
         </footer>
       </div>
     </Router>

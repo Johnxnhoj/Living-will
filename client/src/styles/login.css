@@ -1,0 +1,51 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.mainLog {
+  box-shadow: 5px 5px 5px grey;
+  width: 450px;
+  height: 450px;
+  margin: auto;
+  margin-top: 170px;
+}
+
+.loginLogo {
+  display: flex;
+  justify-content: center;
+}
+
+.actualLogo {
+  width: 160px;
+  height: 50px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 10px 10px;
+  width: 300px;
+  outline: none;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.loginButton {
+  width: 300px;
+  margin-top: 10px;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
