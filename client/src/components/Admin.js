@@ -19,8 +19,8 @@ import { useSide } from "../hooks"
 import { useAdmin } from "../hooks"
 //Logo and Carousel Imports
 import exoduslogo from "../assets/exoduslogo.png"
-import Slider from "../components/Slider"
-import Header from "../components/Header"
+// import Slider from "../components/Slider"
+// import Header from "../components/Header"
 import MainP from "./MainP"
 
 export default props => {
@@ -40,7 +40,16 @@ export default props => {
             </div>
             <div className="Form-links">
               <Link to="/">
-                <p>Home</p>
+                <p>
+                  Home
+                  <Icon icon="home" />
+                </p>
+              </Link>
+              <Link to="/Will">
+                <p>
+                  Will
+                  <Icon icon="address-card" />
+                </p>
               </Link>
               <Link to="/Assets">
                 <p>Assets</p>
@@ -49,16 +58,25 @@ export default props => {
                 <p>CareTaker</p>
               </Link>
               <Link to="/Gifts">
-                <p>Gifts</p>
+                <p>
+                  Gifts
+                  <Icon icon="gift" />
+                </p>
               </Link>
               <Link to="/Thoughts">
-                <p>Thoughts</p>
+                <p>
+                  Thoughts
+                  <Icon icon="comment" />
+                </p>
               </Link>
               <Link to="/Executor">
                 <p>Executor</p>
               </Link>
               <Link to="/Witness">
-                <p>Witness</p>
+                <p>
+                  Witness
+                  <Icon icon="address-book" />
+                </p>
               </Link>
               <button id="signOut" onClick={e => signout()}>
                 Sign Out
