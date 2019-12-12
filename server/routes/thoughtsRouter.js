@@ -4,7 +4,7 @@ const axios = require("axios")
 
 router.post("/thoughts", (req, res, next) => {
   const user_thoughts = req.body.userThoughts
-  const user_id = 20
+  const user_id = req.body.user_id
 
   console.log(req.body)
 

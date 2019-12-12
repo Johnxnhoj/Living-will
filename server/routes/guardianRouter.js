@@ -21,8 +21,8 @@ router.post("/CareTaker", (req, res, next) => {
   const altGuardianName = req.body.input.altGuardianName
   const extraGuardianName = req.body.input.extraGuardianName
   console.log(childName, guardianName, altGuardianName, extraGuardianName)
-  const id = 26
-  const user_id = 30
+
+  const user_id = req.body.user_id
   const sql = `INSERT INTO CareTaker (user_id, child_name, Guardian_Name, alt_Guardian_Name, extra_Guardian_Name)
    VALUES(?, ?, ?, ?, ?)`
 

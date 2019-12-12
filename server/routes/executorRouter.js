@@ -7,8 +7,8 @@ router.post("/executor", (req, res, next) => {
   const city = req.body.cityName
   const county = req.body.countyName
   const state = req.body.stateName
-  const id = 10
-  const user_id = 30
+
+  const user_id = req.body.user_id
 
   console.log(req.body)
 

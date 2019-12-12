@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 // import validator from "validator"
-import { useBasicInfo } from "../hooks/index"
+import { useBasicInfo, useAdmin } from "../hooks/index"
 
 //ACTION DEFINITIONS
 export default props => {
@@ -15,6 +15,7 @@ export default props => {
   const [home, setHome] = useState("")
   const [pets, setPets] = useState("")
 
+  const { isAuthenticated, username, signin, signout, reg } = useAdmin()
   const { grabUserInfo } = useBasicInfo()
   function handleSubmit(e) {
     e.preventDefault()
@@ -22,6 +23,7 @@ export default props => {
     //console.log(guardianName)
     //console.log(childname, guardianName, altGuardianName, extraGuardianName)
     grabUserInfo({
+      // id: userId,
       fullName: fullName,
       cityName: cityName,
       countyName: countyName,
@@ -37,18 +39,17 @@ export default props => {
 
   //EXPORT DEFAULT (PROPS) => {
   return (
-    <div className="container-1">
-      <div>
-        <h1>Tell Us About Yourself</h1>
-        <form onSubmit={handleSubmit}>
-          <label className="name">Full Name</label>
-          <input
-            onChange={e => setFullName(e.target.value)}
-            value={fullName}
-            type="text"
-            placeholder="Full Name"
-          />
-          {/* //<div>
+    <div className="container-2">
+      <h1>Tell Us About Yourself</h1>
+      <form onSubmit={handleSubmit}>
+        <label className="name">Full Name</label>
+        <input
+          onChange={e => setFullName(e.target.value)}
+          value={fullName}
+          type="text"
+          placeholder="Full Name"
+        />
+        {/* //<div>
           Extra Alternate Guardian Full Name
           <input
             type="text"
@@ -56,111 +57,110 @@ export default props => {
           ></input>
         </div> */}
 
-          <div>
-            Mobile Number (Optional)
-            <input
-              onChange={e => setMobile_number(e.target.value)}
-              value={mobile_number}
-              type="text"
-              placeholder="+1(808)702-2019"
-            ></input>
-          </div>
-
-          <div>
-            <label>Marital Status</label>
-            <select
-              className="StatusChoices"
-              name="married"
-              value={marital_status}
-              onChange={e => setMarital_status(e.target.value)}
-            >
-              <option value="marital status">Choose A Marital Status</option>
-              <option value="single">Single</option>
-              <option value="married">Married</option>
-              <option value="divorced">Divorced</option>
-              <option value="widow">Widowed</option>
-            </select>
-          </div>
-
-          <label>City</label>
+        <div>
+          Mobile Number (Optional)
           <input
-            onChange={e => setCityName(e.target.value)}
-            value={cityName}
+            onChange={e => setMobile_number(e.target.value)}
+            value={mobile_number}
             type="text"
-            placeholder="City Name"
-          />
+            placeholder="+1(808)702-2019"
+          ></input>
+        </div>
 
-          <label>County</label>
-          <input
-            onChange={e => setCountyName(e.target.value)}
-            value={countyName}
-            type="text"
-            placeholder="County Name"
-          />
+        <div>
+          <label>Marital Status</label>
+          <select
+            className="StatusChoices"
+            name="married"
+            value={marital_status}
+            onChange={e => setMarital_status(e.target.value)}
+          >
+            <option value="marital status">Choose A Marital Status</option>
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+            <option value="divorced">Divorced</option>
+            <option value="widow">Widowed</option>
+          </select>
+        </div>
 
-          <label>State</label>
-          <input
-            onChange={e => setStateName(e.target.value)}
-            value={stateName}
-            type="text"
-            placeholder="State Name"
-          />
+        <label>City</label>
+        <input
+          onChange={e => setCityName(e.target.value)}
+          value={cityName}
+          type="text"
+          placeholder="City Name"
+        />
 
-          <label>Email</label>
-          <input
-            onChange={e => setEmail(e.target.value)}
-            value={email}
-            type="email"
-            placeholder="email@gmail.com"
-          />
+        <label>County</label>
+        <input
+          onChange={e => setCountyName(e.target.value)}
+          value={countyName}
+          type="text"
+          placeholder="County Name"
+        />
 
-          <div className="formCheckBI">
-            <label className="basicInfoCheck">Do You Have Children?</label>
-            <select
-              className="Children"
-              name="kids"
-              value={children}
-              onChange={e => setChildren(e.target.value)}
-            >
-              <option value="child">Select One</option>
-              <option value="si">Yes</option>
-              <option value="no">No</option>
-            </select>
-          </div>
+        <label>State</label>
+        <input
+          onChange={e => setStateName(e.target.value)}
+          value={stateName}
+          type="text"
+          placeholder="State Name"
+        />
 
-          <div>
-            <label className="basicInfoCheck">Do You Have Pets?</label>
-            <select
-              className="pets"
-              name="pets"
-              value={pets}
-              onChange={e => setPets(e.target.value)}
-            >
-              <option value="pets">Select One</option>
-              <option value="y">Yes</option>
-              <option value="n">No</option>
-            </select>
-          </div>
+        <label>Email</label>
+        <input
+          onChange={e => setEmail(e.target.value)}
+          value={email}
+          type="email"
+          placeholder="email@gmail.com"
+        />
 
-          <div>
-            <label className="basicInfoCheck">
-              Do You Own a Home or Other Real Estate?
-            </label>
-            <select
-              className="home"
-              name="homies"
-              value={home}
-              onChange={e => setHome(e.target.value)}
-            >
-              <option value="home">Select One</option>
-              <option value="yeah">Yes</option>
-              <option value="nah">No</option>
-            </select>
-          </div>
+        <div className="formCheckBI">
+          <label className="basicInfoCheck">Do You Have Children?</label>
+          <select
+            className="Children"
+            name="kids"
+            value={children}
+            onChange={e => setChildren(e.target.value)}
+          >
+            <option value="child">Select One</option>
+            <option value="si">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
 
-          <button type="submit">Save And Continue</button>
-        </form>
-      </div>
+        <div>
+          <label className="basicInfoCheck">Do You Have Pets?</label>
+          <select
+            className="pets"
+            name="pets"
+            value={pets}
+            onChange={e => setPets(e.target.value)}
+          >
+            <option value="pets">Select One</option>
+            <option value="y">Yes</option>
+            <option value="n">No</option>
+          </select>
+        </div>
+
+        <div>
+          <label className="basicInfoCheck">
+            Do You Own a Home or Other Real Estate?
+          </label>
+          <select
+            className="home"
+            name="homies"
+            value={home}
+            onChange={e => setHome(e.target.value)}
+          >
+            <option value="home">Select One</option>
+            <option value="yeah">Yes</option>
+            <option value="nah">No</option>
+          </select>
+        </div>
+
+        <button type="submit">Save And Continue</button>
+      </form>
     </div>
   )
 }
