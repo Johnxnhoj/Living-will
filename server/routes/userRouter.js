@@ -24,7 +24,7 @@ router.post("/register", (req, res, next) => {
 })
 
 router.post("/login", (req, res, next) => {
-  // const username = req.body.username
+  const username = req.body.username
 
   db.query(
     "SELECT salt FROM users WHERE username = ?",
@@ -32,7 +32,7 @@ router.post("/login", (req, res, next) => {
     (err, results, fields) => {
       if (results.length > 0) {
         const password = sha512(req.body.password + results[0].salt)
-        const userId = results[0].id
+        // const userId = results[0].id
         const sql = `SELECT count(1) as count FROM users WHERE username = ? AND password = ?`
 
         // console.log(

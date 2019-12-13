@@ -46,7 +46,7 @@ export function GetId() {
   return dispatch => {
     axios.get("/user").then(resp => {
       dispatch({
-        type: Get_ID,
+        // type: Get_ID,
         payload: resp.data
       })
     })
