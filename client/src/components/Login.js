@@ -45,7 +45,9 @@ export default props => {
           <button className="loginButton" type="submit">
             Login
           </button>
-          <Link to="/register">New User? Register Here!</Link>
+          <Link className="logBut" to="/register">
+            New User? Register Here!
+          </Link>
         </form>
       </div>
     </div>

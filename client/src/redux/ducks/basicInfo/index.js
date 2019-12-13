@@ -31,8 +31,8 @@ export default (state = initialState, action) => {
 
 ////// action creators
 export function postToInfo(input) {
-  return dispatch => {
-    axios.post("/user_info/user_info", input).then(resp => {
+  return (dispatch) => {
+    axios.post("/user_info/user_info", input).then((resp) => {
       dispatch({
         type: POST_INFO,
         payload: resp.data
@@ -41,6 +41,18 @@ export function postToInfo(input) {
     })
   }
 }
+
+
+// export function GetId() {
+//   return (dispatch) => {
+//     axios.get("/user").then((resp) => {
+//       dispatch({
+//         // type: Get_ID,
+//         payload: resp.data
+//       })
+//     })
+//   }
+// }
 
 export function GetId() {
   return dispatch => {
@@ -53,9 +65,10 @@ export function GetId() {
   }
 }
 
+
 export function getBasicInfo() {
-  return dispatch => {
-    axios.get("/user_info/user_info").then(resp => {
+  return (dispatch) => {
+    axios.get("/user_info/user_info").then((resp) => {
       dispatch({
         type: GET_INFO,
         payload: resp.data
@@ -84,8 +97,8 @@ export function getBasicInfo() {
 export function useBasicInfo() {
   // const users = useSelector(appState => appState.userState.users)
   const dispatch = useDispatch()
-  const basicInfo = useSelector(appState => appState.basicInfoState.basicInfo)
-  const grabUserInfo = info => dispatch(postToInfo(info))
+  const basicInfo = useSelector((appState) => appState.basicInfoState.basicInfo)
+  const grabUserInfo = (info) => dispatch(postToInfo(info))
 
   useEffect(() => {
     dispatch(getBasicInfo())
