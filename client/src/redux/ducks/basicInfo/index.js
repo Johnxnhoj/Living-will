@@ -33,8 +33,8 @@ export default (state = initialState, action) => {
 
 ////// action creators
 export function postToInfo(input) {
-  return dispatch => {
-    axios.post("/user_info/user_info", input).then(resp => {
+  return (dispatch) => {
+    axios.post("/user_info/user_info", input).then((resp) => {
       dispatch({
         type: POST_INFO,
         payload: resp.data
@@ -44,9 +44,10 @@ export function postToInfo(input) {
   }
 }
 
-// export function GetId(username) {
-//   return dispatch => {
-//     axios.get("/user/").then(resp => {
+// export function GetId() {
+//   return (dispatch) => {
+//     axios.get("/user").then((resp) => {
+
 //       dispatch({
 //         // type: Get_ID,
 //         payload: resp.data
@@ -55,9 +56,22 @@ export function postToInfo(input) {
 //   }
 // }
 
-export function getBasicInfo() {
+export function GetId() {
   return dispatch => {
-    axios.get("/user_info/user_info").then(resp => {
+    axios.get("/user").then(resp => {
+      dispatch({
+        // type: Get_ID,
+        payload: resp.data
+      })
+    })
+  }
+}
+
+
+
+export function getBasicInfo() {
+  return (dispatch) => {
+    axios.get("/user_info/user_info").then((resp) => {
       dispatch({
         type: GET_INFO,
         payload: resp.data

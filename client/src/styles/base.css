@@ -16,7 +16,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
 }
-
+/*css for the side*/
 .Form-links {
   display: flex;
   flex-direction: column;
@@ -38,30 +38,6 @@ a:-webkit-any-link {
   cursor: pointer;
   text-decoration: none;
 }
-
-footer {
-  background: white;
-}
-
-
-
-.disclaimer {
-  width: 300px;
-  color: gray;
-  font-size: 10px;
-}
-
-
-.head {
-  display: flex;
-  margin: 5px;
-  place-items: center;
-  justify-content: space-between;
-  background: white;
-  right: 0;
-  height: 50px;
-}
-
 .Side {
   position: fixed;
   width: 400px;
@@ -88,27 +64,124 @@ footer {
 .Side.open {
   right: 0;
 }
+/* .Form-links button {
+  display: flex;
+  justify-content: center;
+  background: red;
+} */
+#signOut {
+  width: 150px;
+  height: 35px;
+  background: rgba(29, 255, 199, 0.678);
+  border-radius: 5px;
+  border: none;
+  transition: 0.3s;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
+#signOut:hover {
+  width: 160px;
+  height: 40px;
+  background: rgb(255, 189, 89);
+  border-radius: 2px;
+  border: none;
+  font-family: "Roboto", sans-serif;
+}
+.Form-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  background: rgb(252, 252, 252);
+  display: flex;
+  justify-content: space-evenly;
+}
+p {
+  display: block;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.disclaimer {
+  width: 300px;
+  color: gray;
+  font-size: 10px;
+}
+
+.head {
+  display: flex;
+  margin: 5px;
+  place-items: center;
+  justify-content: space-between;
+  background: white;
+  right: 0;
+  height: 50px;
+}
+
 .logoa {
   width: 200px;
   height: 50px;
 }
+.logoa-2 {
+  width: 120px;
+  height: 35px;
+}
 /* css for all the forms */
 .container-1 {
-  background: pink;
+  background: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   height: 860px;
 }
 
 .container-2 {
-  background: rgb(255, 232, 156);
+  background: rgba(252, 188, 105, 0.815);
   width: 1500px;
   place-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-radius: 1%;
 }
-
+.container-3 {
+  background: rgb(255, 255, 255);
+  width: 1400px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1%;
+  box-shadow: 10px 10px 20px rgba(2, 117, 138, 0.226);
+}
+.container-will {
+  background: rgb(255, 255, 255);
+  width: 1400px;
+  height: 700px;
+}
+.button-go {
+  width: 85px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  font-family: sans-serif;
+  font-size: 15px;
+  background-color: rgb(122, 249, 253);
+  transition: 0.3s;
+}
+.button-go:hover {
+  background-color: rgb(255, 132, 110);
+  border: none;
+  border-radius: 3px;
+  width: 90px;
+  height: 55px;
+}
+select {
+  width: 300px;
+}
 /* css for the divs in assets*/
 .box-1 {
   display: flex;
@@ -119,16 +192,13 @@ footer {
 }
 
 .Input-1 {
-  background: greenyellow;
-  margin: 10px;
+  background: rgba(255, 176, 222, 0.171);
+  margin: 5px;
   display: flex;
+  flex-direction: column;
 }
 
 /* css for the main div / main page changing */
-.button-assets {
-  width: 50px;
-  height: 50px;
-}
 
 .change {
   position: relative;
@@ -141,4 +211,10 @@ main {
   justify-content: center;
   height: 860px;
   background: white;
+}
+
+/* css for the main page*/
+.Slider-0 {
+  width: 95vw;
+  height: 100vh;
 }

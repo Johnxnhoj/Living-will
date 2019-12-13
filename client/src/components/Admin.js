@@ -42,6 +42,7 @@ export default props => {
                   <img className="logoa" src={exoduslogo} />
                 </Link>
               </div>
+
               <div>
                 Hello {username} {id}!
               </div>
@@ -65,14 +66,24 @@ export default props => {
                   </Link>
 
                   <Link to="/BasicInfo">
-                    <p>Basic Info</p>
+                    <p>
+                      Basic Info
+                      <Icon icon="save" />
+                    </p>
                   </Link>
 
                   <Link to="/Assets">
-                    <p>Assets</p>
+                    <p>
+                      Assets
+                      <Icon icon="sitemap" />
+                    </p>
                   </Link>
                   <Link to="/CareTaker">
-                    <p>Caretaker</p>
+                    <p>
+                      Caretaker
+                      <Icon icon="heart" />
+                    </p>
+
                   </Link>
                   <Link to="/Gifts">
                     <p>
@@ -88,7 +99,11 @@ export default props => {
                   </Link>
 
                   <Link to="/Executor">
-                    <p>Executor</p>
+                    <p>
+                      Executor
+                      <Icon icon="file" />
+                    </p>
+
                   </Link>
                   <Link to="/Witness">
                     <p>
@@ -124,19 +139,28 @@ export default props => {
               </div>
             </main>
             <footer className="foot">
-              <div className="icons">
-                <Icon icon="facebook-square"></Icon>
-                <Icon icon="instagram"></Icon>
-                <Icon icon="twitter-square"></Icon>
+              <div className="logo">
+                <Link to="/">
+                  <img className="logoa-2" src={exoduslogo} />
+                </Link>
+                <div className="icons">
+                  <Icon icon="facebook-square"></Icon>
+                  <Icon icon="instagram"></Icon>
+                  <Icon icon="twitter-square"></Icon>
+                </div>
               </div>
-              <p className="rights">Exodus, Inc. All Rights Reserved.</p>
-              <p className="disclaimer">
-                Disclaimer: We are not a law firm or a substitute for an
-                attorney or law firm. We cannot provide any kind of advice,
-                explanation, opinion, or recommendation about possible legal
-                rights, remedies, defenses, options, selection of forms or
-                strategies.
-              </p>
+
+              <div className="rights">
+                Exodus, Inc. All Rights Reserved.
+                <p className="disclaimer">
+                  Disclaimer: We are not a law firm or a substitute for an
+                  attorney or law firm. We cannot provide any kind of advice,
+                  explanation, opinion, or recommendation about possible legal
+                  rights, remedies, defenses, options, selection of forms or
+                  strategies.
+                </p>
+              </div>
+
             </footer>
           </div>
         </Router>

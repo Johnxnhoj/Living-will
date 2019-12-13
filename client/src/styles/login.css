@@ -37,15 +37,28 @@ input {
   background: transparent;
   border: none;
   border-bottom: 1px solid gray;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
 }
 
 .loginButton {
   width: 300px;
-  margin-top: 10px;
+  margin-top: 15px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+  cursor: pointer;
 }
 
 .formContainer {
   display: flex;
   justify-content: center;
   margin-top: 50px;
+}
+
+.logBut {
+  font-size: 13px;
+  margin-top: 20px;
 }

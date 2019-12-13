@@ -33,7 +33,9 @@ router.post("/login", (req, res, next) => {
       if (results.length > 0) {
         const password = sha512(req.body.password + results[0].salt)
         // const userId = results[0].id
+
         const sql = `SELECT id, count(1) as count FROM users WHERE username = ? AND password = ?`
+
 
         // console.log(
         //   `SELECT count(1) as count FROM users WHERE username = '${username}' and password = ${password}`

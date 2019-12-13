@@ -22,35 +22,39 @@ export default props => {
   return (
     <div className="container-1">
       <div className="container-2">
-        <div>Guardian</div>
+        <h1>Caretaker</h1>
         <form onSubmit={handleSubmit}>
-          <div>
-            Child Full Name{" "}
-            <input type="text" onChange={e => setChildname(e.target.value)} />
+          <div className="container-3">
+            <div className="Input-1">
+              Child Full Name{" "}
+              <input type="text" onChange={e => setChildname(e.target.value)} />
+            </div>
+            <div className="Input-1">
+              {" "}
+              Guardian Full Name Full Name{" "}
+              <input
+                type="text"
+                onChange={e => setGuardianName(e.target.value)}
+              ></input>
+            </div>
+            <div className="Input-1">
+              Alternate Guardian Full Name
+              <input
+                type="text"
+                onChange={e => setAltGuardianName(e.target.value)}
+              ></input>
+            </div>
+            <div className="Input-1">
+              Extra Alternate Guardian Full Name
+              <input
+                type="text"
+                onChange={e => setExtraGuardianName(e.target.value)}
+              ></input>
+            </div>
+            <button className="button-go" type="submit">
+              submit
+            </button>
           </div>
-          <div>
-            {" "}
-            Guardian Full Name Full Name{" "}
-            <input
-              type="text"
-              onChange={e => setGuardianName(e.target.value)}
-            ></input>
-          </div>
-          <div>
-            Alternate Guardian Full Name
-            <input
-              type="text"
-              onChange={e => setAltGuardianName(e.target.value)}
-            ></input>
-          </div>
-          <div>
-            Extra Alternate Guardian Full Name
-            <input
-              type="text"
-              onChange={e => setExtraGuardianName(e.target.value)}
-            ></input>
-          </div>
-          <button type="submit">submit</button>
         </form>
       </div>
     </div>
