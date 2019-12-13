@@ -35,6 +35,7 @@ export function postToCare(input) {
 export function useTakerInfo() {
   const dispatch = useDispatch()
   const grabCareInfo = (info) => dispatch(postToCare(info))
+  const 
   return { grabCareInfo }
 }
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { useTakerInfo } from "../hooks/index"
+import { useTakerInfo, useAdmin } from "../hooks/index"
 
 export default props => {
   const [childname, setChildname] = useState("")
@@ -7,9 +7,11 @@ export default props => {
   const [altGuardianName, setAltGuardianName] = useState("")
   const [extraGuardianName, setExtraGuardianName] = useState("")
   const { grabCareInfo } = useTakerInfo()
+  const { isAuthenticated, username, signin, signout, reg, id } = useAdmin()
   function handleSubmit(e) {
     e.preventDefault()
     grabCareInfo({
+      user_id: id,
       childname: childname,
       guardianName: guardianName,
       altGuardianName: altGuardianName,
