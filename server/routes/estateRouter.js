@@ -64,15 +64,16 @@ router.get("/estateRouter", (req, res, next) => {
 })
 
 router.post("/estate", (req, res, next) => {
+  const user_id = req.body.user_id
   const namebeni = req.body.namebeni
   const addressbeni = req.body.addressbeni
   const relationbeni = req.body.relationbeni
   const typebeni = req.body.typebeni
   const property = req.body.property
-  console.log(namebeni, addressbeni, relationbeni, typebeni, property)
+  console.log(user_id, namebeni, addressbeni, relationbeni, typebeni, property)
   //console.log(req.body)
 
-  const user_id = req.body.user_id
+  // const user_id = id
   const sql = `INSERT INTO estate (user_id, beni_name, address, property, type_of)
    VALUES(?, ?, ?, ?, ?)`
 

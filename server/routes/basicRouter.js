@@ -2,7 +2,7 @@ const router = require("express").Router()
 const db = require("../db")
 
 router.post("/user_info", (req, res, next) => {
-  const user_id = req.body.user_id
+  const id = req.body.id
   const full_name = req.body.fullName
   const city = req.body.cityName
   const county = req.body.countyName
@@ -24,7 +24,7 @@ router.post("/user_info", (req, res, next) => {
   db.query(
     sql,
     [
-      user_id,
+      id,
       full_name,
       city,
       county,

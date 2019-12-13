@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 // import validator from "validator"
 import { useBasicInfo, useAdmin } from "../hooks/index"
-
+import { decode } from "jsonwebtoken"
 //ACTION DEFINITIONS
 export default props => {
   const [fullName, setFullName] = useState("")
@@ -14,16 +14,16 @@ export default props => {
   const [children, setChildren] = useState("")
   const [home, setHome] = useState("")
   const [pets, setPets] = useState("")
-
-  const { isAuthenticated, username, signin, signout, reg } = useAdmin()
+  const { isAuthenticated, username, signin, signout, reg, id } = useAdmin()
   const { grabUserInfo } = useBasicInfo()
   function handleSubmit(e) {
     e.preventDefault()
     //console.log(childname, guardianName)
     //console.log(guardianName)
     //console.log(childname, guardianName, altGuardianName, extraGuardianName)
+
     grabUserInfo({
-      // id: userId,
+      user_Id: id,
       fullName: fullName,
       cityName: cityName,
       countyName: countyName,
@@ -39,9 +39,10 @@ export default props => {
 
   //EXPORT DEFAULT (PROPS) => {
   return (
+
     <div className="container-1">
       <div className="container-2">
-        <h1>Tell Us About Yourself</h1>
+        <h1>Tell Us About Yourself {id} </h1>
         <form onSubmit={handleSubmit}>
           <div className="container-3">
             <div className="Input-1">
@@ -163,13 +164,13 @@ export default props => {
                 <option value="nah">No</option>
               </select>
             </div>
-
-            <button className="button-go" type="submit">
+            <button className="button-go" type="submit" value={id}>
               Save And Continue
             </button>
           </div>
         </form>
       </div>
+
     </div>
   )
 }

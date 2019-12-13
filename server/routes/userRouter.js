@@ -33,7 +33,9 @@ router.post("/login", (req, res, next) => {
       if (results.length > 0) {
         const password = sha512(req.body.password + results[0].salt)
         // const userId = results[0].id
-        const sql = `SELECT count(1) as count FROM users WHERE username = ? AND password = ?`
+
+        const sql = `SELECT id, count(1) as count FROM users WHERE username = ? AND password = ?`
+
 
         // console.log(
         //   `SELECT count(1) as count FROM users WHERE username = '${username}' and password = ${password}`
@@ -42,10 +44,14 @@ router.post("/login", (req, res, next) => {
         db.query(sql, [username, password], (err, results, fields) => {
           console.log(results)
           if (results[0].count > 0) {
-            const token = jwt.sign({ username }, config.get("secret"))
+            const token = jwt.sign(
+              { id: results[0].id, username },
+              config.get("secret")
+            )
             console.log(token)
             res.json({
-              message: "Authenticated",
+              id: results[0].id,
+              message: "Auothenticated",
               token
             })
           } else {

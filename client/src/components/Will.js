@@ -2,7 +2,7 @@ import React from "react"
 import { useBasicInfo, useAdmin } from "../hooks/index"
 
 export default props => {
-  const { grabUserInfo, basicInfo } = useBasicInfo()
+  const { grabUserInfo, basicInfo, user_info, info } = useBasicInfo()
   const { isAuthenticated, username, signin, signout, reg } = useAdmin()
   return (
     <div className="container-1">
@@ -24,6 +24,7 @@ export default props => {
             be appointed temporary PR if applies.if my PR fails or ceases
           </p>
         </div>
+
       </div>
     </div>
   )

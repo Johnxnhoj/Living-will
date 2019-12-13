@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { useEstate } from "../hooks/index"
+import { useEstate, useAdmin } from "../hooks/index"
 
 export default props => {
   const [namebeni, setNamebeni] = useState("")
@@ -8,9 +8,11 @@ export default props => {
   const [typebeni, setTypebeni] = useState("")
   const [property, setProperty] = useState("")
   const { grabEstateInfo } = useEstate()
+  const { id } = useAdmin()
   function handleSubmit(e) {
     e.preventDefault()
     grabEstateInfo({
+      user_id: id,
       namebeni: namebeni,
       addressbeni: addressbeni,
       relationbeni: relationbeni,

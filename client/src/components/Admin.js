@@ -30,7 +30,7 @@ import MainP from "./MainP"
 
 export default props => {
   const { visible, toggle } = useSide()
-  const { signout, isAuthenticated } = useAdmin()
+  const { username, signout, isAuthenticated, id } = useAdmin()
   return (
     <div>
       {isAuthenticated ? (
@@ -41,6 +41,10 @@ export default props => {
                 <Link to="/">
                   <img className="logoa" src={exoduslogo} />
                 </Link>
+              </div>
+
+              <div>
+                Hello {username} {id}!
               </div>
 
               <div className={visible ? "Side open" : "Side"}>
@@ -79,6 +83,7 @@ export default props => {
                       Caretaker
                       <Icon icon="heart" />
                     </p>
+
                   </Link>
                   <Link to="/Gifts">
                     <p>
@@ -98,6 +103,7 @@ export default props => {
                       Executor
                       <Icon icon="file" />
                     </p>
+
                   </Link>
                   <Link to="/Witness">
                     <p>
@@ -154,6 +160,7 @@ export default props => {
                   strategies.
                 </p>
               </div>
+
             </footer>
           </div>
         </Router>
