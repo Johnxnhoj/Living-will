@@ -42,6 +42,7 @@ export function postToInfo(input) {
   }
 }
 
+
 // export function GetId() {
 //   return (dispatch) => {
 //     axios.get("/user").then((resp) => {
@@ -52,6 +53,18 @@ export function postToInfo(input) {
 //     })
 //   }
 // }
+
+export function GetId() {
+  return dispatch => {
+    axios.get("/user").then(resp => {
+      dispatch({
+        // type: Get_ID,
+        payload: resp.data
+      })
+    })
+  }
+}
+
 
 export function getBasicInfo() {
   return (dispatch) => {

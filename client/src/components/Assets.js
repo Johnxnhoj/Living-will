@@ -22,9 +22,9 @@ export default props => {
   return (
     <div className="container-1">
       <div className="container-2">
-        Assets
+        <h1>Assets</h1>
         <form onSubmit={handleSubmit}>
-          <div className="box-1">
+          <div className="container-3">
             <div className="Input-1">
               Name of Beneficiary{" "}
               <input
@@ -70,7 +70,7 @@ export default props => {
                 onChange={e => setProperty(e.target.value)}
               ></input>
             </div>
-            <button className="button-assets" type="submit">
+            <button className="button-go" type="submit">
               submit
             </button>
           </div>
