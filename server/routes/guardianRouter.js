@@ -1,29 +1,17 @@
 const router = require("express").Router()
-const axios = require("axios")
+// const axios = require("axios")
 const db = require("../db")
 
-const guard = []
-
-const people = {}
-
-router.get("/guardianRouter", (req, res, next) => {
-  axios.get("/care_taker").then(resp => {
-    const user = resp.data.results[0]
-  })
-})
-
 router.post("/CareTaker", (req, res, next) => {
-  // console.log(info)
-  // res.json({ message: "Hello" })
-  // childname, guardianName, altGuardianName, extraGuardianName
+  const user_id = req.body.input.user_Id
   const childName = req.body.input.childname
   const guardianName = req.body.input.guardianName
   const altGuardianName = req.body.input.altGuardianName
   const extraGuardianName = req.body.input.extraGuardianName
-  console.log(childName, guardianName, altGuardianName, extraGuardianName)
+  console.log(req.body)
 
-  const user_id = resp.data.id
-  const sql = `INSERT INTO CareTaker (user_id, child_name, Guardian_Name, alt_Guardian_Name, extra_Guardian_Name)
+  const sql = `
+  INSERT INTO CareTaker (user_id, child_name, Guardian_Name, alt_Guardian_Name, extra_Guardian_Name)
    VALUES(?, ?, ?, ?, ?)`
 
   db.query(
@@ -37,6 +25,17 @@ router.post("/CareTaker", (req, res, next) => {
       })
     }
   )
+})
+
+router.get("/CareTaker/:user_id", (req, res, next) => {
+  const userId = req.params.id
+  // const user = resp.data.results[0]
+  const getsql = `SELECT child_name, Guardian_Name, alt_Guardian_Name, extra_Guardian_Name 
+  FROM CareTaker WHERE user_id = ?`
+
+  db.query(getsql, [userId], (err, results, fields) => {
+    res.json(results)
+  })
 })
 
 module.exports = router

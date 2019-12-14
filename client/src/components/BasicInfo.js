@@ -14,7 +14,7 @@ export default props => {
   const [children, setChildren] = useState("")
   const [home, setHome] = useState("")
   const [pets, setPets] = useState("")
-  const { isAuthenticated, username, signin, signout, reg, id } = useAdmin()
+  const { isAuthenticated, id } = useAdmin()
   const { grabUserInfo } = useBasicInfo()
   function handleSubmit(e) {
     e.preventDefault()
@@ -39,7 +39,6 @@ export default props => {
 
   //EXPORT DEFAULT (PROPS) => {
   return (
-
     <div className="container-1">
       <div className="container-2">
         <h1>Tell Us About Yourself {id} </h1>
@@ -170,7 +169,6 @@ export default props => {
           </div>
         </form>
       </div>
-
     </div>
   )
 }

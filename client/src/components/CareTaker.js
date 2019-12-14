@@ -1,17 +1,17 @@
 import React, { useState } from "react"
 import { useTakerInfo, useAdmin } from "../hooks/index"
-
+import { decode } from "jsonwebtoken"
 export default props => {
   const [childname, setChildname] = useState("")
   const [guardianName, setGuardianName] = useState("")
   const [altGuardianName, setAltGuardianName] = useState("")
   const [extraGuardianName, setExtraGuardianName] = useState("")
-  const { grabCareInfo } = useTakerInfo()
-  const { isAuthenticated, username, signin, signout, reg, id } = useAdmin()
+  const { grabCareInfo, guardian, get } = useTakerInfo()
+  const { isAuthenticated, id } = useAdmin()
   function handleSubmit(e) {
     e.preventDefault()
     grabCareInfo({
-      user_id: id,
+      user_Id: id,
       childname: childname,
       guardianName: guardianName,
       altGuardianName: altGuardianName,
@@ -31,7 +31,7 @@ export default props => {
             </div>
             <div className="Input-1">
               {" "}
-              Guardian Full Name Full Name{" "}
+              Guardian Full Name Full Name
               <input
                 type="text"
                 onChange={e => setGuardianName(e.target.value)}
@@ -51,7 +51,7 @@ export default props => {
                 onChange={e => setExtraGuardianName(e.target.value)}
               ></input>
             </div>
-            <button className="button-go" type="submit">
+            <button className="button-go" type="submit" value={id}>
               submit
             </button>
           </div>
