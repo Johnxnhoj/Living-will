@@ -14,7 +14,7 @@ export default (props) => {
   const [children, setChildren] = useState("")
   const [home, setHome] = useState("")
   const [pets, setPets] = useState("")
-  const { isAuthenticated, username, signin, signout, reg, id } = useAdmin()
+  const { isAuthenticated, id } = useAdmin()
   const { grabUserInfo } = useBasicInfo()
   function handleSubmit(e) {
     e.preventDefault()
