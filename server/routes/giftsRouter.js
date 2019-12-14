@@ -2,16 +2,15 @@ const router = require("express").Router()
 const db = require("../db")
 
 router.post("/gifts", (req, res, next) => {
+  const user_id = req.body.user_Id
   const gift = req.body.gift
   const gift_recipient = req.body.gift_recipient
   const relationship_to_user = req.body.relationship_to_user
   const alternate_gift_recipient = req.body.alternate_gift_recipient
 
-  const user_id = req.body.user_id
-
   console.log(req.body)
 
-  const sql = `INSERT INTO Gifts (user_id,gift,gift_recipient ,relationship_to_user, alternate_gift_recipient)
+  const sql = `INSERT INTO Gifts (user_id, gift, gift_recipient, relationship_to_user, alternate_gift_recipient)
 VALUES (?,?,?,?,?)`
 
   db.query(
@@ -32,9 +31,13 @@ VALUES (?,?,?,?,?)`
   )
 })
 
-router.get("/giftsRouter", (req, res, next) => {
-  axios.get("/gifts").then(resp => {
-    const user = resp.data.results[0]
+router.get("/Gifts/:user_id", (req, res, next) => {
+  const userId = req.params.user_Id
+  const getsql = `SELECT user_id, gift, gift_recipient, relationship_to_user, alternate_gift_recipient
+    FROM Gifts`
+
+  db.query(getsql, [userId], (err, results, fields) => {
+    res.json(results)
   })
 })
 

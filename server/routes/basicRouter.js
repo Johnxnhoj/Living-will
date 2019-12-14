@@ -58,7 +58,9 @@ router.post("/user_info", (req, res, next) => {
 // })
 
 router.get("/user_info/:user_id", (req, res, next) => {
+
   const userId = req.params.user_id
+
   const getsql = `SELECT full_name, city, county, state, email
     FROM user_info WHERE user_id = ?`
 

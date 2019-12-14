@@ -1,18 +1,19 @@
 import React, { useState } from "react"
-import { useGifts } from "../hooks/index"
+import { useGifts, useAdmin } from "../hooks/index"
 
-export default props => {
+export default (props) => {
   // const [user_id, setUser_id] = useState("")
   const [gift, setGift] = useState("")
   const [gift_recipient, setGift_recipient] = useState("")
   const [relationship_to_user, setRelationship_to_user] = useState("")
   const [alternate_gift_recipient, setAlternate_gift_recipient] = useState("")
+  const { isAuthenticated, id } = useAdmin()
+  const { grabGiftInfo, presents, get } = useGifts()
 
-  const { grabGiftInfo } = useGifts()
   function handleSubmit(e) {
     e.preventDefault()
     grabGiftInfo({
-      // user_id: user_id,
+      user_Id: id,
       gift: gift,
       gift_recipient: gift_recipient,
       relationship_to_user: relationship_to_user,
@@ -34,7 +35,7 @@ export default props => {
             <div className="Input-1">
               <label>I want to give my...</label>
               <input
-                onChange={e => setGift(e.target.value)}
+                onChange={(e) => setGift(e.target.value)}
                 value={gift}
                 type="text"
               ></input>
@@ -42,7 +43,7 @@ export default props => {
             <div className="Input-1">
               <label>To... (Full Name)</label>
               <input
-                onChange={e => setGift_recipient(e.target.value)}
+                onChange={(e) => setGift_recipient(e.target.value)}
                 value={gift_recipient}
                 type="text"
               ></input>
@@ -53,7 +54,7 @@ export default props => {
               <select
                 name="relation"
                 value={relationship_to_user}
-                onChange={e => setRelationship_to_user(e.target.value)}
+                onChange={(e) => setRelationship_to_user(e.target.value)}
               >
                 <option value="relation">Select</option>
                 <option value="relation">//Immediate Family//</option>
@@ -100,14 +101,14 @@ export default props => {
             <div className="Input-1">
               <label>Alternate Recipient (Full Name)</label>
               <input
-                onChange={e => setAlternate_gift_recipient(e.target.value)}
+                onChange={(e) => setAlternate_gift_recipient(e.target.value)}
                 value={alternate_gift_recipient}
                 type="text"
               ></input>
             </div>
 
-            <button className="button-go" type="submit">
-              Save And Continue
+            <button value={id} className="button-go" type="submit">
+              Submit
             </button>
           </div>
         </form>

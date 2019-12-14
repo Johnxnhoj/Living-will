@@ -2,16 +2,20 @@ const router = require("express").Router()
 // const axios = require("axios")
 const db = require("../db")
 
+
 router.post("/CareTaker", (req, res, next) => {
+
   const user_id = req.body.input.user_Id
   const childName = req.body.input.childname
   const guardianName = req.body.input.guardianName
   const altGuardianName = req.body.input.altGuardianName
   const extraGuardianName = req.body.input.extraGuardianName
+
   console.log(req.body)
 
   const sql = `
   INSERT INTO CareTaker (user_id, child_name, Guardian_Name, alt_Guardian_Name, extra_Guardian_Name)
+
    VALUES(?, ?, ?, ?, ?)`
 
   db.query(

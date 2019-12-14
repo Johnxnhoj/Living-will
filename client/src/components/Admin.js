@@ -28,7 +28,7 @@ import exoduslogo from "../assets/exoduslogo.png"
 // import Header from "../components/Header"
 import MainP from "./MainP"
 
-export default props => {
+export default (props) => {
   const { visible, toggle } = useSide()
   const { username, signout, isAuthenticated, id } = useAdmin()
   return (
@@ -43,12 +43,12 @@ export default props => {
                 </Link>
               </div>
 
-              <div>
-                Hello {username} {id}!
+              <div className="adminGreeting">
+                Welcome, {username} {id}!
               </div>
 
               <div className={visible ? "Side open" : "Side"}>
-                <div className="toggle" onClick={e => toggle()}>
+                <div className="toggle" onClick={(e) => toggle()}>
                   <Icon icon="bars" />
                 </div>
                 <div className="Form-links">
@@ -83,7 +83,6 @@ export default props => {
                       Caretaker
                       <Icon icon="heart" />
                     </p>
-
                   </Link>
                   <Link to="/Gifts">
                     <p>
@@ -103,7 +102,6 @@ export default props => {
                       Executor
                       <Icon icon="file" />
                     </p>
-
                   </Link>
                   <Link to="/Witness">
                     <p>
@@ -112,7 +110,7 @@ export default props => {
                     </p>
                   </Link>
 
-                  <button id="signOut" onClick={e => signout()}>
+                  <button id="signOut" onClick={(e) => signout()}>
                     Sign Out
                   </button>
                 </div>
@@ -160,7 +158,6 @@ export default props => {
                   strategies.
                 </p>
               </div>
-
             </footer>
           </div>
         </Router>

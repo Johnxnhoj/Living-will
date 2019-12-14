@@ -3,12 +3,11 @@ const db = require("../db")
 const axios = require("axios")
 
 router.post("/executor", (req, res, next) => {
+  const user_id = req.body.user_Id
   const full_name = req.body.fullName
   const city = req.body.cityName
   const county = req.body.countyName
   const state = req.body.stateName
-
-  const user_id = req.body.user_id
 
   console.log(req.body)
 
@@ -32,11 +31,12 @@ router.post("/executor", (req, res, next) => {
   )
 })
 
-router.get("/executorRoutes", (req, res, next) => {
+router.get("/executor/:user_id", (req, res, next) => {
+  const userId = req.params.user_Id
   const getsql = `SELECT id, user_id, full_name, city, county, state
   FROM executor`
 
-  db.query(getsql, (err, results, fields) => {
+  db.query(getsql, [userId], (err, results, fields) => {
     res.json(results)
   })
 })

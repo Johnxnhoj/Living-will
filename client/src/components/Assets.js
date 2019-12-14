@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useEstate, useAdmin } from "../hooks/index"
 
-export default props => {
+export default (props) => {
   const [namebeni, setNamebeni] = useState("")
   const [addressbeni, setAddressbeni] = useState("")
   const [relationbeni, setRelationbeni] = useState("")
@@ -33,7 +33,7 @@ export default props => {
                 type="text"
                 placeholder="Name of Beneficiary"
                 value={namebeni}
-                onChange={e => setNamebeni(e.target.value)}
+                onChange={(e) => setNamebeni(e.target.value)}
               ></input>
             </div>
             <div className="Input-1">
@@ -42,7 +42,7 @@ export default props => {
                 type="text"
                 placeholder="Beneficiary Adress"
                 value={addressbeni}
-                onChange={e => setAddressbeni(e.target.value)}
+                onChange={(e) => setAddressbeni(e.target.value)}
               ></input>
             </div>
             <div className="Input-1">
@@ -51,6 +51,7 @@ export default props => {
               <select
                 name="relation"
                 value={relationbeni}
+
                 onChange={e => setRelationbeni(e.target.value)}
               >
                 <option value="relation">Select</option>
@@ -94,6 +95,7 @@ export default props => {
                 <option value="Church">Church</option>
                 <option value="School">School</option>
               </select>
+
             </div>
             <div className="Input-1">
               Type of Estate
@@ -101,7 +103,7 @@ export default props => {
                 type="text"
                 placeholder="Type of Estate"
                 value={typebeni}
-                onChange={e => setTypebeni(e.target.value)}
+                onChange={(e) => setTypebeni(e.target.value)}
               ></input>
             </div>
             <div className="Input-1">
@@ -110,11 +112,13 @@ export default props => {
                 type="text"
                 placeholder="Property"
                 value={property}
-                onChange={e => setProperty(e.target.value)}
+                onChange={(e) => setProperty(e.target.value)}
               ></input>
             </div>
+
             <button className="button-go" type="submit" value={id}>
               submit
+
             </button>
           </div>
         </form>
