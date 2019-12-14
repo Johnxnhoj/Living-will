@@ -1,13 +1,15 @@
 import React, { useState } from "react"
-import { useUserThoughts } from "../hooks/index"
+import { useUserThoughts, useAdmin } from "../hooks/index"
 
-export default props => {
+export default (props) => {
   const [userThoughts, setUserThoughts] = useState("")
-  const { grabUserThoughts } = useUserThoughts()
+  const { grabUserThoughts, get, ideas } = useUserThoughts()
+  const { isAuthenticated, id } = useAdmin()
   function handleSubmit(e) {
     e.preventDefault()
     grabUserThoughts({
-      userThoughts: userThoughts
+      userThoughts: userThoughts,
+      user_Id: id
     })
   }
   return (
@@ -25,11 +27,11 @@ export default props => {
               rows="10"
               cols="50"
               value={userThoughts}
-              onChange={e => setUserThoughts(e.target.value)}
+              onChange={(e) => setUserThoughts(e.target.value)}
             ></textarea>
             <div>
               <button className="button-go" type="submit">
-                Save And Continue
+                Submit
               </button>
             </div>
           </div>

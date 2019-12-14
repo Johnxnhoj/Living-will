@@ -4,7 +4,7 @@ const axios = require("axios")
 
 router.post("/thoughts", (req, res, next) => {
   const user_thoughts = req.body.userThoughts
-  const user_id = req.body.user_id
+  const user_id = req.body.user_Id
 
   console.log(req.body)
 
@@ -24,11 +24,12 @@ router.post("/thoughts", (req, res, next) => {
   })
 })
 
-router.get("/thoughtsRoutes", (req, res, next) => {
+router.get("/thoughts/:user_id", (req, res, next) => {
+  const userId = req.params.user_Id
   const getsql = `SELECT user_thoughts
   FROM Thoughts`
 
-  db.query(getsql, (err, results, fields) => {
+  db.query(getsql, [userId], (err, results, fields) => {
     res.json(results)
   })
 })

@@ -2,7 +2,7 @@ const router = require("express").Router()
 const db = require("../db")
 
 router.post("/user_info", (req, res, next) => {
-  const id = req.body.id
+  const user_id = req.body.user_Id
   const full_name = req.body.fullName
   const city = req.body.cityName
   const county = req.body.countyName
@@ -24,7 +24,7 @@ router.post("/user_info", (req, res, next) => {
   db.query(
     sql,
     [
-      id,
+      user_id,
       full_name,
       city,
       county,
@@ -49,23 +49,20 @@ router.post("/user_info", (req, res, next) => {
   )
 })
 
-router.get("/users/id/:userName", (req, res, next) => {
-  const username = req.params.userName
-  const getsql = `SELECT id FROM users WHERE username =?`
-  db.query(getsql, [username], (err, results, fields) => {
-    res.json(results[0])
-  })
-})
+// router.get("/users/id/:userName", (req, res, next) => {
+//   const username = req.params.userName
+//   const getsql = `SELECT id FROM users WHERE username =?`
+//   db.query(getsql, [username], (err, results, fields) => {
+//     res.json(results[0])
+//   })
+// })
 
-router.get("/", (req, res, next) => {
-  // axios.get("/user_info").then(resp => {
-  // const user = resp.data.results[0]
-  // })
-
+router.get("/user_info/:user_id", (req, res, next) => {
+  const userId = req.params.user_Id
   const getsql = `SELECT full_name, city, county, state, email
     FROM user_info`
 
-  db.query(getsql, (err, results, fields) => {
+  db.query(getsql, [userId], (err, results, fields) => {
     // let names = results.map(info => user_info
     res.json(results)
   })

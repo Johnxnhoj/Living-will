@@ -1,14 +1,17 @@
 import React, { useState } from "react"
-import { useWitness } from "../hooks/index"
+import { useWitness, useAdmin } from "../hooks/index"
 
-export default props => {
+export default (props) => {
   const [nameWit1, setNameWit1] = useState("")
   const [nameWit2, setNameWit2] = useState("")
   const [DateW, setDateW] = useState("")
-  const { grabWitnessInfo } = useWitness()
+  const { grabWitnessInfo, witwit, get } = useWitness()
+  const { isAuthenticated, id } = useAdmin()
+
   function handleSubmit(e) {
     e.preventDefault()
     grabWitnessInfo({
+      user_Id: id,
       nameWit1: nameWit1,
       nameWit2: nameWit2,
       DateW: DateW
@@ -32,25 +35,25 @@ export default props => {
               <input
                 type="text"
                 placeholder="Witness No.1"
-                onChange={e => setNameWit1(e.target.value)}
+                onChange={(e) => setNameWit1(e.target.value)}
               />
             </div>
             <div className="Input-1">
               <input
                 type="text"
                 placeholder="Witness No.2"
-                onChange={e => setNameWit2(e.target.value)}
+                onChange={(e) => setNameWit2(e.target.value)}
               />
             </div>
             <div className="Input-1">
               <input
                 type="date"
                 placeholder="Date"
-                onChange={e => setDateW(e.target.value)}
+                onChange={(e) => setDateW(e.target.value)}
               />
             </div>
             <button className="button-go" type="submit">
-              submit
+              Submit
             </button>
           </div>
         </form>

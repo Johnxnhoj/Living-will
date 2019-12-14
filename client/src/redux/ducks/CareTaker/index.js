@@ -1,19 +1,24 @@
 import { useSelector, useDispatch } from "react-redux"
 import Axios from "axios"
 
-// action definitions
+// ACTION DEFINITIONS
 const POST_CARE = "CareTaker/POST_CARE"
-const DELE_CARE = "CareTaker/DELE_CARE"
+const GET_CARE = "CareTaker/GET_CARE"
+// const DELE_CARE = "CareTaker/DELE_CARE"
 
-// initial state
+// INITIAL STATE
 const initialState = {
-  info: []
+  getCT: [],
+  info: {}
 }
 
+//REDUCER
 export default (state = initialState, action) => {
   switch (action.type) {
     case POST_CARE:
       return { ...state, info: action.payload }
+    case GET_CARE:
+      return { ...state, getCT: action.payload }
     // case DELE_CARE:
     //   return { ...state, info: info.filter(info => info.id !== action.payload) }
     default:
@@ -21,6 +26,7 @@ export default (state = initialState, action) => {
   }
 }
 
+//ACTION CREATORS
 export function postToCare(input) {
   return (dispatch) => {
     Axios.post("/care_taker/CareTaker", { input }).then((resp) => {
@@ -32,29 +38,22 @@ export function postToCare(input) {
   }
 }
 
-export function useTakerInfo() {
-  const dispatch = useDispatch()
-  const grabCareInfo = (info) => dispatch(postToCare(info))
-  const 
-  return { grabCareInfo }
+export function getCareT(id) {
+  return (dispatch) => {
+    Axios.get("/care_taker/CareTaker" + id).then((resp) => {
+      dispatch({
+        type: GET_CARE,
+        payload: resp.data[0]
+      })
+    })
+  }
 }
 
-// export function asyncPostToCare(input) {
-//   return dispatch => {
-//     Axios.post("/CareTaker", { input }).then(resp => {
-//       dispatch({
-//         type: POST_CARE,
-//         payload: resp.data
-//       })
-//     })
-//   }
-// }
-// function getCare() {
-//   return dispatch => {
-//     axios.get("/guardianRouter")
-//   }
-// }
-
-// reducer
-// action creators
-// custom hooks
+//CUSTOM HOOKS
+export function useTakerInfo() {
+  const dispatch = useDispatch()
+  const careTK = useSelector((appState) => appState.CareTakerState.info)
+  const get = (id) => dispatch(getCareT(id))
+  const grabCareInfo = (info) => dispatch(postToCare(info))
+  return { grabCareInfo, get, careTK }
+}

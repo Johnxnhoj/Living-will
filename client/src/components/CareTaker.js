@@ -1,17 +1,18 @@
 import React, { useState } from "react"
 import { useTakerInfo, useAdmin } from "../hooks/index"
 
-export default props => {
+export default (props) => {
   const [childname, setChildname] = useState("")
   const [guardianName, setGuardianName] = useState("")
   const [altGuardianName, setAltGuardianName] = useState("")
   const [extraGuardianName, setExtraGuardianName] = useState("")
   const { grabCareInfo } = useTakerInfo()
   const { isAuthenticated, username, signin, signout, reg, id } = useAdmin()
+
   function handleSubmit(e) {
     e.preventDefault()
     grabCareInfo({
-      user_id: id,
+      user_Id: id,
       childname: childname,
       guardianName: guardianName,
       altGuardianName: altGuardianName,
@@ -27,32 +28,35 @@ export default props => {
           <div className="container-3">
             <div className="Input-1">
               Child Full Name{" "}
-              <input type="text" onChange={e => setChildname(e.target.value)} />
+              <input
+                type="text"
+                onChange={(e) => setChildname(e.target.value)}
+              />
             </div>
             <div className="Input-1">
               {" "}
               Guardian Full Name Full Name{" "}
               <input
                 type="text"
-                onChange={e => setGuardianName(e.target.value)}
+                onChange={(e) => setGuardianName(e.target.value)}
               ></input>
             </div>
             <div className="Input-1">
               Alternate Guardian Full Name
               <input
                 type="text"
-                onChange={e => setAltGuardianName(e.target.value)}
+                onChange={(e) => setAltGuardianName(e.target.value)}
               ></input>
             </div>
             <div className="Input-1">
               Extra Alternate Guardian Full Name
               <input
                 type="text"
-                onChange={e => setExtraGuardianName(e.target.value)}
+                onChange={(e) => setExtraGuardianName(e.target.value)}
               ></input>
             </div>
             <button className="button-go" type="submit">
-              submit
+              Submit
             </button>
           </div>
         </form>
