@@ -1,17 +1,21 @@
 import React, { useState } from "react"
-import { useExecutor } from "../hooks/index"
 
-export default props => {
+import { useExecutor, useAdmin } from "../hooks/index"
+
+export default (props) => {
+
   const [fullName, setFullName] = useState("")
   const [cityName, setCityName] = useState("")
   const [countyName, setCountyName] = useState("")
   const [stateName, setStateName] = useState("")
-  const { grabUserExecutor } = useExecutor()
+  const { grabUserExecutor, get, execute } = useExecutor()
+  const { isAuthenticated, id } = useAdmin()
 
   function handleSubmit(e) {
     e.preventDefault()
     props.history.push("/thankyou")
     grabUserExecutor({
+      user_Id: id,
       fullName: fullName,
       cityName: cityName,
       countyName: countyName,
@@ -35,7 +39,7 @@ export default props => {
               <input
                 type="text"
                 value={fullName}
-                onChange={e => setFullName(e.target.value)}
+                onChange={(e) => setFullName(e.target.value)}
                 name="text"
               ></input>{" "}
             </div>
@@ -45,7 +49,7 @@ export default props => {
               <input
                 type="text"
                 value={cityName}
-                onChange={e => setCityName(e.target.value)}
+                onChange={(e) => setCityName(e.target.value)}
               ></input>{" "}
             </div>
             <div className="Input-1">
@@ -54,7 +58,7 @@ export default props => {
               <input
                 type="text"
                 value={countyName}
-                onChange={e => setCountyName(e.target.value)}
+                onChange={(e) => setCountyName(e.target.value)}
               ></input>{" "}
             </div>
             <div className="Input-1">
@@ -63,7 +67,7 @@ export default props => {
               <input
                 type="text"
                 value={stateName}
-                onChange={e => setStateName(e.target.value)}
+                onChange={(e) => setStateName(e.target.value)}
               ></input>{" "}
             </div>
             <button
@@ -72,7 +76,7 @@ export default props => {
               // value={userExecutor}
               // onChange={(e) => setUserExecutor(e.target.value)}
             >
-              Save And Continue
+              Submit
             </button>
           </div>
         </form>

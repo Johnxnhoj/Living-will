@@ -30,7 +30,7 @@ import exoduslogo from "../assets/exoduslogo.png"
 // import Header from "../components/Header"
 import MainP from "./MainP"
 
-export default props => {
+export default (props) => {
   const { visible, toggle } = useSide()
   const { username, signout, isAuthenticated, id } = useAdmin()
   return (
@@ -44,6 +44,7 @@ export default props => {
                   <img className="logoa" src={exoduslogo} />
                 </Link>
               </div>
+
               <div>
                 Hello {username} {id}!
               </div>
@@ -51,6 +52,10 @@ export default props => {
                 <button id="signOut" onClick={e => signout()}>
                   Sign Out
                 </button>
+
+
+
+           
               </div>
             </header>
             <main>

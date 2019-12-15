@@ -3,17 +3,13 @@ import { useSelector, useDispatch } from "react-redux"
 import axios from "axios"
 
 // ACTION DEFINITIONS
-const POST_GIFTS = "gifts/GET_GIFTS"
-// const GET_RECIPIENT = "lw/GET_RECIPIENT"
-// const GET_RELATION = "lw/ GET_RELATION"
-// const GET_ALTERNATE = "lw/GET_ALTERNATE"
+const POST_GIFTS = "gifts/POST_GIFTS"
+const GET_GIFTS = "gifts/GET_GIFTS"
 
 // INITIAL STATE
 const initialState = {
-  gift: []
-  // recipient: [],
-  // relation: [],
-  // alternate: []
+  gift: [],
+  info: {}
 }
 
 // REDUCER
@@ -21,12 +17,8 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case POST_GIFTS:
       return { ...state, gift: action.payload }
-    // case GET_RECIPIENT:
-    // 	return {...state, recipient: action.payload}
-    // case GET_RELATION:
-    // 	return {...state, relation: action.payload}
-    // case GET_ALTERNATE:
-    // 	return {...state, alternate: action.payload}
+    case GET_GIFTS:
+      return { ...state, info: action.payload }
     default:
       return state
   }
@@ -40,47 +32,28 @@ export function postGifts(input) {
         type: POST_GIFTS,
         payload: resp.data
       })
-      console.log(input)
+      // console.log(input)
     })
   }
 }
 
-// const getRCPT = () => {
-// 	return (dispatch) => {
-// 		axios.get("/recipient").then(resp) => {
-// 			dispatch({
-// 				type: GET_RECIPIENT,
-// 				payload: resp.data
-// 			})
-// 		}
-// 	}
-
-// const getRLTN = () => {
-// 	return (dispatch) => {
-// 		axios.get("/relation").then(resp) => {
-// 			dispatch({
-// 				type:GET_RELATION,
-// 				payload: resp.data
-// 			})
-// 		}
-// }
-
-// const getALT = () => {
-// 	return (dispatch) => {
-// 		axios.get("/alternate").then(resp) => {
-// 			dispatch({
-// 				type: GET_ALTERNATE,
-// 				payload: resp.data
-// 			})
-// 		}
-// }
+export function getGifts(id) {
+  return dispatch => {
+    axios.get("/gifts/Gifts" + id).then(resp => {
+      dispatch({
+        type: GET_GIFTS,
+        payload: resp.data[0]
+      })
+    })
+  }
+}
 
 // CUSTOM HOOKS
 export function useGifts() {
-  // const gift = useSelector(
-  //   (appState) => appState.giftState.gift
-  // )
   const dispatch = useDispatch()
+  const presents = useSelector(appState => appState.GiftsState.info)
+  const arriving = id => dispatch(getGifts(id))
   const grabGiftInfo = info => dispatch(postGifts(info))
-  return { grabGiftInfo }
+  useEffect(() => {}, [dispatch])
+  return { grabGiftInfo, presents, arriving }
 }
