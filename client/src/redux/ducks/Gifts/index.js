@@ -26,8 +26,8 @@ export default (state = initialState, action) => {
 
 // ACTION CREATORS
 export function postGifts(input) {
-  return (dispatch) => {
-    axios.post("/gifts/Gifts", input).then((resp) => {
+  return dispatch => {
+    axios.post("/gifts/Gifts", input).then(resp => {
       dispatch({
         type: POST_GIFTS,
         payload: resp.data
@@ -38,8 +38,8 @@ export function postGifts(input) {
 }
 
 export function getGifts(id) {
-  return (dispatch) => {
-    axios.get("/gifts/Gifts" + id).then((resp) => {
+  return dispatch => {
+    axios.get("/gifts/Gifts" + id).then(resp => {
       dispatch({
         type: GET_GIFTS,
         payload: resp.data[0]
@@ -51,9 +51,9 @@ export function getGifts(id) {
 // CUSTOM HOOKS
 export function useGifts() {
   const dispatch = useDispatch()
-  const presents = useSelector((appState) => appState.GiftsState.info)
-  const get = (id) => dispatch(getGifts(id))
-  const grabGiftInfo = (info) => dispatch(postGifts(info))
+  const presents = useSelector(appState => appState.GiftsState.info)
+  const arriving = id => dispatch(getGifts(id))
+  const grabGiftInfo = info => dispatch(postGifts(info))
   useEffect(() => {}, [dispatch])
-  return { grabGiftInfo, presents, get }
+  return { grabGiftInfo, presents, arriving }
 }
