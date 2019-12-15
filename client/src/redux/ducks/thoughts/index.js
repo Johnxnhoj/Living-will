@@ -26,8 +26,8 @@ export default (state = initialState, action) => {
 
 //ACTION CREATORS
 export function postToThoughts(textarea) {
-  return (dispatch) => {
-    Axios.post("/thoughts/Thoughts", textarea).then((resp) => {
+  return dispatch => {
+    Axios.post("/thoughts/Thoughts", textarea).then(resp => {
       dispatch({
         type: POST_THOUGHTS,
         payload: resp.data
@@ -37,8 +37,8 @@ export function postToThoughts(textarea) {
 }
 
 export function getThoughts(id) {
-  return (dispatch) => {
-    Axios.get("/thoughts/Thoughts" + id).then((resp) => {
+  return dispatch => {
+    Axios.get("/thoughts/Thoughts" + id).then(resp => {
       dispatch({
         type: GET_THOUGHTS,
         payload: resp.data[0]
@@ -50,10 +50,10 @@ export function getThoughts(id) {
 //CUSTOM HOOKS
 export function useUserThoughts() {
   const dispatch = useDispatch()
-  const get = (id) => dispatch(getThoughts(id))
-  const ideas = useSelector((appState) => appState.ThoughtsState.info)
-  const grabUserThoughts = (userThoughts) =>
+  const want = id => dispatch(getThoughts(id))
+  const ideas = useSelector(appState => appState.ThoughtsState.info)
+  const grabUserThoughts = userThoughts =>
     dispatch(postToThoughts(userThoughts))
   useEffect(() => {}, [dispatch])
-  return { grabUserThoughts, ideas, get }
+  return { grabUserThoughts, ideas, want }
 }
