@@ -6,6 +6,7 @@ export default props => {
   const { grabUserThoughts } = useUserThoughts()
   function handleSubmit(e) {
     e.preventDefault()
+    props.history.push("/thankyou")
     grabUserThoughts({
       userThoughts: userThoughts
     })

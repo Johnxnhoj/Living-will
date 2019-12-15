@@ -11,6 +11,7 @@ export default props => {
   const { grabGiftInfo } = useGifts()
   function handleSubmit(e) {
     e.preventDefault()
+    props.history.push("/thankyou")
     grabGiftInfo({
       // user_id: user_id,
       gift: gift,
@@ -25,11 +26,6 @@ export default props => {
         <h1>Gifts</h1>
         <form onSubmit={handleSubmit}>
           <div className="container-3">
-            <p>
-              Specify items, such as heirlooms, jewelry or cash amounts that you
-              want to leave to someone.
-            </p>
-
             <p>Gift #1</p>
             <div className="Input-1">
               <label>I want to give my...</label>

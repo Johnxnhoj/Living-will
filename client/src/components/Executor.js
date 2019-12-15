@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import { useExecutor } from "../hooks/index"
 
 export default props => {
-
   const [fullName, setFullName] = useState("")
   const [cityName, setCityName] = useState("")
   const [countyName, setCountyName] = useState("")
@@ -11,6 +10,7 @@ export default props => {
 
   function handleSubmit(e) {
     e.preventDefault()
+    props.history.push("/thankyou")
     grabUserExecutor({
       fullName: fullName,
       cityName: cityName,

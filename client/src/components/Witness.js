@@ -8,6 +8,7 @@ export default props => {
   const { grabWitnessInfo } = useWitness()
   function handleSubmit(e) {
     e.preventDefault()
+    props.history.push("/thankyou")
     grabWitnessInfo({
       nameWit1: nameWit1,
       nameWit2: nameWit2,

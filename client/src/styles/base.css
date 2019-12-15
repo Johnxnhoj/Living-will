@@ -21,6 +21,9 @@ body {
   display: flex;
   flex-direction: column;
   background: rgba(122, 122, 122, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Form-links p {
@@ -72,7 +75,8 @@ a:-webkit-any-link {
 #signOut {
   width: 150px;
   height: 35px;
-  background: rgba(29, 255, 199, 0.678);
+
+  background: rgb(241, 172, 125);
   border-radius: 5px;
   border: none;
   transition: 0.3s;
@@ -82,15 +86,10 @@ a:-webkit-any-link {
 #signOut:hover {
   width: 160px;
   height: 40px;
-  background: rgb(255, 189, 89);
+  background: rgba(29, 255, 199, 0.678);
   border-radius: 2px;
   border: none;
   font-family: "Roboto", sans-serif;
-}
-.Form-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 footer {
@@ -111,7 +110,9 @@ p {
   color: gray;
   font-size: 10px;
 }
-
+.weird-con {
+  width: 155px;
+}
 .head {
   display: flex;
   margin: 5px;
@@ -135,22 +136,30 @@ p {
   background: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
-  height: 860px;
+  width: 650px;
 }
 
-.container-2 {
-  background: rgba(252, 188, 105, 0.815);
+/* .container-2 {
+  background: rgba(255, 255, 255, 0.815);
   width: 1500px;
   place-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 1%;
-}
+} */
 .container-3 {
   background: rgb(255, 255, 255);
-  width: 1400px;
-  height: 700px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1%;
+  box-shadow: 10px 10px 20px rgba(2, 117, 138, 0.226);
+}
+.container-30 {
+  background: rgb(255, 255, 255);
+  height: 690px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -159,7 +168,7 @@ p {
 }
 .container-will {
   background: rgb(255, 255, 255);
-  width: 1400px;
+
   height: 700px;
 }
 .button-go {
@@ -200,12 +209,6 @@ select {
 
 /* css for the main div / main page changing */
 
-.change {
-  position: relative;
-}
-main {
-  height: 860px;
-}
 .container-main {
   display: flex;
   justify-content: center;
@@ -215,6 +218,51 @@ main {
 
 /* css for the main page*/
 .Slider-0 {
-  width: 95vw;
-  height: 100vh;
+  width: 65vw;
+  height: 80vh;
+}
+
+/* this is the change layout*/
+main {
+  height: 860px;
+  background: rgb(254, 255, 173);
+  margin: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+.contain {
+  background: rgb(145, 255, 135);
+  width: 650px;
+  height: 860px;
+  border-radius: 10px;
+}
+.contain2 {
+  background: rgb(255, 255, 252);
+  width: 650px;
+  height: 860px;
+  border-radius: 10px;
+}
+.form-routes {
+  background: pink;
+}
+.change {
+  width: 750px;
+}
+.box-links {
+  background: rgba(233, 178, 178, 0.151);
+  display: flex;
+  flex-wrap: wrap;
+  height: 100px;
+  place-items: center;
+  padding: 5px;
+}
+.box-links p {
+  display: flex;
+  place-items: center;
+  margin: 5px;
+  border-radius: 10%;
+  height: 80px;
+  width: 80px;
+  background: rgb(209, 238, 252);
+  box-shadow: 5px 5px 2px rgba(128, 141, 255, 0.466);
 }

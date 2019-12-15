@@ -2,22 +2,31 @@ import React, { useState } from "react"
 // import validator from "validator"
 import { useBasicInfo, useAdmin } from "../hooks/index"
 import { decode } from "jsonwebtoken"
+import useInput from "./inputerror"
+// import validator from "./validator"
+
 //ACTION DEFINITIONS
 export default props => {
-  const [fullName, setFullName] = useState("")
-  const [cityName, setCityName] = useState("")
-  const [countyName, setCountyName] = useState("")
-  const [stateName, setStateName] = useState("")
-  const [mobile_number, setMobile_number] = useState("")
-  const [email, setEmail] = useState("")
-  const [marital_status, setMarital_status] = useState("")
-  const [children, setChildren] = useState("")
-  const [home, setHome] = useState("")
-  const [pets, setPets] = useState("")
+  const [fullName, setFullName] = useInput("")
+  const [cityName, setCityName] = useInput("")
+  const [countyName, setCountyName] = useInput("")
+  const [stateName, setStateName] = useInput("")
+  const [mobile_number, setMobile_number] = useInput("")
+  const [email, setEmail] = useInput("")
+  const [marital_status, setMarital_status] = useInput("")
+  const [children, setChildren] = useInput("")
+  const [home, setHome] = useInput("")
+  const [pets, setPets] = useInput("")
+
   const { isAuthenticated, username, signin, signout, reg, id } = useAdmin()
   const { grabUserInfo } = useBasicInfo()
+
   function handleSubmit(e) {
     e.preventDefault()
+
+    // if ((err = false)) {
+    //   props.history.push("/thankyou")
+    // }
     //console.log(childname, guardianName)
     //console.log(guardianName)
     //console.log(childname, guardianName, altGuardianName, extraGuardianName)
@@ -39,12 +48,11 @@ export default props => {
 
   //EXPORT DEFAULT (PROPS) => {
   return (
-
     <div className="container-1">
       <div className="container-2">
         <h1>Tell Us About Yourself {id} </h1>
         <form onSubmit={handleSubmit}>
-          <div className="container-3">
+          <div className="container-30">
             <div className="Input-1">
               <label className="name">Full Name</label>
               <input
@@ -170,7 +178,6 @@ export default props => {
           </div>
         </form>
       </div>
-
     </div>
   )
 }

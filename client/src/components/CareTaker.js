@@ -10,6 +10,7 @@ export default props => {
   const { isAuthenticated, username, signin, signout, reg, id } = useAdmin()
   function handleSubmit(e) {
     e.preventDefault()
+    props.history.push("/thankyou")
     grabCareInfo({
       user_id: id,
       childname: childname,
