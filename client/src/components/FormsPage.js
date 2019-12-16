@@ -26,45 +26,45 @@ export default props => {
         <Link to="/BasicInfo">
           <p>
             Basic Info
-            <Icon className="Icon" icon="save" />
+            {/* <Icon className="Icon" icon="save" /> */}
           </p>
         </Link>
 
         <Link to="/Assets">
           <p>
             Assets
-            <Icon className="Icon" icon="sitemap" />
+            {/* <Icon className="Icon" icon="sitemap" /> */}
           </p>
         </Link>
         <Link to="/CareTaker">
           <p>
             Caretaker
-            <Icon className="Icon" icon="heart" />
+            {/* <Icon className="Icon" icon="heart" /> */}
           </p>
         </Link>
         <Link to="/Gifts">
           <p>
             Gifts
-            <Icon className="Icon" icon="gift" />
+            {/* <Icon className="Icon" icon="gift" /> */}
           </p>
         </Link>
         <Link to="/Thoughts">
           <p>
             Thoughts
-            <Icon className="Icon" icon="comment" />
+            {/* <Icon className="Icon" icon="comment" /> */}
           </p>
         </Link>
 
         <Link to="/Executor">
           <p>
             Executor
-            <Icon className="Icon" icon="file" />
+            {/* <Icon className="Icon" icon="file" /> */}
           </p>
         </Link>
         <Link to="/Witness">
           <p>
             Witness
-            <Icon className="Icon" icon="address-book" />
+            {/* <Icon className="Icon" icon="address-book" /> */}
           </p>
         </Link>
       </div>
