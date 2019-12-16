@@ -7,13 +7,10 @@ const POST_CARE = "CareTaker/POST_CARE"
 const DELE_CARE = "CareTaker/DELE_CARE"
 const GET_CARE = "CareTaker/GET_CARE"
 
-
 // INITIAL STATE
 const initialState = {
-
   info: [],
   getBack: {}
-
 }
 
 //REDUCER
@@ -22,7 +19,6 @@ export default (state = initialState, action) => {
     case POST_CARE:
       return { ...state, info: action.payload }
     case GET_CARE:
-
       return { ...state, getBack: action.payload }
 
     // case DELE_CARE:
@@ -31,7 +27,6 @@ export default (state = initialState, action) => {
       return state
   }
 }
-
 
 ///action creators
 
@@ -46,11 +41,10 @@ export function postToCare(input) {
   }
 }
 
-
 export function getCare(id) {
   return dispatch => {
     Axios.get("/care_taker/CareTaker" + id).then(resp => {
-
+      console.log(resp.data[0])
       dispatch({
         type: GET_CARE,
         payload: resp.data[0]
@@ -59,18 +53,15 @@ export function getCare(id) {
   }
 }
 
-
 ///hook
 export function useTakerInfo() {
   const dispatch = useDispatch()
 
-
-  const guardian = useSelector(appState => appState.CareTakerState.getBack)
+  const CareTaker = useSelector(appState => appState.CareTakerState.getBack)
   const recieve = id => dispatch(getCare(id))
   const grabCareInfo = info => dispatch(postToCare(info))
   useEffect(() => {}, [dispatch])
-  return { grabCareInfo, guardian, recieve }
-
+  return { grabCareInfo, CareTaker, recieve }
 }
 
 // export function asyncPostToCare(input) {
@@ -88,4 +79,3 @@ export function useTakerInfo() {
 // reducer
 // action creators
 // custom hooks
-

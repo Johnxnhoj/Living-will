@@ -34,7 +34,7 @@ router.post("/executor", (req, res, next) => {
 router.get("/executor/:user_id", (req, res, next) => {
   const userId = req.params.user_Id
   const getsql = `SELECT id, user_id, full_name, city, county, state
-  FROM executor`
+  FROM executor WHERE user_id =?`
 
   db.query(getsql, [userId], (err, results, fields) => {
     res.json(results)

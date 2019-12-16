@@ -27,7 +27,7 @@ router.post("/thoughts", (req, res, next) => {
 router.get("/thoughts/:user_id", (req, res, next) => {
   const userId = req.params.user_Id
   const getsql = `SELECT user_thoughts
-  FROM Thoughts`
+  FROM Thoughts WHERE user_id =?`
 
   db.query(getsql, [userId], (err, results, fields) => {
     res.json(results)

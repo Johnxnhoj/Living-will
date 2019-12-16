@@ -9,7 +9,6 @@ router.post("/estate", (req, res, next) => {
   const relationbeni = req.body.relationbeni
   const typebeni = req.body.typebeni
   const property = req.body.property
-  console.log(req.body)
   //console.log(req.body)
 
   // const user_id = id
@@ -29,12 +28,13 @@ router.post("/estate", (req, res, next) => {
   )
 })
 
-router.get("/estateRouter/:user_id", (req, res, next) => {
-  const userId = req.params.user_id
+router.get("/estateRouter", (req, res, next) => {
+  const userId = req.query.id
   const getsql = `SELECT user_id, beni_name, address, relationbeni, property, type_of 
   FROM estate WHERE user_id = ?`
 
   db.query(getsql, [userId], (err, results, fields) => {
+    console.log(results)
     res.json(results)
   })
 })
