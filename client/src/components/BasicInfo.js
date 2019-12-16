@@ -51,7 +51,7 @@ export default props => {
   return (
     <div className="container-1">
       <div className="container-2">
-        <h1>Tell Us About Yourself {id} </h1>
+        <h1>Tell Us About Yourself </h1>
         <form onSubmit={handleSubmit}>
           <div className="container-30">
             <div className="Input-1">

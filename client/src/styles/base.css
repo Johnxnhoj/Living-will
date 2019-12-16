@@ -75,28 +75,31 @@ a:-webkit-any-link {
 #signOut {
   width: 150px;
   height: 35px;
-
+  color: white;
   background: rgb(241, 172, 125);
-  border-radius: 5px;
+  border-radius: 4px;
   border: none;
-  transition: 0.3s;
+  transition: 0.5s;
   font-size: 20px;
   font-family: "Roboto", sans-serif;
 }
 #signOut:hover {
-  width: 160px;
-  height: 40px;
-  background: rgba(29, 255, 199, 0.678);
+  width: 153px;
+  height: 36px;
+  background: rgb(126, 207, 221);
   border-radius: 2px;
   border: none;
   font-family: "Roboto", sans-serif;
 }
-
-footer {
-  background: rgb(252, 252, 252);
-  display: flex;
-  justify-content: space-evenly;
+.createawill {
+  color: rgb(0, 0, 0);
+  background: rgba(126, 207, 221, 0.534);
+  border-radius: 2px;
+  height: 25px;
+  place-items: center;
+  margin: 5px;
 }
+
 p {
   display: block;
   margin-block-start: 0em;
@@ -107,20 +110,18 @@ p {
 
 .disclaimer {
   width: 300px;
-  color: gray;
+  color: rgb(131, 130, 130);
   font-size: 10px;
 }
+.rights {
+  color: rgb(255, 255, 255);
+}
+.icons {
+  color: rgba(255, 255, 255, 0.692);
+}
+
 .weird-con {
   width: 155px;
-}
-.head {
-  display: flex;
-  margin: 5px;
-  place-items: center;
-  justify-content: space-between;
-  background: white;
-  right: 0;
-  height: 50px;
 }
 
 .logoa {
@@ -131,12 +132,16 @@ p {
   width: 120px;
   height: 35px;
 }
+.Master-container {
+  height: 1500px;
+}
 /* css for all the forms */
 .container-1 {
-  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.192);
   display: flex;
   justify-content: center;
   width: 650px;
+  height: 690px;
 }
 
 /* .container-2 {
@@ -153,13 +158,13 @@ p {
   border-radius: 1%;
 } */
 .container-3 {
-  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.952);
   width: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 1%;
-  box-shadow: 10px 10px 20px rgba(2, 117, 138, 0.226);
+  box-shadow: 5px 3px 10px 7px rgba(1, 16, 19, 0.342);
 }
 .container-30 {
   background: rgb(255, 255, 255);
@@ -168,7 +173,7 @@ p {
   flex-direction: column;
   align-items: center;
   border-radius: 1%;
-  box-shadow: 10px 10px 20px rgba(2, 117, 138, 0.226);
+  box-shadow: 5px 3px 10px 7px rgba(1, 16, 19, 0.342);
 }
 .container-will {
   background: rgb(255, 255, 255);
@@ -205,13 +210,44 @@ select {
 }
 
 .Input-1 {
-  background: rgba(255, 176, 222, 0.171);
+  background: rgba(255, 176, 222, 0.774);
   margin: 5px;
   display: flex;
   flex-direction: column;
 }
 
 /* css for the main div / main page changing */
+.Container-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+.head {
+  display: flex;
+  margin: 5px;
+  place-items: center;
+  justify-content: space-between;
+  background: rgba(236, 150, 93, 0);
+  right: 0;
+  height: 50px;
+  color: white;
+}
+main {
+  height: 800px;
+  background: rgba(255, 255, 255, 0);
+  margin: 0px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.foot {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background: rgba(211, 139, 91, 0);
+
+  display: flex;
+  justify-content: space-evenly;
+}
 
 .container-main {
   display: flex;
@@ -220,66 +256,83 @@ select {
   background: white;
 }
 
-/* css for the main page*/
-.Slider-0 {
-  width: 65vw;
-  height: 80vh;
-}
-
-/* this is the change layout*/
-main {
-  height: 860px;
-  background: rgb(254, 255, 173);
-  margin: 5px;
+.CWP {
+  height: 1500px;
+  background: rgba(255, 255, 255, 0);
+  margin: 0px;
   display: flex;
   justify-content: space-around;
 }
+/* css for the main page*/
+.Slider-0 {
+  width: 60vw;
+  height: 120vh;
+}
+
+/* this is the change layout*/
+
 .contain {
-  background: rgb(145, 255, 135);
+  background: rgba(252, 252, 252, 0.445);
   width: 650px;
   height: 860px;
   border-radius: 10px;
 }
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 .contain2 {
-  background: rgb(255, 255, 252);
+  background: rgba(255, 255, 252, 0.342);
   width: 650px;
   height: 860px;
+  margin: 0px 10px;
   border-radius: 10px;
 }
 .form-routes {
-  background: pink;
+  background: rgba(255, 255, 255, 0.219);
 }
 .change {
   width: 750px;
 }
 .box-links {
-  background: rgba(233, 178, 178, 0.151);
+  background: rgba(233, 178, 178, 0);
   display: flex;
+  justify-content: center;
+
   flex-wrap: wrap;
   height: 100px;
-  place-items: center;
+
   padding: 5px;
 }
 .box-links p {
   display: flex;
-  place-items: center;
+  justify-content: center;
+  align-items: center;
   margin: 5px;
   border-radius: 10%;
   height: 80px;
   width: 80px;
-  background: rgb(209, 238, 252);
-  box-shadow: 5px 5px 2px rgba(128, 141, 255, 0.466);
+  background: rgb(143, 212, 224);
+  box-shadow: 5px 5px 1px rgba(255, 194, 103, 0.315);
+  font-size: 18px;
+  font-family: sans-serif;
+  color: white;
 }
 
-.foot {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-/* .adminGreeting {
+.front-buttons {
   display: flex;
-  justify-content: flex-end;
+
+  justify-content: flex-end; 
+  margin: 10px;
 } */
+
+
+
+ 
 
 .BasicInfoShowing p,
 .executorSection p {

@@ -29,59 +29,74 @@ import exoduslogo from "../assets/exoduslogo.png"
 // import Slider from "../components/Slider"
 // import Header from "../components/Header"
 import MainP from "./MainP"
+import CreateWillPage from "./CreateWillPage"
+import video from "../assets/video.mp4"
+import sundown from "../assets/sundown.mp4"
 
 export default props => {
   const { visible, toggle } = useSide()
   const { username, signout, isAuthenticated, id } = useAdmin()
   return (
-    <div>
+    <div className="Master-container">
       {isAuthenticated ? (
         <Router>
-          <div className="Container">
-            <header className="head">
-              <div className="logo">
-                <Link to="/">
-                  <img className="logoa" src={exoduslogo} />
-                </Link>
-              </div>
-
-              <div>
-                Hello {username} {id}!
-              </div>
-              <div className="weird-con">
-                <button id="signOut" onClick={e => signout()}>
-                  Sign Out
-                </button>
-              </div>
-            </header>
-            <main>
-              <Will className="Will" />
-              <FormsPage className="formspage" />
-            </main>
-
-            <footer className="foot">
-              <div className="logo">
-                <Link to="/">
-                  <img className="logoa-2" src={exoduslogo} />
-                </Link>
-                <div className="icons">
-                  <Icon icon="facebook-square"></Icon>
-                  <Icon icon="instagram"></Icon>
-                  <Icon icon="twitter-square"></Icon>
+          <div>
+            <video
+              autoplay="true"
+              loop="true"
+              id="myVideo"
+              src={sundown}
+            ></video>
+            <div className="Container-overlay">
+              <header className="head">
+                <div className="logo">
+                  <Link to="/">
+                    <img className="logoa" src={exoduslogo} />
+                  </Link>
                 </div>
-              </div>
 
-              <div className="rights">
-                Exodus, Inc. All Rights Reserved.
-                <p className="disclaimer">
-                  Disclaimer: We are not a law firm or a substitute for an
-                  attorney or law firm. We cannot provide any kind of advice,
-                  explanation, opinion, or recommendation about possible legal
-                  rights, remedies, defenses, options, selection of forms or
-                  strategies.
-                </p>
-              </div>
-            </footer>
+                <div>
+                  Hello {username} {id}!
+                </div>
+                <div className="weird-con">
+                  <button id="signOut" onClick={e => signout()}>
+                    Sign Out
+                  </button>
+                </div>
+              </header>
+
+              <main>
+                <Route exact path="/" component={MainP} />
+                <Route
+                  path="/CreateWillPage"
+                  component={CreateWillPage}
+                ></Route>
+              </main>
+
+              <footer className="foot">
+                <div className="logo">
+                  <Link to="/">
+                    <img className="logoa-2" src={exoduslogo} />
+                  </Link>
+                  <div className="icons">
+                    <Icon icon="facebook-square"></Icon>
+                    <Icon icon="instagram"></Icon>
+                    <Icon icon="twitter-square"></Icon>
+                  </div>
+                </div>
+
+                <div className="rights">
+                  Exodus, Inc. All Rights Reserved.
+                  <p className="disclaimer">
+                    Disclaimer: We are not a law firm or a substitute for an
+                    attorney or law firm. We cannot provide any kind of advice,
+                    explanation, opinion, or recommendation about possible legal
+                    rights, remedies, defenses, options, selection of forms or
+                    strategies.
+                  </p>
+                </div>
+              </footer>
+            </div>
           </div>
         </Router>
       ) : (
