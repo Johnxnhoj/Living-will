@@ -25,8 +25,9 @@ export default props => {
   }, [])
 
   return (
-    <div className="container-1">
-      <div className="container-2">
+
+    <div className="contain">
+     
         <h1>Will</h1>
         <div className="container-will">
           {" "}
@@ -43,7 +44,8 @@ export default props => {
           </p>
           <p>{CareTaker.child_name}</p>
         </div>
-      </div>
+
+  
     </div>
   )
 }

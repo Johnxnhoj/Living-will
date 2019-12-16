@@ -10,6 +10,7 @@ export default (props) => {
 
   function handleSubmit(e) {
     e.preventDefault()
+    props.history.push("/thankyou")
     grabWitnessInfo({
       user_Id: id,
       nameWit1: nameWit1,

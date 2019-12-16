@@ -7,6 +7,7 @@ export default (props) => {
   const { isAuthenticated, id } = useAdmin()
   function handleSubmit(e) {
     e.preventDefault()
+    props.history.push("/thankyou")
     grabUserThoughts({
       userThoughts: userThoughts,
       user_Id: id

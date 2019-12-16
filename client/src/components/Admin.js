@@ -14,6 +14,7 @@ import Gifts from "./Gifts"
 import Thoughts from "./Thoughts"
 //// Side Bar Routes///
 import Will from "./Will"
+import FormsPage from "./FormsPage"
 import Documents from "./Documents"
 import Executor from "./Executor"
 import Witness from "./Witness"
@@ -22,6 +23,7 @@ import Help from "./Help"
 import Settings from "./Settings"
 import { useSide } from "../hooks"
 import { useAdmin } from "../hooks"
+import thankyou from "./thankyou"
 //Logo and Carousel Imports
 import exoduslogo from "../assets/exoduslogo.png"
 // import Slider from "../components/Slider"
@@ -36,106 +38,31 @@ export default (props) => {
       {isAuthenticated ? (
         <Router>
           <div className="Container">
-            <header>
+            <header className="head">
               <div className="logo">
                 <Link to="/">
                   <img className="logoa" src={exoduslogo} />
                 </Link>
               </div>
 
-              <div className="adminGreeting">
-                Welcome, {username} {id}!
+              <div>
+                Hello {username} {id}!
               </div>
+              <div className="weird-con">
+                <button id="signOut" onClick={e => signout()}>
+                  Sign Out
+                </button>
 
-              <div className={visible ? "Side open" : "Side"}>
-                <div className="toggle" onClick={(e) => toggle()}>
-                  <Icon icon="bars" />
-                </div>
-                <div className="Form-links">
-                  <Link to="/">
-                    <p>
-                      Home
-                      <Icon icon="home" />
-                    </p>
-                  </Link>
-                  <Link to="/Will">
-                    <p>
-                      Will
-                      <Icon icon="address-card" />
-                    </p>
-                  </Link>
 
-                  <Link to="/BasicInfo">
-                    <p>
-                      Basic Info
-                      <Icon icon="save" />
-                    </p>
-                  </Link>
 
-                  <Link to="/Assets">
-                    <p>
-                      Assets
-                      <Icon icon="sitemap" />
-                    </p>
-                  </Link>
-                  <Link to="/CareTaker">
-                    <p>
-                      Caretaker
-                      <Icon icon="heart" />
-                    </p>
-                  </Link>
-                  <Link to="/Gifts">
-                    <p>
-                      Gifts
-                      <Icon icon="gift" />
-                    </p>
-                  </Link>
-                  <Link to="/Thoughts">
-                    <p>
-                      Thoughts
-                      <Icon icon="comment" />
-                    </p>
-                  </Link>
-
-                  <Link to="/Executor">
-                    <p>
-                      Executor
-                      <Icon icon="file" />
-                    </p>
-                  </Link>
-                  <Link to="/Witness">
-                    <p>
-                      Witness
-                      <Icon icon="address-book" />
-                    </p>
-                  </Link>
-
-                  <button id="signOut" onClick={(e) => signout()}>
-                    Sign Out
-                  </button>
-                </div>
+           
               </div>
             </header>
-
             <main>
-              <Route exact path="/" component={MainP} />
-              <div className="change">
-                <Route path="/BasicInfo" component={BasicInfo} />
-                <Route path="/Assets" component={Assets} />
-                <Route path="/CareTaker" component={CareTaker} />
-                <Route path="/Gifts" component={Gifts} />
-                <Route path="/Thoughts" component={Thoughts} />
-
-                <Route path="/Will" component={Will} />
-                {/* routes for the side bar*/}
-                <Route path="/Documents" component={Documents} />
-                <Route path="/Executor" component={Executor} />
-                <Route path="/Witness" component={Witness} />
-                <Route path="/Notifications" component={Notifications} />
-                <Route path="/Help" component={Help} />
-                <Route path="/Settings" component={Settings} />
-              </div>
+              <Will className="Will" />
+              <FormsPage className="formspage" />
             </main>
+            ]
             <footer className="foot">
               <div className="logo">
                 <Link to="/">

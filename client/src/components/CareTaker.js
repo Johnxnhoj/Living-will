@@ -14,6 +14,7 @@ export default props => {
 
   function handleSubmit(e) {
     e.preventDefault()
+    props.history.push("/thankyou")
     grabCareInfo({
       user_Id: id,
       childname: childname,

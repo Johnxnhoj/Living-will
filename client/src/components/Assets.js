@@ -11,6 +11,7 @@ export default (props) => {
   const { id } = useAdmin()
   function handleSubmit(e) {
     e.preventDefault()
+    props.history.push("/thankyou")
     grabEstateInfo({
       user_Id: id,
       namebeni: namebeni,

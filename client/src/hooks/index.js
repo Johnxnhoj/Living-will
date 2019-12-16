@@ -9,8 +9,6 @@ export { useWitness } from "../redux/ducks/witness"
 
 export { useGifts } from "../redux/ducks/Gifts"
 
-
 export { useSide } from "../redux/ducks/Side"
 
 export { useAdmin } from "../redux/ducks/admin"
-

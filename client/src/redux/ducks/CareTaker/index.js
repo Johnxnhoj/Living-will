@@ -63,11 +63,14 @@ export function getCare(id) {
 ///hook
 export function useTakerInfo() {
   const dispatch = useDispatch()
+
+
   const guardian = useSelector(appState => appState.CareTakerState.getBack)
   const recieve = id => dispatch(getCare(id))
   const grabCareInfo = info => dispatch(postToCare(info))
   useEffect(() => {}, [dispatch])
   return { grabCareInfo, guardian, recieve }
+
 }
 
 // export function asyncPostToCare(input) {
