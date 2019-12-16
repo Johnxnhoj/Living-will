@@ -219,7 +219,8 @@ select {
 /* css for the main div / main page changing */
 .Container-overlay {
   position: fixed;
-  width: 1445px;
+  width: 100%;
+  height: 100%;
 }
 .head {
   display: flex;
@@ -232,7 +233,7 @@ select {
   color: white;
 }
 main {
-  height: 630px;
+  height: 800px;
   background: rgba(255, 255, 255, 0);
   margin: 0px;
   display: flex;
