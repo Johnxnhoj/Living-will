@@ -38,7 +38,7 @@ export function postToEstate(input) {
 export function getAssets(id) {
   return dispatch => {
     Axios.get("/estate/estateRouter?id=" + id).then(resp => {
-      console.log(resp.data[0])
+      // console.log(resp.data[0])
       dispatch({
         type: GET_ESTATE,
         payload: resp.data[0]

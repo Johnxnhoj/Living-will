@@ -325,5 +325,16 @@ main {
 
 .front-buttons {
   display: flex;
+
+  justify-content: flex-end; 
   margin: 10px;
+} */
+
+
+
+ 
+
+.BasicInfoShowing p,
+.executorSection p {
+  background: lavender;
 }

@@ -169,8 +169,8 @@ export default props => {
                 onChange={e => setHome(e.target.value)}
               >
                 <option value="home">Select One</option>
-                <option value="yeah">Yes</option>
-                <option value="nah">No</option>
+                <option value="Yes">Yes</option>
+                <option value="NO">No</option>
               </select>
             </div>
             <button className="button-go" type="submit" value={id}>

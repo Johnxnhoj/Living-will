@@ -34,7 +34,7 @@ router.get("/estateRouter", (req, res, next) => {
   FROM estate WHERE user_id = ?`
 
   db.query(getsql, [userId], (err, results, fields) => {
-    console.log(results)
+    // console.log(results)
     res.json(results)
   })
 })

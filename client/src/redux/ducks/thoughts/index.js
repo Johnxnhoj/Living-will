@@ -48,12 +48,14 @@ export function getThoughts(id) {
 }
 
 //CUSTOM HOOKS
-export function useUserThoughts() {
+export function useUserThoughts(id) {
   const dispatch = useDispatch()
   const want = id => dispatch(getThoughts(id))
   const ideas = useSelector(appState => appState.ThoughtsState.info)
   const grabUserThoughts = userThoughts =>
     dispatch(postToThoughts(userThoughts))
-  useEffect(() => {}, [dispatch])
+  useEffect(() => {
+    want(id)
+  }, [dispatch])
   return { grabUserThoughts, ideas, want }
 }
