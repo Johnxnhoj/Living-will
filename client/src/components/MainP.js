@@ -1,19 +1,19 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import { useSide } from "../hooks"
-import Slider from "./Slider"
+
+import sundown from "../assets/sundown.mp4"
 export default props => {
   const { toggle } = useSide()
   return (
-    <div className="container-1">
-      <div className="container-2">
-        <div className="middle-b">
-          <button>Your Will</button>
-          <button className="create-will" onClick={e => toggle()}>
-            Create a Will
-          </button>
-          <Slider />
-        </div>
+    <div className="container-x">
+      <div className="front-buttons">
+        <button>Your Will</button>
+        <Link to="CreateWillPage">
+          <p className="createawill">create a will</p>
+        </Link>
       </div>
+      {/* <video autoplay="true" loop="true" id="myVideo" src={sundown}></video> */}
     </div>
   )
 }
