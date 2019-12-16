@@ -8,17 +8,17 @@ const GET_EXECUTOR = "executor/GET_EXECUTOR"
 
 //INITIAL STATE
 const initialState = {
-  userExecutor: [],
-  info: {}
+  info: [],
+  executor_info: {}
 }
 
 //REDUCER
 export default (state = initialState, action) => {
   switch (action.type) {
     case POST_EXECUTOR:
-      return { ...state, userExecutor: action.payload }
-    case GET_EXECUTOR:
       return { ...state, info: action.payload }
+    case GET_EXECUTOR:
+      return { ...state, executor_info: action.payload }
     default:
       return state
   }
@@ -38,7 +38,8 @@ export function postToExecutor(input) {
 
 export function getExecutor(id) {
   return dispatch => {
-    Axios.get("/executor/executor" + id).then(resp => {
+    Axios.get("/executor/executorRouter?id=" + id).then(resp => {
+      console.log("excuter", resp.data[0])
       dispatch({
         type: GET_EXECUTOR,
         payload: resp.data[0]
@@ -48,11 +49,14 @@ export function getExecutor(id) {
 }
 
 //CUSTOM HOOKS
-export function useExecutor() {
+export function useExecutor(id) {
+  const executor = useSelector(appState => appState.executorState.info)
   const dispatch = useDispatch()
-  const execute = useSelector(appState => appState.executorState.info)
+  const execute = useSelector(appState => appState.executorState.executor_info)
   const grab = id => dispatch(getExecutor(id))
   const grabUserExecutor = info => dispatch(postToExecutor(info))
-  useEffect(() => {}, [dispatch])
-  return { grabUserExecutor, grab, execute }
+  useEffect(() => {
+    grab(id)
+  }, [dispatch])
+  return { grabUserExecutor, grab, execute, executor }
 }

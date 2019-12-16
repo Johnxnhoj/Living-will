@@ -5,11 +5,11 @@ const db = require("../db")
 // const people = {}
 
 router.get("/witness/:user_id", (req, res, next) => {
-  const userId = req.params.user_Id
+  const witId = req.params.user_id
   const getsql = `SELECT id, user_id, Wit_1, Wit_2, Date_W
   FROM witness WHERE user_id =?`
 
-  db.query(getsql, [userId], (err, results, fields) => {
+  db.query(getsql, [witId], (err, results, fields) => {
     res.json(results)
   })
 })
