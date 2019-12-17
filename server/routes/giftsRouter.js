@@ -33,8 +33,8 @@ router.post("/gifts", (req, res, next) => {
       )
     } else {
       // console.log(replacing)
-      const sql2 = `INSERT INTO Gifts ( gift, gift_recipient, relationship_to_user, alternate_gift_recipient)
-    VALUES(?, ?, ?, ?, ?)`
+      const sql2 = `INSERT INTO Gifts ( user_id, gift, gift_recipient, relationship_to_user, alternate_gift_recipient)
+    VALUES(?, ?, ?, ?)`
 
       db.query(
         sql2,
