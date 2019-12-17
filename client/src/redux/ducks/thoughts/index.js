@@ -38,7 +38,8 @@ export function postToThoughts(textarea) {
 
 export function getThoughts(id) {
   return dispatch => {
-    Axios.get("/thoughts/Thoughts" + id).then(resp => {
+    Axios.get("/thoughts/thoughts/" + id).then(resp => {
+      console.log("thoughts", resp.data[0])
       dispatch({
         type: GET_THOUGHTS,
         payload: resp.data[0]
@@ -49,13 +50,16 @@ export function getThoughts(id) {
 
 //CUSTOM HOOKS
 export function useUserThoughts(id) {
-  const dispatch = useDispatch()
-  const want = id => dispatch(getThoughts(id))
+  const userThoughts = useSelector(
+    appState => appState.ThoughtsState.userThoughts
+  )
   const ideas = useSelector(appState => appState.ThoughtsState.info)
+  const dispatch = useDispatch()
+  // const want = id => dispatch(getThoughts(id))
   const grabUserThoughts = userThoughts =>
     dispatch(postToThoughts(userThoughts))
   useEffect(() => {
-    want(id)
+    dispatch(getThoughts(id))
   }, [dispatch])
-  return { grabUserThoughts, ideas, want }
+  return { grabUserThoughts, ideas, userThoughts }
 }

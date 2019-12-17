@@ -38,7 +38,10 @@ export function postGifts(input) {
 
 export function getGifts(id) {
   return dispatch => {
-    axios.get("/Gifts/Gifts" + id).then(resp => {
+
+    axios.get("/Gifts/Gifts/" + id).then(resp => {
+      console.log("gifts", resp.data[0])
+
       dispatch({
         type: GET_GIFTS,
         payload: resp.data[0]
@@ -48,11 +51,13 @@ export function getGifts(id) {
 }
 
 // CUSTOM HOOKS
-export function useGifts() {
+export function useGifts(id) {
   const dispatch = useDispatch()
   const presents = useSelector(appState => appState.GiftsState.info)
-  const arriving = id => dispatch(getGifts(id))
+  // const arriving = id => dispatch(getGifts(id))
   const grabGiftInfo = info => dispatch(postGifts(info))
-  useEffect(() => {}, [dispatch])
-  return { grabGiftInfo, presents, arriving }
+  useEffect(() => {
+    dispatch(getGifts(id))
+  }, [dispatch])
+  return { grabGiftInfo, presents }
 }

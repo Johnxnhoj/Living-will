@@ -2,9 +2,7 @@ const router = require("express").Router()
 // const axios = require("axios")
 const db = require("../db")
 
-
 router.post("/CareTaker", (req, res, next) => {
-
   const user_id = req.body.input.user_Id
   const childName = req.body.input.childname
   const guardianName = req.body.input.guardianName
@@ -32,9 +30,9 @@ router.post("/CareTaker", (req, res, next) => {
 })
 
 router.get("/CareTaker/:user_id", (req, res, next) => {
-  const userId = req.params.id
+  const userId = req.params.user_id
   // const user = resp.data.results[0]
-  const getsql = `SELECT child_name, Guardian_Name, alt_Guardian_Name, extra_Guardian_Name 
+  const getsql = `SELECT user_id, child_name, Guardian_Name, alt_Guardian_Name, extra_Guardian_Name 
   FROM CareTaker WHERE user_id = ?`
 
   db.query(getsql, [userId], (err, results, fields) => {
