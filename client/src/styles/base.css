@@ -179,7 +179,8 @@ p {
 }
 .container-30 {
   background: rgb(255, 255, 255);
-  height: 690px;
+  height: 567px;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -191,6 +192,10 @@ p {
   padding: 10px 10px;
   height: 700px;
   border-radius: 10px;
+  overflow: scroll;
+  /* font-size: 10px; */
+  display: flex;
+  flex-wrap: wrap;
 }
 .button-go {
   width: 85px;
@@ -353,7 +358,13 @@ main {
   background: lavender;
 }
 
-
+.AssetsSection p,
+.GuardianSection p,
+.GiftsSection p,
+.WitSection p,
+.ThoughtsSection p {
+  background: lavender;
+}
 .adminGreeting {
   margin-left: 900px;
 }
@@ -372,9 +383,8 @@ textarea {
   header,
   .formspage,
   footer,
-  .contain2,}
+  .contain2,
   #myVideo {
     display: none !important;
   }
-
-
+}

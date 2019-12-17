@@ -1,5 +1,10 @@
 import React from "react"
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom"
 import Icon from "../lib/Icon"
 import BasicInfo from "./BasicInfo"
 import Assets from "./Assets"
