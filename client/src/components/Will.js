@@ -22,6 +22,9 @@ export default props => {
   const { grabUserThoughts, ideas, want } = useUserThoughts(id)
   const { grabWitnessInfo, find, witwit, ness } = useWitness(id)
 
+  function myFunction() {
+    window.print()
+  }
   useEffect(() => {
     get(id)
     // grab(id)
@@ -50,11 +53,12 @@ export default props => {
           I nominate and appoint{" "}
           <p>{infoEstate ? infoEstate.beni_name : ""} </p> *ExecutorFullName* of
           *City,<p>{infoEstate ? infoEstate.relationbeni : ""} </p> County,
-          State* <p>{witwit.Wit_1} </p>as Personal Representative of my estate
-          and I request that <p>{execute ? execute.full_name : ""}</p>(he /she)
-          be appointed temporary PR if applies, if my PR fails or ceases
+          State* <p>{witwit ? witwit.Wit_1 : ""} </p>as Personal Representative
+          of my estate and I request that{" "}
+          <p>{execute ? execute.full_name : ""}</p>(he /she) be appointed
+          temporary PR if applies, if my PR fails or ceases
         </p>
-        <p></p>
+        <button onClick={myFunction}>Print this page</button>
       </div>
     </div>
   )

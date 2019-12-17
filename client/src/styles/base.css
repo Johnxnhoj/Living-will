@@ -314,7 +314,9 @@ main {
   background: rgba(255, 255, 255, 0.219);
 }
 .change {
-  width: 750px;
+  width: 650px;
+  height: 700px;
+  background: rgba(255, 118, 118, 0.562);
 }
 .box-links {
   background: rgba(233, 178, 178, 0);
@@ -345,10 +347,12 @@ main {
   justify-content: flex-end;
   margin: 10px;
 }
+
 .BasicInfoShowing p,
 .executorSection p {
   background: lavender;
 }
+
 
 .adminGreeting {
   margin-left: 900px;
@@ -364,3 +368,13 @@ textarea {
 .description {
   padding: 7px 7px;
 }
+@media print {
+  header,
+  .formspage,
+  footer,
+  .contain2,}
+  #myVideo {
+    display: none !important;
+  }
+
+
