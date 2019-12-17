@@ -21,8 +21,6 @@ export default (state = initialState, action) => {
     case GET_CARE:
       return { ...state, getBack: action.payload }
 
-    // case DELE_CARE:
-    //   return { ...state, info: info.filter(info => info.id !== action.payload) }
     default:
       return state
   }
@@ -37,6 +35,7 @@ export function postToCare(input) {
         type: POST_CARE,
         payload: resp.data
       })
+      dispatch(getCare(input.user_Id))
     })
   }
 }

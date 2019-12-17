@@ -40,17 +40,20 @@ export default (props) => {
   console.log(care)
   // console.log(witwit)
   // console.log(id)
+  console.log(user_info)
   return (
     <div className="contain">
       <h1>Will</h1>
       <div className="container-will">
         {" "}
         <div className="BasicInfoShowing">
-          I <p> {user_info.full_name} </p> resident in the City of{" "}
+
+          I <p> {user_info ? user_info.full_name : "Update your shit"} </p>{" "}
           <p> {user_info.city} </p> County of <p> {user_info.county} </p> ,
           State of <p> {user_info.state} </p> being of sound mind, not acting
           under duress or undue influence, and fully understanding the nature
           and extent of all my property and of this .....blah blah blah.
+
           <p>{ideas ? ideas.user_thoughts : ""}</p> blah blah
         </div>
         <div className="executorSection">
@@ -65,6 +68,8 @@ export default (props) => {
           PR fails or ceases<p>{care ? care.Guardian_Name : ""}</p>
           testing testing
         </div>
+
+
        
         <div className="AssetsSection">
           <p>{infoEstate ? infoEstate.beni_name : ""} </p>beni name
@@ -97,6 +102,7 @@ export default (props) => {
           <p>{witwit ? witwit.Wit_2 : ""} </p> Witness Number 2
           <p>{witwit ? witwit.Date_W : ""} </p> Date they sigined E-Document{" "}
         </div>
+
 
       </div>
       <button onClick={myFunction}>Print this page</button>

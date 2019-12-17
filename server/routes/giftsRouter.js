@@ -33,18 +33,12 @@ router.post("/gifts", (req, res, next) => {
       )
     } else {
       // console.log(replacing)
-      const sql2 = `INSERT INTO Gifts (user_id, gift, gift_recipient, relationship_to_user, alternate_gift_recipient)
+      const sql2 = `INSERT INTO Gifts ( gift, gift_recipient, relationship_to_user, alternate_gift_recipient)
     VALUES(?, ?, ?, ?, ?)`
 
       db.query(
         sql2,
-        [
-          user_id,
-          gift,
-          gift_recipient,
-          relationship_to_user,
-          alternate_gift_recipient
-        ],
+        [gift, gift_recipient, relationship_to_user, alternate_gift_recipient],
         (err, results, fields) => {
           console.log(err)
           res.json({
@@ -59,7 +53,7 @@ router.post("/gifts", (req, res, next) => {
 
 router.get("/Gifts/:user_id", (req, res, next) => {
   const userId = req.params.user_id
-  const getsql = `SELECT user_id, gift, gift_recipient, relationship_to_user, alternate_gift_recipient
+  const getsql = `SELECT gift, gift_recipient, relationship_to_user, alternate_gift_recipient
     FROM Gifts WHERE user_id =?`
 
   db.query(getsql, [userId], (err, results, fields) => {

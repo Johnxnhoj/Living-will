@@ -180,7 +180,10 @@ p {
 }
 .container-30 {
   background: rgb(255, 255, 255);
+
+
   height: 567px;
+
   overflow: auto;
   display: flex;
   flex-direction: column;
@@ -360,6 +363,8 @@ main {
 }
 
 
+
+
 .AssetsSection p,
 .GuardianSection p,
 .GiftsSection p,
@@ -367,6 +372,7 @@ main {
 .ThoughtsSection p {
   background: lavender;
 }
+
 
 .adminGreeting {
   margin-left: 900px;
@@ -394,6 +400,8 @@ textarea {
 }
 
 
+
+
 .quote {
   text-align: center;
   color: white;
@@ -410,4 +418,5 @@ textarea {
   border: 1px solid black;
   border-radius: 10px;
 }
+
 
