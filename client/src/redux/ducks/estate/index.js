@@ -31,6 +31,7 @@ export function postToEstate(input) {
         type: POST_ESTATE,
         payload: resp.data
       })
+      dispatch(getAssets(input.user_Id))
     })
   }
 }

@@ -32,7 +32,7 @@ VALUES (?,?,?,?,?)`
 })
 
 router.get("/Gifts/:user_id", (req, res, next) => {
-  const userId = req.params.user_Id
+  const userId = req.params.user_id
   const getsql = `SELECT user_id, gift, gift_recipient, relationship_to_user, alternate_gift_recipient
     FROM Gifts WHERE user_id =?`
 

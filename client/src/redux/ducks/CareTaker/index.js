@@ -43,8 +43,8 @@ export function postToCare(input) {
 
 export function getCare(id) {
   return dispatch => {
-    Axios.get("/care_taker/CareTaker" + id).then(resp => {
-      console.log(resp.data[0])
+    Axios.get("/care_taker/CareTaker/" + id).then(resp => {
+      console.log("care", resp.data[0])
       dispatch({
         type: GET_CARE,
         payload: resp.data[0]
@@ -54,14 +54,16 @@ export function getCare(id) {
 }
 
 ///hook
-export function useTakerInfo() {
+export function useTakerInfo(id) {
   const dispatch = useDispatch()
 
-  const CareTaker = useSelector(appState => appState.CareTakerState.getBack)
-  const recieve = id => dispatch(getCare(id))
+  const care = useSelector(appState => appState.CareTakerState.getBack)
+  // const recieve = id => dispatch(getCare(id))
   const grabCareInfo = info => dispatch(postToCare(info))
-  useEffect(() => {}, [dispatch])
-  return { grabCareInfo, CareTaker, recieve }
+  useEffect(() => {
+    dispatch(getCare(id))
+  }, [dispatch])
+  return { grabCareInfo, care }
 }
 
 // export function asyncPostToCare(input) {

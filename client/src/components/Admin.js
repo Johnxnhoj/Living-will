@@ -42,7 +42,7 @@ export default props => {
         <Router>
           <div>
             <video
-              autoplay="true"
+              autoPlay="true"
               loop="true"
               id="myVideo"
               src={sundown}

@@ -25,11 +25,11 @@ router.post("/thoughts", (req, res, next) => {
 })
 
 router.get("/thoughts/:user_id", (req, res, next) => {
-  const userId = req.params.user_Id
+  const thoId = req.params.user_id
   const getsql = `SELECT user_thoughts
   FROM Thoughts WHERE user_id =?`
 
-  db.query(getsql, [userId], (err, results, fields) => {
+  db.query(getsql, [thoId], (err, results, fields) => {
     res.json(results)
   })
 })
