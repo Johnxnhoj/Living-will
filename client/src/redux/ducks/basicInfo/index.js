@@ -39,34 +39,10 @@ export function postToInfo(input) {
         type: POST_INFO,
         payload: resp.data
       })
-      console.log(input)
+      dispatch(getBasicInfo(input.user_Id))
     })
   }
 }
-
-// export function GetId() {
-//   return (dispatch) => {
-//     axios.get("/user").then((resp) => {
-
-//       dispatch({
-//         // type: Get_ID,
-//         payload: resp.data
-//       })
-//     })
-//   }
-// }
-
-//  export function GetId() {
-
-//   return dispatch => {
-//     axios.get("/user").then(resp => {
-//       dispatch({
-//          // type: Get_ID,
-//         payload: resp.data
-//        })
-// })
-//  }
-//  }
 
 export function getBasicInfo(id) {
   return dispatch => {

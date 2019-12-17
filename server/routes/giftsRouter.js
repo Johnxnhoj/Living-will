@@ -10,25 +10,51 @@ router.post("/gifts", (req, res, next) => {
 
   console.log(req.body)
 
-  const sql = `INSERT INTO Gifts (user_id, gift, gift_recipient, relationship_to_user, alternate_gift_recipient)
-VALUES (?,?,?,?,?)`
+  const sql3 = `SELECT * FROM Gifts WHERE user_id = ?`
 
-  db.query(
-    sql,
-    [
-      user_id,
-      gift,
-      gift_recipient,
-      relationship_to_user,
-      alternate_gift_recipient
-    ],
-    (err, results, fields) => {
-      res.json({
-        messaage: "Completed Gifts",
-        results
-      })
+  db.query(sql3, [user_id], (err, results, fields) => {
+    if (results.length > 0) {
+      const sql1 = `UPDATE Gifts SET gift = ?, gift_recipient = ?, relationship_to_user = ?, alternate_gift_recipient = ? WHERE user_id = ?`
+      db.query(
+        sql1,
+        [
+          user_id,
+          gift,
+          gift_recipient,
+          relationship_to_user,
+          alternate_gift_recipient
+        ],
+        (err, results, fields) => {
+          if (err) {
+            console.log(err)
+          }
+          res.json(results)
+        }
+      )
+    } else {
+      // console.log(replacing)
+      const sql2 = `INSERT INTO Gifts (user_id, gift, gift_recipient, relationship_to_user, alternate_gift_recipient)
+    VALUES(?, ?, ?, ?, ?)`
+
+      db.query(
+        sql2,
+        [
+          user_id,
+          gift,
+          gift_recipient,
+          relationship_to_user,
+          alternate_gift_recipient
+        ],
+        (err, results, fields) => {
+          console.log(err)
+          res.json({
+            message: "added gift full name",
+            results
+          })
+        }
+      )
     }
-  )
+  })
 })
 
 router.get("/Gifts/:user_id", (req, res, next) => {
