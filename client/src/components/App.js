@@ -1,11 +1,17 @@
 import React from "react"
 import "../styles/login.css"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom"
 
 import Admin from "./Admin"
 import Login from "./Login"
 import Register from "./Register"
 import CheckLogin from "./CheckLogin"
+
 ///
 import Slider from "../components/Slider"
 
