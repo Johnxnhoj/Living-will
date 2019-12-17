@@ -12,7 +12,7 @@ import {
 import CareTaker from "../redux/ducks/CareTaker"
 import estate from "../redux/ducks/estate"
 
-export default props => {
+export default (props) => {
   const { isAuthenticated, username, signin, signout, reg, id } = useAdmin()
   const { user_info, get } = useBasicInfo()
   const { infoEstate, getting } = useEstate()
@@ -54,15 +54,18 @@ export default props => {
           <p>{ideas ? ideas.user_thoughts : ""}</p> blah blah
         </div>
         <div className="executorSection">
-          Inominate and appoint *ExecutorFullName* of *City,
-          <p>{infoEstate ? infoEstate.relationbeni : ""} </p> County, State*{" "}
-          <p>{witwit ? witwit.Wit_1 : ""} </p>as Personal Representative of my
-          estate and I request that <p>{execute ? execute.full_name : ""}</p>(he
-          /she) be appointed temporary PR<p>{presents ? presents.gift : ""}</p>{" "}
-          if applies, if my PR fails or ceases
-          <p>{care ? care.Guardian_Name : ""}</p>
+
+          I nominate and appoint{" "}
+          <p>{infoEstate ? infoEstate.beni_name : ""} </p> *ExecutorFullName* of
+          *City,<p>{infoEstate ? infoEstate.relationbeni : ""} </p> County,
+          State* <p>{witwit ? witwit.Wit_1 : ""} </p>as Personal Representative
+          of my estate and I request that{" "}
+          <p>{execute ? execute.full_name : ""}</p>(he /she) be appointed
+          temporary PR<p>{presents ? presents.gift : ""}</p> if applies, if my
+          PR fails or ceases<p>{care ? care.Guardian_Name : ""}</p>
           testing testing
         </div>
+       
         <div className="AssetsSection">
           <p>{infoEstate ? infoEstate.beni_name : ""} </p>beni name
           <p>{infoEstate ? infoEstate.address : ""}</p> address
@@ -94,6 +97,7 @@ export default props => {
           <p>{witwit ? witwit.Wit_2 : ""} </p> Witness Number 2
           <p>{witwit ? witwit.Date_W : ""} </p> Date they sigined E-Document{" "}
         </div>
+
       </div>
       <button onClick={myFunction}>Print this page</button>
     </div>
