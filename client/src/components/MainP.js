@@ -7,8 +7,9 @@ export default (props) => {
   const { toggle } = useSide()
   return (
     <div className="container-x">
+      <div className="quote">CREATE YOUR LEGACY.</div>
       <div className="front-buttons">
-        <button className="willBut">Your Will</button>
+        {/* <button className="willBut">Your Will</button> */}
         <Link to="CreateWillPage">
           <p className="createawill">Create A Will</p>
         </Link>

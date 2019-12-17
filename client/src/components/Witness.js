@@ -25,7 +25,7 @@ export default (props) => {
         <h1>Witness</h1>
         <form onSubmit={handleSubmit}>
           <div className="container-3">
-            <p>
+            <p className="description">
               Find at least two (2) witnesses (most States require two (2)
               witnesses) that can attest to the will and sign. It is strongly
               encouraged the witnesses be disinterested from the will. For legal

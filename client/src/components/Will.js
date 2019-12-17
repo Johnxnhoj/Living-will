@@ -12,7 +12,7 @@ import {
 import CareTaker from "../redux/ducks/CareTaker"
 import estate from "../redux/ducks/estate"
 
-export default props => {
+export default (props) => {
   const { isAuthenticated, username, signin, signout, reg, id } = useAdmin()
   const { user_info, get } = useBasicInfo()
   const { infoEstate, getting } = useEstate()
@@ -59,14 +59,13 @@ export default props => {
           State* <p>{witwit ? witwit.Wit_1 : ""} </p>as Personal Representative
           of my estate and I request that{" "}
           <p>{execute ? execute.full_name : ""}</p>(he /she) be appointed
-
           temporary PR<p>{presents ? presents.gift : ""}</p> if applies, if my
           PR fails or ceases<p>{care ? care.Guardian_Name : ""}</p>
           testing testing
-        </div><button onClick={myFunction}>Print this page</button>
-        
-
-   
+        </div>
+        <button className="printBut" onClick={myFunction}>
+          Print This Page
+        </button>
       </div>
     </div>
   )

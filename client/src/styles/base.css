@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap");
 
 html {
   box-sizing: border-box;
@@ -294,6 +295,7 @@ main {
   width: 650px;
   height: 860px;
   padding: 20px;
+  border-radius: 10px;
 }
 #myVideo {
   position: fixed;
@@ -316,7 +318,7 @@ main {
 .change {
   width: 650px;
   height: 700px;
-  background: rgba(255, 118, 118, 0.562);
+  /* background: rgba(255, 118, 118, 0.562); */
 }
 .box-links {
   background: rgba(233, 178, 178, 0);
@@ -343,7 +345,6 @@ main {
 
 .front-buttons {
   display: flex;
-
   justify-content: flex-end;
   margin: 10px;
 }
@@ -352,7 +353,6 @@ main {
 .executorSection p {
   background: lavender;
 }
-
 
 .adminGreeting {
   margin-left: 900px;
@@ -368,13 +368,30 @@ textarea {
 .description {
   padding: 7px 7px;
 }
+
 @media print {
   header,
   .formspage,
   footer,
-  .contain2,}
+  .contain2,
   #myVideo {
     display: none !important;
   }
+}
 
+.quote {
+  text-align: center;
+  color: white;
+  font-family: "Bebas Neue", cursive;
+  font-size: 100px;
+  margin-top: 250px;
+}
 
+.printBut {
+  margin-top: 10px;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
