@@ -29,6 +29,7 @@ html {
   margin-top: 170px;
   background: rgba(255, 253, 249, 0.075);
   border-radius: 30px;
+  filter: blur();
 }
 
 .loginLogo {
@@ -103,4 +104,11 @@ input {
   color: rgba(151, 139, 139, 0.685);
 
   font-size: 20px;
+}
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
