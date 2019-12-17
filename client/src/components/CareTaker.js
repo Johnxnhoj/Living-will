@@ -2,7 +2,10 @@ import React, { useState } from "react"
 import { useTakerInfo, useAdmin } from "../hooks/index"
 
 import { decode } from "jsonwebtoken"
+
 export default props => {
+
+
   const [childname, setChildname] = useState("")
   const [guardianName, setGuardianName] = useState("")
   const [altGuardianName, setAltGuardianName] = useState("")
@@ -68,7 +71,9 @@ export default props => {
             </div>
 
             <button className="button-go" type="submit" value={id}>
-              submit
+
+              Submit
+
             </button>
           </div>
         </form>

@@ -32,15 +32,16 @@ export function postGifts(input) {
         type: POST_GIFTS,
         payload: resp.data
       })
-      // console.log(input)
     })
   }
 }
 
 export function getGifts(id) {
   return dispatch => {
+
     axios.get("/Gifts/Gifts/" + id).then(resp => {
       console.log("gifts", resp.data[0])
+
       dispatch({
         type: GET_GIFTS,
         payload: resp.data[0]

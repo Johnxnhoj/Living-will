@@ -15,9 +15,7 @@ html {
 .loginLogo2 {
   display: flex;
   justify-content: center;
-
   color: rgb(255, 255, 255);
-
   font-size: 30px;
 }
 
@@ -29,6 +27,7 @@ html {
   margin-top: 170px;
   background: rgba(255, 253, 249, 0.075);
   border-radius: 30px;
+  filter: blur();
 }
 
 .loginLogo {
@@ -68,7 +67,7 @@ input {
   font-family: "Roboto", sans-serif;
   outline: none;
   cursor: pointer;
-  background: rgb(126, 207, 221);
+  background: transparent;
   transition: 0.5s;
 }
 .loginButton:hover {
@@ -89,8 +88,6 @@ input {
 
 .logBut p {
   font-size: 20px;
-
-  color: rgb(10, 124, 177);
 }
 .fill input {
   border-radius: 20px;
@@ -103,4 +100,11 @@ input {
   color: rgba(151, 139, 139, 0.685);
 
   font-size: 20px;
+}
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
 }

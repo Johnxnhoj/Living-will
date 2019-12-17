@@ -3,8 +3,9 @@ import { useAdmin } from "../hooks"
 import { Link } from "react-router-dom"
 // import "../styles/main.css"
 import LLogin from "../assets/LLogin.png"
+import exoduslogo from "../assets/exoduslogo.png"
 
-export default props => {
+export default (props) => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
@@ -13,7 +14,7 @@ export default props => {
   function handleSubmit(e) {
     e.preventDefault()
 
-    reg(username, password).then(resp => {
+    reg(username, password).then((resp) => {
       props.history.push("/")
     })
     // .catch(e => {})
@@ -21,17 +22,19 @@ export default props => {
   return (
     <div className="loginpage">
       <div className="mainLog">
-        <div className="loginLogo2">REGISTER</div>
-
+        <div className="loginLogo">
+          <img className="actualLogo" src={exoduslogo} />
+        </div>
         <div className="formContainer">
           <form className="fill" onSubmit={handleSubmit}>
+            <p className="LOGIN">REGISTER</p>
             <input
               id="user"
               placeholder="Username"
               type="text"
               name="username"
               value={username}
-              onChange={e => setUsername(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
             />
             <input
               id="pass"
@@ -39,7 +42,7 @@ export default props => {
               type="password"
               name="password"
               value={password}
-              onChange={e => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <button className="loginButton" type="submit">
               Login

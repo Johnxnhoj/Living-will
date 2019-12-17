@@ -2,8 +2,9 @@ import React, { useState } from "react"
 import { useAdmin } from "../hooks"
 import { Link } from "react-router-dom"
 import exoduslogo from "../assets/exoduslogo.png"
+import sundown from "../assets/sundown.mp4"
 
-export default props => {
+export default (props) => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
@@ -13,10 +14,10 @@ export default props => {
     e.preventDefault()
 
     signin(username, password)
-      .then(resp => {
+      .then((resp) => {
         props.history.push("/")
       })
-      .catch(e => {})
+      .catch((e) => {})
   }
   return (
     <div className="loginpage">
@@ -34,7 +35,7 @@ export default props => {
               type="text"
               name="username"
               value={username}
-              onChange={e => setUsername(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
             />
             <input
               id="pass"
@@ -42,13 +43,13 @@ export default props => {
               type="password"
               name="password"
               value={password}
-              onChange={e => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <button className="loginButton" type="submit">
-              Sign In
+              Login
             </button>
             <Link className="logBut" to="/register">
-              New User?<p>Register Here!</p>
+              New User? Register Here!
             </Link>
           </form>
         </div>
