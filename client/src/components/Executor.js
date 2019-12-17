@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 import { useExecutor, useAdmin } from "../hooks/index"
 
-export default props => {
+export default (props) => {
   const [fullName, setFullName] = useState("")
   const [cityName, setCityName] = useState("")
   const [countyName, setCountyName] = useState("")
@@ -28,7 +28,7 @@ export default props => {
         <h1>Executor</h1>
         <form onSubmit={handleSubmit}>
           <div className="container-3">
-            <p>
+            <p className="description">
               Name an executor, who is responsible for tracking down assets,
               paying creditors, and making sure beneficiaries named in the will
               receive property to which they are entitled.
@@ -38,7 +38,7 @@ export default props => {
               <input
                 type="text"
                 value={fullName}
-                onChange={e => setFullName(e.target.value)}
+                onChange={(e) => setFullName(e.target.value)}
                 name="text"
               ></input>{" "}
             </div>
@@ -48,7 +48,7 @@ export default props => {
               <input
                 type="text"
                 value={cityName}
-                onChange={e => setCityName(e.target.value)}
+                onChange={(e) => setCityName(e.target.value)}
               ></input>{" "}
             </div>
             <div className="Input-1">
@@ -57,7 +57,7 @@ export default props => {
               <input
                 type="text"
                 value={countyName}
-                onChange={e => setCountyName(e.target.value)}
+                onChange={(e) => setCountyName(e.target.value)}
               ></input>{" "}
             </div>
             <div className="Input-1">
@@ -66,7 +66,7 @@ export default props => {
               <input
                 type="text"
                 value={stateName}
-                onChange={e => setStateName(e.target.value)}
+                onChange={(e) => setStateName(e.target.value)}
               ></input>{" "}
             </div>
             <button

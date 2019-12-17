@@ -27,7 +27,7 @@ export default (props) => {
         <h1>Gifts</h1>
         <form onSubmit={handleSubmit}>
           <div className="container-3">
-            <p>Gift #1</p>
+            <p className="description">Gift #1</p>
             <div className="Input-1">
               <label>I want to give my...</label>
               <input

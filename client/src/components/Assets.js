@@ -32,7 +32,6 @@ export default (props) => {
               Name of Beneficiary{" "}
               <input
                 type="text"
-                placeholder="Name of Beneficiary"
                 value={namebeni}
                 onChange={(e) => setNamebeni(e.target.value)}
               ></input>
@@ -41,7 +40,6 @@ export default (props) => {
               Beneficiary Address{" "}
               <input
                 type="text"
-                placeholder="Beneficiary Adress"
                 value={addressbeni}
                 onChange={(e) => setAddressbeni(e.target.value)}
               ></input>
@@ -52,8 +50,7 @@ export default (props) => {
               <select
                 name="relation"
                 value={relationbeni}
-
-                onChange={e => setRelationbeni(e.target.value)}
+                onChange={(e) => setRelationbeni(e.target.value)}
               >
                 <option value="relation">Select</option>
                 <option value="relation">//Immediate Family//</option>
@@ -96,13 +93,11 @@ export default (props) => {
                 <option value="Church">Church</option>
                 <option value="School">School</option>
               </select>
-
             </div>
             <div className="Input-1">
               Type of Estate
               <input
                 type="text"
-                placeholder="Type of Estate"
                 value={typebeni}
                 onChange={(e) => setTypebeni(e.target.value)}
               ></input>
@@ -111,15 +106,13 @@ export default (props) => {
               Property
               <input
                 type="text"
-                placeholder="Property"
                 value={property}
                 onChange={(e) => setProperty(e.target.value)}
               ></input>
             </div>
 
             <button className="button-go" type="submit" value={id}>
-              submit
-
+              Submit
             </button>
           </div>
         </form>

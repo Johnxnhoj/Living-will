@@ -26,6 +26,10 @@ body {
   align-items: center;
 }
 
+h1 {
+  text-align: center;
+}
+
 .Form-links p {
   margin: 10px 20px;
   border-bottom: 2px solid rgb(179, 179, 179);
@@ -76,9 +80,8 @@ a:-webkit-any-link {
   width: 150px;
   height: 35px;
   color: white;
-  background: rgb(241, 172, 125);
-  border-radius: 4px;
-  border: none;
+  background: transparent;
+  border-radius: 10px;
   transition: 0.5s;
   font-size: 20px;
   font-family: "Roboto", sans-serif;
@@ -86,18 +89,26 @@ a:-webkit-any-link {
 #signOut:hover {
   width: 153px;
   height: 36px;
-  background: rgb(126, 207, 221);
-  border-radius: 2px;
-  border: none;
+  background: rgb(221, 172, 126);
   font-family: "Roboto", sans-serif;
 }
 .createawill {
-  color: rgb(0, 0, 0);
-  background: rgba(126, 207, 221, 0.534);
-  border-radius: 2px;
-  height: 25px;
-  place-items: center;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 5px 5px;
   margin: 5px;
+}
+
+.willBut {
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 5px 5px;
+  margin: 5px;
+  font-size: 20px;
+  outline: none;
 }
 
 p {
@@ -164,7 +175,7 @@ p {
   flex-direction: column;
   align-items: center;
   border-radius: 1%;
-  box-shadow: 5px 3px 10px 7px rgba(1, 16, 19, 0.342);
+  box-shadow: 5px 5px 5px 5px rgba(22, 22, 22, 0.253);
 }
 .container-30 {
   background: rgb(255, 255, 255);
@@ -173,32 +184,40 @@ p {
   flex-direction: column;
   align-items: center;
   border-radius: 1%;
-  box-shadow: 5px 3px 10px 7px rgba(1, 16, 19, 0.342);
+  box-shadow: 5px 5px 5px 5px rgba(22, 22, 22, 0.253);
 }
 .container-will {
   background: rgb(255, 255, 255);
-
+  padding: 10px 10px;
   height: 700px;
+  border-radius: 10px;
 }
 .button-go {
   width: 85px;
   height: 50px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
   font-family: sans-serif;
   font-size: 15px;
   background-color: white;
   transition: 0.3s;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .button-go:hover {
-  background-color: rgb(255, 132, 110);
+  background-color: rgb(221, 172, 126);
   border: none;
-  border-radius: 3px;
+  border-radius: 10px;
   width: 90px;
   height: 55px;
 }
 select {
   width: 300px;
+  background: transparent;
+  font-size: 15px;
+  border: 1px solid black;
+  outline: none;
+  margin-top: 10px;
 }
 /* css for the divs in assets*/
 .box-1 {
@@ -210,7 +229,6 @@ select {
 }
 
 .Input-1 {
-  background: rgba(255, 176, 222, 0.774);
   margin: 5px;
   display: flex;
   flex-direction: column;
@@ -275,7 +293,7 @@ main {
   background: rgba(252, 252, 252, 0.445);
   width: 650px;
   height: 860px;
-  border-radius: 10px;
+  padding: 20px;
 }
 #myVideo {
   position: fixed;
@@ -302,11 +320,9 @@ main {
   background: rgba(233, 178, 178, 0);
   display: flex;
   justify-content: center;
-
+  padding: 5px;
   flex-wrap: wrap;
   height: 100px;
-
-  padding: 5px;
 }
 .box-links p {
   display: flex;
@@ -316,9 +332,9 @@ main {
   border-radius: 10%;
   height: 80px;
   width: 80px;
-  background: rgb(143, 212, 224);
-  box-shadow: 5px 5px 1px rgba(255, 194, 103, 0.315);
-  font-size: 18px;
+  background: transparent;
+  box-shadow: 5px 5px 5px 5px rgba(22, 22, 22, 0.253);
+  font-size: 17px;
   font-family: sans-serif;
   color: white;
 }
@@ -326,15 +342,25 @@ main {
 .front-buttons {
   display: flex;
 
-  justify-content: flex-end; 
+  justify-content: flex-end;
   margin: 10px;
-} */
-
-
-
- 
-
+}
 .BasicInfoShowing p,
 .executorSection p {
   background: lavender;
+}
+
+.adminGreeting {
+  margin-left: 900px;
+}
+
+textarea {
+  border: 1px solid black;
+  outline: none;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.description {
+  padding: 7px 7px;
 }
