@@ -76,8 +76,7 @@ router.post("/user_info", (req, res, next) => {
         }
       )
     } else {
-      console.log(replacing)
-      const sql2 = `INSERT INTO user_info (user_id, full_name, City, County, State, Email, mobile_number, marital_status, childern, home, pets)
+      const sql2 = `INSERT INTO user_info (user_id, full_name, City, County, State, Email, mobile_number, marital_status, children, home, pets)
       VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
 
       db.query(

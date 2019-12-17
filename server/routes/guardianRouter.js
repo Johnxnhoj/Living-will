@@ -43,6 +43,7 @@ router.post("/CareTaker", (req, res, next) => {
         }
       )
     } else {
+      yar
       console.log(results)
       const sql2 = `INSERT INTO Caretaker ( child_name, Guardian_Name, alt_Guardian_Name, extra_Guardian_Name)
       VALUES(?, ?, ?, ?)`

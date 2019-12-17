@@ -94,6 +94,7 @@ function logout() {
 }
 
 export function getId(username) {
+  // Not working.
   return dispatch => {
     axios.get("/users/id/" + username).then(resp => {
       dispatch({

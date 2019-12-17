@@ -40,16 +40,18 @@ export default props => {
   console.log(care)
   // console.log(witwit)
   // console.log(id)
+  console.log(user_info)
   return (
     <div className="contain">
       <h1>Will</h1>
       <div className="container-will">
         {" "}
         <div className="BasicInfoShowing">
-          {/* I <p> {user_info.full_name} </p> resident in the City of *City* County */}
-          of *County*, State of *State*, being of sound mind, not acting under
-          duress or undue influence, and fully understanding the nature and
-          extent of all my property and of this .....blah blah blah.
+          I <p> {user_info ? user_info.full_name : "Update your shit"} </p>{" "}
+          resident in the City of *City* County of *County*, State of *State*,
+          being of sound mind, not acting under duress or undue influence, and
+          fully understanding the nature and extent of all my property and of
+          this .....blah blah blah.
           <p>{ideas ? ideas.user_thoughts : ""}</p> blah blah
         </div>
         <div className="executorSection">
