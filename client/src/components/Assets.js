@@ -50,9 +50,7 @@ export default props => {
               <select
                 name="relation"
                 value={relationbeni}
-
                 onChange={e => setRelationbeni(e.target.value)}
-
               >
                 <option value="relation">Select</option>
                 <option value="relation">//Immediate Family//</option>
@@ -97,18 +95,12 @@ export default props => {
               </select>
             </div>
             <div className="Input-1">
-
               Type of Estate
-              <input
-                type="text"
-
               <label> Type of Estate </label>
-
               <select
                 name="Type of Estate"
-
                 value={typebeni}
-                onChange={e => setRelationbeni(e.target.value)}
+                onChange={e => setTypebeni(e.target.value)}
               >
                 {" "}
                 <option value="home">House</option>
@@ -123,16 +115,13 @@ export default props => {
               Description
               <input
                 type="text"
-
                 value={property}
                 onChange={e => setProperty(e.target.value)}
               ></input>
             </div>
 
             <button className="button-go" type="submit" value={id}>
-
               Submit
-
             </button>
           </div>
         </form>

@@ -353,7 +353,6 @@ main {
   background: lavender;
 }
 
-
 .adminGreeting {
   margin-left: 900px;
 }
@@ -372,9 +371,8 @@ textarea {
   header,
   .formspage,
   footer,
-  .contain2,}
+  .contain2,
   #myVideo {
     display: none !important;
   }
-
-
+}

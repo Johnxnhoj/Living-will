@@ -46,7 +46,7 @@ export default props => {
       <div className="container-will">
         {" "}
         <div className="BasicInfoShowing">
-          I <p> {user_info.full_name} </p> resident in the City of *City* County
+          {/* I <p> {user_info.full_name} </p> resident in the City of *City* County */}
           of *County*, State of *State*, being of sound mind, not acting under
           duress or undue influence, and fully understanding the nature and
           extent of all my property and of this .....blah blah blah.
@@ -59,14 +59,11 @@ export default props => {
           State* <p>{witwit ? witwit.Wit_1 : ""} </p>as Personal Representative
           of my estate and I request that{" "}
           <p>{execute ? execute.full_name : ""}</p>(he /she) be appointed
-
           temporary PR<p>{presents ? presents.gift : ""}</p> if applies, if my
           PR fails or ceases<p>{care ? care.Guardian_Name : ""}</p>
           testing testing
-        </div><button onClick={myFunction}>Print this page</button>
-        
-
-   
+        </div>
+        <button onClick={myFunction}>Print this page</button>
       </div>
     </div>
   )
