@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useEstate, useAdmin } from "../hooks/index"
 
-export default props => {
+export default (props) => {
   const [namebeni, setNamebeni] = useState("")
   const [addressbeni, setAddressbeni] = useState("")
   const [relationbeni, setRelationbeni] = useState("")
@@ -33,7 +33,7 @@ export default props => {
               <input
                 type="text"
                 value={namebeni}
-                onChange={e => setNamebeni(e.target.value)}
+                onChange={(e) => setNamebeni(e.target.value)}
               ></input>
             </div>
             <div className="Input-1">
@@ -41,7 +41,7 @@ export default props => {
               <input
                 type="text"
                 value={addressbeni}
-                onChange={e => setAddressbeni(e.target.value)}
+                onChange={(e) => setAddressbeni(e.target.value)}
               ></input>
             </div>
             <div className="Input-1">
@@ -95,16 +95,24 @@ export default props => {
               </select>
             </div>
             <div className="Input-1">
-              Type of Estate
+
+          
+
+
               <label> Type of Estate </label>
+
+
               <select
                 name="Type of Estate"
                 value={typebeni}
+
                 onChange={e => setTypebeni(e.target.value)}
+
+
               >
                 {" "}
                 <option value="home">House</option>
-                <option value="car">car</option>
+                <option value="car">Car</option>
                 <option value="Business">Business</option>
                 <option value="Cash">Cash</option>
                 <option value="Personal">Personal</option>
@@ -116,7 +124,7 @@ export default props => {
               <input
                 type="text"
                 value={property}
-                onChange={e => setProperty(e.target.value)}
+                onChange={(e) => setProperty(e.target.value)}
               ></input>
             </div>
 
