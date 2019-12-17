@@ -33,7 +33,7 @@ import CreateWillPage from "./CreateWillPage"
 import video from "../assets/video.mp4"
 import sundown from "../assets/sundown.mp4"
 
-export default (props) => {
+export default props => {
   const { visible, toggle } = useSide()
   const { username, signout, isAuthenticated, id } = useAdmin()
   return (
@@ -59,7 +59,7 @@ export default (props) => {
                   Hello {username} {id}!
                 </div>
                 <div className="weird-con">
-                  <button id="signOut" onClick={(e) => signout()}>
+                  <button id="signOut" onClick={e => signout()}>
                     Sign Out
                   </button>
                 </div>
@@ -67,6 +67,7 @@ export default (props) => {
 
               <main>
                 <Route exact path="/" component={MainP} />
+                <Route path="will" component={Will} />
                 <Route
                   path="/CreateWillPage"
                   component={CreateWillPage}
