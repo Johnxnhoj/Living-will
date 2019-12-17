@@ -15,9 +15,7 @@ html {
 .loginLogo2 {
   display: flex;
   justify-content: center;
-
   color: rgb(255, 255, 255);
-
   font-size: 30px;
 }
 
@@ -69,7 +67,7 @@ input {
   font-family: "Roboto", sans-serif;
   outline: none;
   cursor: pointer;
-  background: rgb(126, 207, 221);
+  background: transparent;
   transition: 0.5s;
 }
 .loginButton:hover {
@@ -90,8 +88,6 @@ input {
 
 .logBut p {
   font-size: 20px;
-
-  color: rgb(10, 124, 177);
 }
 .fill input {
   border-radius: 20px;

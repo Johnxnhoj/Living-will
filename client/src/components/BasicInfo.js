@@ -7,7 +7,7 @@ import useInput from "./inputerror"
 
 //ACTION DEFINITIONS
 
-export default props => {
+export default (props) => {
   const [fullName, setFullName] = useState("")
   const [cityName, setCityName] = useState("")
   const [countyName, setCountyName] = useState("")
@@ -57,10 +57,9 @@ export default props => {
             <div className="Input-1">
               <label className="name">Full Name</label>
               <input
-                onChange={e => setFullName(e.target.value)}
+                onChange={(e) => setFullName(e.target.value)}
                 value={fullName}
                 type="text"
-                placeholder="Full Name"
               />
             </div>
             {/* //<div>
@@ -73,10 +72,9 @@ export default props => {
             <div className="Input-1">
               <div>Mobile Number (Optional) </div>
               <input
-                onChange={e => setMobile_number(e.target.value)}
+                onChange={(e) => setMobile_number(e.target.value)}
                 value={mobile_number}
                 type="text"
-                placeholder="+1(808)702-2019"
               ></input>
             </div>
 
@@ -86,7 +84,7 @@ export default props => {
                 className="StatusChoices"
                 name="married"
                 value={marital_status}
-                onChange={e => setMarital_status(e.target.value)}
+                onChange={(e) => setMarital_status(e.target.value)}
               >
                 <option value="marital status">Choose A Marital Status</option>
                 <option value="single">Single</option>
@@ -98,37 +96,33 @@ export default props => {
             <div className="Input-1">
               <label>City</label>
               <input
-                onChange={e => setCityName(e.target.value)}
+                onChange={(e) => setCityName(e.target.value)}
                 value={cityName}
                 type="text"
-                placeholder="City Name"
               />
             </div>
             <div className="Input-1">
               <label>County</label>
               <input
-                onChange={e => setCountyName(e.target.value)}
+                onChange={(e) => setCountyName(e.target.value)}
                 value={countyName}
                 type="text"
-                placeholder="County Name"
               />
             </div>
             <div className="Input-1">
               <label>State</label>
               <input
-                onChange={e => setStateName(e.target.value)}
+                onChange={(e) => setStateName(e.target.value)}
                 value={stateName}
                 type="text"
-                placeholder="State Name"
               />
             </div>
             <div className="Input-1">
               <label>Email</label>
               <input
-                onChange={e => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 type="email"
-                placeholder="email@gmail.com"
               />
             </div>
 
@@ -138,7 +132,7 @@ export default props => {
                 className="Children"
                 name="kids"
                 value={children}
-                onChange={e => setChildren(e.target.value)}
+                onChange={(e) => setChildren(e.target.value)}
               >
                 <option value="child">Select One</option>
                 <option value="si">Yes</option>
@@ -152,7 +146,7 @@ export default props => {
                 className="pets"
                 name="pets"
                 value={pets}
-                onChange={e => setPets(e.target.value)}
+                onChange={(e) => setPets(e.target.value)}
               >
                 <option value="pets">Select One</option>
                 <option value="y">Yes</option>
@@ -166,7 +160,7 @@ export default props => {
                 className="home"
                 name="homies"
                 value={home}
-                onChange={e => setHome(e.target.value)}
+                onChange={(e) => setHome(e.target.value)}
               >
                 <option value="home">Select One</option>
                 <option value="Yes">Yes</option>
