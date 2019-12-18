@@ -7,7 +7,6 @@ export default (props) => {
   const { isAuthenticated, id } = useAdmin()
   function handleSubmit(e) {
     e.preventDefault()
-    props.history.push("/thankyou")
     grabUserThoughts({
       userThoughts: userThoughts,
       user_Id: id
@@ -19,7 +18,7 @@ export default (props) => {
         <h1>Thoughts</h1>
         <form onSubmit={handleSubmit}>
           <div className="container-3">
-            <p className="description">
+            <p>
               You may jot down general thoughts about your life or leave
               detailed explanations about why you left specific gifts behind,
               etc.{" "}

@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux"
 import Axios from "axios"
-import { useEffect } from "react"
+// import { useEffect } from "react"
 
 // ACTION DEFINITIONS
 const POST_WIT = "witness/POST_WIT"
@@ -39,7 +39,7 @@ export function postToWitWit(input) {
 
 export function getWit(id) {
   return dispatch => {
-    Axios.get("/witness/Witness/" + id).then(resp => {
+    Axios.get("/witness/Witness" + id).then(resp => {
       dispatch({
         type: GET_WIT,
         payload: resp.data[0]
@@ -49,14 +49,10 @@ export function getWit(id) {
 }
 
 //CUSTOM HOOKS
-export function useWitness(id) {
+export function useWitness() {
   const dispatch = useDispatch()
-  const ness = useSelector(appState => appState.witnessState.witnessinfo)
   const witwit = useSelector(appState => appState.witnessState.info)
   const find = id => dispatch(getWit(id))
   const grabWitnessInfo = witnessinfo => dispatch(postToWitWit(witnessinfo))
-  useEffect(() => {
-    find(id)
-  }, [dispatch])
-  return { grabWitnessInfo, find, witwit, ness }
+  return { grabWitnessInfo, find, witwit }
 }

@@ -17,96 +17,48 @@ router.post("/user_info", (req, res, next) => {
 
   console.log("hello")
 
-  //   const sql = `
-  //   INSERT INTO user_info (user_id, full_name, city, county, state, email, mobile_number, marital_status, children, home, pets)
-  //   VALUES (?,?,?,?,?,?,?,?,?,?,?) `
+  const sql = `
+  INSERT INTO user_info (user_id, full_name, city, county, state, email, mobile_number, marital_status, children, home, pets) 
+  VALUES (?,?,?,?,?,?,?,?,?,?,?) `
 
-  //   db.query(
-  //     sql,
-  //     [
-  //       user_id,
-  //       full_name,
-  //       city,
-  //       county,
-  //       state,
-  //       email,
-  //       mobile_number,
-  //       marital_status,
-  //       children,
-  //       home,
-  //       pets
-  //     ],
-  //     (err, results, fields) => {
-  //       if (err) {
-  //         throw new Error(err)
-  //       } else {
-  //         res.json({
-  //           message: "Completed Basic Info",
-  //           results
-  //         })
-  //       }
-  //     }
-  //   )
-  // })
-  const sql3 = `SELECT * FROM user_info WHERE user_id = ?`
-
-  db.query(sql3, [user_id], (err, results, fields) => {
-    if (results.length > 0) {
-      const sql1 = `UPDATE user_info SET full_name = ?, City = ?, County = ?, State = ?, Email = ?, mobile_number = ?, marital_status = ?, children = ?, home = ?, pets = ? WHERE user_id = ?`
-      db.query(
-        sql1,
-        [
-          full_name,
-          city,
-          county,
-          state,
-          email,
-          mobile_number,
-          marital_status,
-          children,
-          home,
-          pets,
-          user_id
-        ],
-        (err, results, fields) => {
-          if (err) {
-            console.log(err)
-          }
-          res.json(results)
-        }
-      )
-    } else {
-      const sql2 = `INSERT INTO user_info (user_id, full_name, City, County, State, Email, mobile_number, marital_status, children, home, pets)
-      VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
-
-      db.query(
-        sql2,
-        [
-          user_id,
-          full_name,
-          city,
-          county,
-          state,
-          email,
-          mobile_number,
-          marital_status,
-          children,
-          home,
-          pets
-        ],
-        (err, results, fields) => {
-          console.log(err)
-          res.json({
-            message: "added basic info full name",
-            results
-          })
-        }
-      )
+  db.query(
+    sql,
+    [
+      user_id,
+      full_name,
+      city,
+      county,
+      state,
+      email,
+      mobile_number,
+      marital_status,
+      children,
+      home,
+      pets
+    ],
+    (err, results, fields) => {
+      if (err) {
+        throw new Error(err)
+      } else {
+        res.json({
+          message: "Completed Basic Info",
+          results
+        })
+      }
     }
-  })
+  )
 })
 
+// router.get("/users/id/:userName", (req, res, next) => {
+//   const username = req.params.userName
+//   const getsql = `SELECT id FROM users WHERE username =?`
+//   db.query(getsql, [username], (err, results, fields) => {
+//     res.json(results[0])
+//   })
+// })
+
 router.get("/user_info/:user_id", (req, res, next) => {
+
   const userId = req.params.user_id
 
   const getsql = `SELECT full_name, city, county, state, email

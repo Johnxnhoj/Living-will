@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap");
 
 html {
   box-sizing: border-box;
@@ -22,13 +21,6 @@ body {
   display: flex;
   flex-direction: column;
   background: rgba(122, 122, 122, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-h1 {
-  text-align: center;
 }
 
 .Form-links p {
@@ -80,38 +72,32 @@ a:-webkit-any-link {
 #signOut {
   width: 150px;
   height: 35px;
-  color: white;
-  background: transparent;
-  border-radius: 10px;
-  transition: 0.5s;
+  background: rgba(29, 255, 199, 0.678);
+  border-radius: 5px;
+  border: none;
+  transition: 0.3s;
   font-size: 20px;
   font-family: "Roboto", sans-serif;
 }
 #signOut:hover {
-  width: 153px;
-  height: 36px;
-  background: rgb(221, 172, 126);
+  width: 160px;
+  height: 40px;
+  background: rgb(255, 189, 89);
+  border-radius: 2px;
+  border: none;
   font-family: "Roboto", sans-serif;
 }
-.createawill {
-  color: white;
-  border: 1px solid white;
-  border-radius: 10px;
-  padding: 5px 5px;
-  margin: 5px;
+.Form-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.willBut {
-  color: white;
-  background: transparent;
-  border: 1px solid white;
-  border-radius: 10px;
-  padding: 5px 5px;
-  margin: 5px;
-  font-size: 20px;
-  outline: none;
+footer {
+  background: rgb(252, 252, 252);
+  display: flex;
+  justify-content: space-evenly;
 }
-
 p {
   display: block;
   margin-block-start: 0em;
@@ -122,18 +108,18 @@ p {
 
 .disclaimer {
   width: 300px;
-  color: rgb(131, 130, 130);
+  color: gray;
   font-size: 10px;
 }
-.rights {
-  color: rgb(255, 255, 255);
-}
-.icons {
-  color: rgba(255, 255, 255, 0.692);
-}
 
-.weird-con {
-  width: 155px;
+.head {
+  display: flex;
+  margin: 5px;
+  place-items: center;
+  justify-content: space-between;
+  background: white;
+  right: 0;
+  height: 50px;
 }
 
 .logoa {
@@ -144,88 +130,57 @@ p {
   width: 120px;
   height: 35px;
 }
-.Master-container {
-  height: 1500px;
-}
 /* css for all the forms */
 .container-1 {
-  background: rgba(255, 255, 255, 0.192);
+  background: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
-  width: 650px;
-  height: 690px;
+  height: 860px;
 }
-
-/* .container-2 {
-  background: rgba(255, 255, 255, 0.815);
 
 .container-2 {
   background: white;
-
   width: 1500px;
   place-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 1%;
-} */
-.container-3 {
-  background: rgba(255, 255, 255, 0.952);
-  width: 450px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 1%;
-  box-shadow: 5px 5px 5px 5px rgba(22, 22, 22, 0.253);
 }
-.container-30 {
+.container-3 {
   background: rgb(255, 255, 255);
-
-  height: 567px;
-
-  overflow: auto;
+  width: 1400px;
+  height: 700px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 1%;
-  box-shadow: 5px 5px 5px 5px rgba(22, 22, 22, 0.253);
+  box-shadow: 10px 10px 20px rgba(2, 117, 138, 0.226);
 }
 .container-will {
   background: rgb(255, 255, 255);
-  padding: 10px 10px;
+  width: 1400px;
   height: 700px;
-  border-radius: 10px;
-  overflow: scroll;
-  /* font-size: 10px; */
-  display: flex;
-  flex-wrap: wrap;
 }
 .button-go {
   width: 85px;
   height: 50px;
-  border-radius: 10px;
+  border-radius: 8px;
   border: none;
   font-family: sans-serif;
   font-size: 15px;
   background-color: white;
   transition: 0.3s;
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 .button-go:hover {
-  background-color: rgb(221, 172, 126);
+  background-color: rgb(255, 132, 110);
   border: none;
-  border-radius: 10px;
+  border-radius: 3px;
   width: 90px;
   height: 55px;
 }
 select {
   width: 300px;
-  background: transparent;
-  font-size: 15px;
-  border: 1px solid black;
-  outline: none;
-  margin-top: 10px;
 }
 /* css for the divs in assets*/
 .box-1 {
@@ -237,43 +192,20 @@ select {
 }
 
 .Input-1 {
+  background: rgba(255, 176, 222, 0.171);
   margin: 5px;
   display: flex;
   flex-direction: column;
 }
 
 /* css for the main div / main page changing */
-.Container-overlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-}
-.head {
-  display: flex;
-  margin: 5px;
-  place-items: center;
-  justify-content: space-between;
-  background: rgba(236, 150, 93, 0);
-  right: 0;
-  height: 50px;
-  color: white;
+
+.change {
+  position: relative;
 }
 main {
-  background: rgba(255, 255, 255, 0);
-  margin: 0px;
-  display: flex;
-  justify-content: space-around;
+  height: 860px;
 }
-
-.foot {
-  margin-top: 700px;
-  margin-bottom: 30px;
-  background: rgba(211, 139, 91, 0);
-
-  display: flex;
-  justify-content: space-evenly;
-}
-
 .container-main {
   display: flex;
   justify-content: center;
@@ -281,132 +213,18 @@ main {
   background: white;
 }
 
-.CWP {
-  height: 1500px;
-  background: rgba(255, 255, 255, 0);
-  margin: 0px;
-  display: flex;
-  justify-content: space-around;
-}
 /* css for the main page*/
 .Slider-0 {
-  width: 60vw;
-  height: 120vh;
+  width: 95vw;
+  height: 100vh;
 }
 
-/* this is the change layout*/
-
-.contain {
-  background: rgba(252, 252, 252, 0.445);
-  width: 650px;
-  height: 860px;
-  padding: 20px;
-  border-radius: 10px;
-}
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+.foot {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-.contain2 {
-  background: rgba(255, 255, 252, 0.342);
-  width: 650px;
-  height: 860px;
-  margin: 0px 10px;
-  border-radius: 10px;
-}
-.form-routes {
-  background: rgba(255, 255, 255, 0.219);
-}
-.change {
-  width: 650px;
-  height: 700px;
-  /* background: rgba(255, 118, 118, 0.562); */
-}
-.box-links {
-  background: rgba(233, 178, 178, 0);
-  display: flex;
-  justify-content: center;
-  padding: 5px;
-  flex-wrap: wrap;
-  height: 100px;
-}
-.box-links p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5px;
-  border-radius: 10%;
-  height: 80px;
-  width: 80px;
-  background: transparent;
-  box-shadow: 5px 5px 5px 5px rgba(22, 22, 22, 0.253);
-  font-size: 17px;
-  font-family: sans-serif;
-  color: white;
-}
-
-.front-buttons {
+/* .adminGreeting {
   display: flex;
   justify-content: flex-end;
-  margin: 10px;
-}
-
-.BasicInfoShowing span,
-.executorSection span {
-  background: lavender;
-}
-
-.AssetsSection span,
-.GuardianSection span,
-.GiftsSection span,
-.WitSection span,
-.ThoughtsSection span {
-  background: lavender;
-}
-
-.adminGreeting {
-  margin-left: 900px;
-}
-
-textarea {
-  border: 1px solid black;
-  outline: none;
-  margin-top: 10px;
-  font-size: 15px;
-}
-
-.description {
-  padding: 7px 7px;
-}
-
-@media print {
-  header,
-  .formspage,
-  footer,
-  .contain2,
-  #myVideo,
-  .print-bro {
-    display: none !important;
-  }
-}
-
-.quote {
-  text-align: center;
-  color: white;
-  font-family: "Bebas Neue", cursive;
-  font-size: 100px;
-  margin-top: 250px;
-}
-
-.printBut {
-  margin-top: 10px;
-  outline: none;
-  cursor: pointer;
-  font-size: 20px;
-  border: 1px solid black;
-  border-radius: 10px;
-}
+} */

@@ -21,7 +21,9 @@ const config = require("config")
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-// app.use("/users", userRouter)
+app.use("/users", userRouter)
+app.use("/", jwt({ secret: config.get("secret") }), protectedRouter)
+
 app.use("/users", userRouter)
 app.use("/user_info", basicRouter)
 app.use("/care_taker", guardianRouter)
@@ -32,7 +34,6 @@ app.use("/gifts", giftsRouter)
 app.use("/witness", witnessRouter)
 
 app.use("/executor", executorRouter)
-app.use("/", jwt({ secret: config.get("secret") }), protectedRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
