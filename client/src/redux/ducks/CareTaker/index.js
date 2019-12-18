@@ -29,8 +29,8 @@ export default (state = initialState, action) => {
 ///action creators
 
 export function postToCare(input) {
-  return (dispatch) => {
-    Axios.post("/care_taker/CareTaker", { input }).then((resp) => {
+  return dispatch => {
+    Axios.post("/care_taker/CareTaker", { input }).then(resp => {
       dispatch({
         type: POST_CARE,
         payload: resp.data
@@ -41,8 +41,9 @@ export function postToCare(input) {
 }
 
 export function getCare(id) {
-  return (dispatch) => {
-    Axios.get("/care_taker/CareTaker/" + id).then((resp) => {
+  return dispatch => {
+    Axios.get("/care_taker/CareTaker/" + id).then(resp => {
+      console.log("care", resp.data[0])
       dispatch({
         type: GET_CARE,
         payload: resp.data[0]
@@ -55,9 +56,9 @@ export function getCare(id) {
 export function useTakerInfo(id) {
   const dispatch = useDispatch()
 
-  const care = useSelector((appState) => appState.CareTakerState.getBack)
+  const care = useSelector(appState => appState.CareTakerState.getBack)
   // const recieve = id => dispatch(getCare(id))
-  const grabCareInfo = (info) => dispatch(postToCare(info))
+  const grabCareInfo = info => dispatch(postToCare(info))
   useEffect(() => {
     dispatch(getCare(id))
   }, [dispatch])

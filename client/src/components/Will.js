@@ -12,7 +12,7 @@ import {
 import CareTaker from "../redux/ducks/CareTaker"
 import estate from "../redux/ducks/estate"
 
-export default (props) => {
+export default props => {
   const { isAuthenticated, username, signin, signout, reg, id } = useAdmin()
   const { user_info, get } = useBasicInfo()
   const { infoEstate, getting } = useEstate()
@@ -35,12 +35,19 @@ export default (props) => {
 
     getting(id)
   }, [])
+  // console.log(infoEstate)
+
+  console.log(care)
+  // console.log(witwit)
+  // console.log(id)
+  console.log(user_info)
   return (
     <div className="contain">
       <h1>Will</h1>
       <div className="container-will">
         {" "}
         <div className="BasicInfoShowing">
+
           I <span>{user_info ? user_info.full_name : "Update your shit"}</span>
           resident in the City of
           <span> {user_info ? user_info.city : ""} </span> County of{" "}
@@ -51,6 +58,7 @@ export default (props) => {
           thereof, do hereby make , publish, and declare this document to be my
           Last Will and Testament, and hereby revoke any and all other wills and
           codicls heretofore made by me.
+
         </div>
         {/* <div className="TAXES">
           <label>I. Expenses & Taxes</label>
@@ -74,6 +82,7 @@ export default (props) => {
         </div> */}
         <label> Personal Representative</label>
         <div className="executorSection">
+
           I nominate and appoint <span>{execute ? execute.full_name : ""}</span>
           of
           <span>{execute ? execute.city : ""}</span>, County of
@@ -85,6 +94,7 @@ export default (props) => {
           <span>{care ? care.Guardian_Name : ""} </span> to serve.
         </div>
         <label>iii. Disposition of Property</label>
+
         <div className="AssetsSection">
           I give
           <span>{infoEstate ? infoEstate.beni_name : ""} </span>currently of,{" "}
