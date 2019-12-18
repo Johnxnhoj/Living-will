@@ -38,7 +38,6 @@ export function postGifts(input) {
 
 export function getGifts(id) {
   return dispatch => {
-
     axios.get("/Gifts/Gifts/" + id).then(resp => {
       console.log("gifts", resp.data[0])
 

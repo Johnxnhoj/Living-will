@@ -355,16 +355,18 @@ main {
   margin: 10px;
 }
 
-.BasicInfoShowing p,
-.executorSection p {
+.BasicInfoShowing span,
+.executorSection span {
   background: lavender;
 }
 
-.AssetsSection p,
-.GuardianSection p,
-.GiftsSection p,
-.WitSection p,
-.ThoughtsSection p {
+
+.AssetsSection span,
+.GuardianSection span,
+.GiftsSection span,
+.WitSection span,
+.ThoughtsSection span {
+
   background: lavender;
 }
 
