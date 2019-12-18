@@ -43,11 +43,17 @@ export default props => {
   console.log(user_info)
   return (
     <div className="contain">
-      <h1>Will</h1>
+      <h1 className="hideme">Will</h1>
       <div className="container-will">
         {" "}
         <div className="BasicInfoShowing">
-          I <span>{user_info ? user_info.full_name : "Update your shit"}</span>
+          <h3 className="title">Last Will and Testament</h3>I
+          <span>
+            {" "}
+            {user_info
+              ? user_info.full_name
+              : "Update your personal information"}
+          </span>
           resident in the City of
           <span> {user_info ? user_info.city : ""} </span> County of{" "}
           <span> {user_info ? user_info.county : ""} </span> , State of{" "}
@@ -90,7 +96,7 @@ export default props => {
           Representative fails or ceases to so serve, then I nominate
           <span>{care ? care.Guardian_Name : ""} </span> to serve.
         </div>
-        <label>iii. Disposition of Property</label>
+        <label>Disposition of Property</label>
         <div className="AssetsSection">
           I give
           <span>{infoEstate ? infoEstate.beni_name : ""} </span>currently of,{" "}
@@ -100,18 +106,21 @@ export default props => {
           <span>{infoEstate ? infoEstate.property : ""} </span>
           <span>{infoEstate ? infoEstate.type_of : ""} </span>.
         </div>
+        <label>Legal Guardian</label>
         <div className="GuardianSection">
           I leave my child
           <span>{care ? care.child_name : ""} </span> to be looked after by
           <span>{care ? care.Guardian_Name : ""} </span>. If he/she is unable,
-          uncaple, or unwilling to then I appoint
-          <span>{care ? care.alt_Guardian_Name : ""}</span> as my child's
-          guardian. If he/she is unable, uncaple, or unwilling to then I appoint
+          uncaple, or unwilling to serve then I appoint
+          <span>{care ? care.alt_Guardian_Name : ""}</span> as my child's legal
+          guardian. If he/she is unable, uncaple, or unwilling to serve then I
+          appoint
           <span>{care ? care.extra_Guardian_Name : ""}</span>
-          as their guardian.
+          as their legal guardian.
         </div>
+        <label>Gifts</label>
         <div className="GiftsSection">
-          <span>{presents ? presents.gift : ""}</span> Gift
+          <span>{presents ? presents.gift : ""}</span> Gift{" "}
           <span>{presents ? presents.gift_recipient : ""}</span> Who is
           recieving the gift?
           <span>{presents ? presents.relationship_to_user : ""}</span>{" "}
@@ -119,14 +128,15 @@ export default props => {
           <span>{presents ? presents.alternate_gift_recipient : ""}</span>{" "}
           alternative gift recipient
         </div>
+        <label>Message to loved ones</label>
         <div className="ThoughtsSection">
-          <span>{ideas ? ideas.user_thoughts : ""}</span> Message to loved ones.
+          <span>{ideas ? ideas.user_thoughts : ""}</span>
         </div>
+        <label>Witnesses</label>
         <div className="WitSection">
-          <span>{witwit ? witwit.Wit_1 : ""} </span> Witness Number 1
-          <span>{witwit ? witwit.Wit_2 : ""} </span> Witness Number 2
-          <span>{witwit ? witwit.Date_W : ""} </span> Date they sigined
-          E-Document{" "}
+          X<span>{witwit ? witwit.Wit_1 : ""} </span>X
+          <span>{witwit ? witwit.Wit_2 : ""} </span> Date:
+          <span>{witwit ? witwit.Date_W : ""}</span>
         </div>
       </div>
       <button onClick={myFunction}>Print this page</button>
