@@ -196,6 +196,7 @@ p {
   height: 700px;
   border-radius: 10px;
   overflow: scroll;
+  font-family: serif;
   /* font-size: 10px; */
   display: flex;
   flex-wrap: wrap;
@@ -354,10 +355,19 @@ main {
   justify-content: flex-end;
   margin: 10px;
 }
-
+.container-will label {
+  font-weight: bold;
+}
+h3.title {
+  text-align: center;
+}
 .BasicInfoShowing span,
 .executorSection span {
-  background: lavender;
+  /* background: lavender; */
+  margin: 4px;
+  border-bottom: 0.5px solid gray;
+  margin: 4px;
+  font-style: italic;
 }
 
 .AssetsSection span,
@@ -365,7 +375,15 @@ main {
 .GiftsSection span,
 .WitSection span,
 .ThoughtsSection span {
-  background: lavender;
+
+
+  /* background: lavender; */
+  margin: 4px;
+  border-bottom: 0.5px solid gray;
+  margin: 4px;
+  font-style: italic;
+
+
 }
 
 .adminGreeting {
@@ -385,6 +403,7 @@ textarea {
 
 @media print {
   header,
+  .hideme,
   .formspage,
   footer,
   .contain2,

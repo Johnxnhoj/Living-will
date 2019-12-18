@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useWitness, useAdmin } from "../hooks/index"
 
-export default (props) => {
+export default props => {
   const [nameWit1, setNameWit1] = useState("")
   const [nameWit2, setNameWit2] = useState("")
   const [DateW, setDateW] = useState("")
@@ -36,21 +36,21 @@ export default (props) => {
               <input
                 type="text"
                 placeholder="Witness No.1"
-                onChange={(e) => setNameWit1(e.target.value)}
+                onChange={e => setNameWit1(e.target.value)}
               />
             </div>
             <div className="Input-1">
               <input
                 type="text"
                 placeholder="Witness No.2"
-                onChange={(e) => setNameWit2(e.target.value)}
+                onChange={e => setNameWit2(e.target.value)}
               />
             </div>
             <div className="Input-1">
               <input
                 type="date"
                 placeholder="Date"
-                onChange={(e) => setDateW(e.target.value)}
+                onChange={e => setDateW(e.target.value)}
               />
             </div>
             <button className="button-go" type="submit">
