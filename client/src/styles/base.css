@@ -149,7 +149,7 @@ p {
 }
 /* css for all the forms */
 .container-1 {
-  background: rgba(255, 255, 255, 0.192);
+  background: rgba(124, 124, 124, 0.192);
   display: flex;
   justify-content: center;
   width: 650px;
@@ -360,13 +360,11 @@ main {
   background: lavender;
 }
 
-
 .AssetsSection span,
 .GuardianSection span,
 .GiftsSection span,
 .WitSection span,
 .ThoughtsSection span {
-
   background: lavender;
 }
 
