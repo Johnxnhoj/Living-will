@@ -32,13 +32,19 @@ router.post("/gifts", (req, res, next) => {
         }
       )
     } else {
-      // console.log(replacing)
+      console.log("Replacing")
       const sql2 = `INSERT INTO Gifts ( user_id, gift, gift_recipient, relationship_to_user, alternate_gift_recipient)
-    VALUES(?, ?, ?, ?)`
+    VALUES(?, ?, ?, ?, ?)`
 
       db.query(
         sql2,
-        [gift, gift_recipient, relationship_to_user, alternate_gift_recipient],
+        [
+          user_id,
+          gift,
+          gift_recipient,
+          relationship_to_user,
+          alternate_gift_recipient
+        ],
         (err, results, fields) => {
           console.log(err)
           res.json({
