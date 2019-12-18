@@ -181,7 +181,6 @@ p {
 .container-30 {
   background: rgb(255, 255, 255);
 
-
   height: 567px;
 
   overflow: auto;
@@ -260,7 +259,6 @@ select {
   color: white;
 }
 main {
-  height: 800px;
   background: rgba(255, 255, 255, 0);
   margin: 0px;
   display: flex;
@@ -268,7 +266,7 @@ main {
 }
 
 .foot {
-  margin-top: 30px;
+  margin-top: 700px;
   margin-bottom: 30px;
   background: rgba(211, 139, 91, 0);
 
@@ -362,9 +360,6 @@ main {
   background: lavender;
 }
 
-
-
-
 .AssetsSection p,
 .GuardianSection p,
 .GiftsSection p,
@@ -372,7 +367,6 @@ main {
 .ThoughtsSection p {
   background: lavender;
 }
-
 
 .adminGreeting {
   margin-left: 900px;
@@ -394,13 +388,11 @@ textarea {
   .formspage,
   footer,
   .contain2,
-  #myVideo {
+  #myVideo,
+  .print-bro {
     display: none !important;
   }
 }
-
-
-
 
 .quote {
   text-align: center;
@@ -418,5 +410,3 @@ textarea {
   border: 1px solid black;
   border-radius: 10px;
 }
-
-

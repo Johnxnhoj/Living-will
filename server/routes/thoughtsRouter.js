@@ -26,7 +26,7 @@ router.post("/thoughts", (req, res, next) => {
 
   db.query(sql3, [user_id], (err, results, fields) => {
     if (results.length > 0) {
-      const sql1 = `UPDATE Thoughts SET user_thoughts= ? WHERE user_id = ?`
+      const sql1 = `UPDATE Thoughts SET user_thoughts = ? WHERE user_id = ?`
       db.query(sql1, [user_thoughts, user_id], (err, results, fields) => {
         if (err) {
           console.log(err)
@@ -35,7 +35,7 @@ router.post("/thoughts", (req, res, next) => {
       })
     } else {
       console.log(results)
-      const sql2 = `INSERT INTO estate ( user_id, user_thoughts)
+      const sql2 = `INSERT INTO Thoughts ( user_id, user_thoughts)
       VALUES(?, ?)`
 
       db.query(sql2, [user_id, user_thoughts], (err, results, fields) => {
@@ -53,7 +53,6 @@ router.get("/thoughts/:user_id", (req, res, next) => {
   const thoId = req.params.user_id
   const getsql = `SELECT user_thoughts
   FROM Thoughts WHERE user_id =?`
-
   db.query(getsql, [thoId], (err, results, fields) => {
     res.json(results)
   })
