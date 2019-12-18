@@ -26,8 +26,8 @@ export default (state = initialState, action) => {
 
 //ACTION CREATORS
 export function postToExecutor(input) {
-  return dispatch => {
-    Axios.post("/executor/executor", input).then(resp => {
+  return (dispatch) => {
+    Axios.post("/executor/executor", input).then((resp) => {
       dispatch({
         type: POST_EXECUTOR,
         payload: resp.data
@@ -37,9 +37,8 @@ export function postToExecutor(input) {
 }
 
 export function getExecutor(id) {
-  return dispatch => {
-    Axios.get("/executor/executorRouter?id=" + id).then(resp => {
-      console.log("excuter", resp.data[0])
+  return (dispatch) => {
+    Axios.get("/executor/executorRouter?id=" + id).then((resp) => {
       dispatch({
         type: GET_EXECUTOR,
         payload: resp.data[0]
@@ -50,11 +49,13 @@ export function getExecutor(id) {
 
 //CUSTOM HOOKS
 export function useExecutor(id) {
-  const executor = useSelector(appState => appState.executorState.info)
+  const executor = useSelector((appState) => appState.executorState.info)
   const dispatch = useDispatch()
-  const execute = useSelector(appState => appState.executorState.executor_info)
-  const grab = id => dispatch(getExecutor(id))
-  const grabUserExecutor = info => dispatch(postToExecutor(info))
+  const execute = useSelector(
+    (appState) => appState.executorState.executor_info
+  )
+  const grab = (id) => dispatch(getExecutor(id))
+  const grabUserExecutor = (info) => dispatch(postToExecutor(info))
   useEffect(() => {
     grab(id)
   }, [dispatch])

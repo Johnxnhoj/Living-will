@@ -49,7 +49,7 @@ function login(username, password, dispatch) {
   return new Promise((resolve, reject) => {
     axios
       .post("/users/login", { username, password })
-      .then(resp => {
+      .then((resp) => {
         axios.defaults.headers.common = {
           Authorization: `Bearer ${resp.data.token}`
         }
@@ -62,7 +62,7 @@ function login(username, password, dispatch) {
         // socket.emit("login", username)
         resolve()
       })
-      .catch(e => {
+      .catch((e) => {
         dispatch({
           type: LOGIN_FAILURE
         })
@@ -75,12 +75,12 @@ function register(username, password, dispatch) {
   return new Promise((resolve, reject) => {
     axios
       .post("/users/register", { username, password })
-      .then(resp => {
+      .then((resp) => {
         login(username, password, dispatch).then(() => {
           resolve()
         })
       })
-      .catch(e => {
+      .catch((e) => {
         reject()
       })
   })
@@ -95,8 +95,8 @@ function logout() {
 
 export function getId(username) {
   // Not working.
-  return dispatch => {
-    axios.get("/users/id/" + username).then(resp => {
+  return (dispatch) => {
+    axios.get("/users/id/" + username).then((resp) => {
       dispatch({
         type: GET_ID,
         payload: resp.data
@@ -106,12 +106,11 @@ export function getId(username) {
 }
 
 export function useAdmin() {
-  const username = useSelector(appState => appState.adminState.username)
-  const id = useSelector(appState => appState.adminState.id)
+  const username = useSelector((appState) => appState.adminState.username)
+  const id = useSelector((appState) => appState.adminState.id)
   const isAuthenticated = useSelector(
-    appState => appState.adminState.isAuthenticated
+    (appState) => appState.adminState.isAuthenticated
   )
-  console.log(id)
 
   const dispatch = useDispatch()
   const signin = (u, p) => {
@@ -124,7 +123,7 @@ export function useAdmin() {
   const signout = () => dispatch(logout())
   // const get = () => dispatch(GetId(username))
   useEffect(() => {
-    dispatch(getId(username))
+    //dispatch(getId(username))
   }, [dispatch, username])
   return { isAuthenticated, username, signin, signout, reg, id }
 }
