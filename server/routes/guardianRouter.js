@@ -48,7 +48,6 @@ router.post("/CareTaker", (req, res, next) => {
 
       VALUES(?, ?, ?, ?,?)`
 
-
       db.query(
         sql2,
         [user_id, childName, guardianName, altGuardianName, extraGuardianName],
