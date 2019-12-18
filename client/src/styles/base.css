@@ -181,7 +181,6 @@ p {
 .container-30 {
   background: rgb(255, 255, 255);
 
-
   height: 567px;
 
   overflow: auto;
@@ -357,22 +356,18 @@ main {
   margin: 10px;
 }
 
-.BasicInfoShowing p,
-.executorSection p {
+.BasicInfoShowing span,
+.executorSection span {
   background: lavender;
 }
 
-
-
-
-.AssetsSection p,
-.GuardianSection p,
-.GiftsSection p,
-.WitSection p,
-.ThoughtsSection p {
+.AssetsSection span,
+.GuardianSection span,
+.GiftsSection span,
+.WitSection span,
+.ThoughtsSection span {
   background: lavender;
 }
-
 
 .adminGreeting {
   margin-left: 900px;
@@ -399,9 +394,6 @@ textarea {
   }
 }
 
-
-
-
 .quote {
   text-align: center;
   color: white;
@@ -418,5 +410,3 @@ textarea {
   border: 1px solid black;
   border-radius: 10px;
 }
-
-

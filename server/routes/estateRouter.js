@@ -42,8 +42,8 @@ router.post("/estate", (req, res, next) => {
         }
       )
     } else {
-      console.log(replacing)
-      const sql2 = `INSERT INTO estate ( beni_name, address, relationbeni, property, type_of)
+      console.log(results)
+      const sql2 = `INSERT INTO estate ( user_id,beni_name, address, relationbeni, property, type_of)
       VALUES(?, ?, ?, ?, ?, ?)`
 
       db.query(
