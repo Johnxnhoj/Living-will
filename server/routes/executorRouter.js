@@ -45,7 +45,7 @@ router.post("/executor", (req, res, next) => {
         }
       )
     } else {
-      console.log(replacing)
+      console.log(results)
       const sql2 = `INSERT INTO executor (user_id, full_name, city, county, state)
       VALUES(?, ?, ?, ?, ?)`
 

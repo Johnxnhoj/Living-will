@@ -32,6 +32,7 @@ export function postToThoughts(textarea) {
         type: POST_THOUGHTS,
         payload: resp.data
       })
+      dispatch(getThoughts(textarea))
     })
   }
 }

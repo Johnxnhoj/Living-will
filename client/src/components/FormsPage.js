@@ -92,6 +92,8 @@ export default props => {
           <Route path="/thankyou" component={thankyou} />
         </div>
       </div>
+
+      <Link to="/CreateWillPage">DONE</Link>
     </div>
   )
 }
