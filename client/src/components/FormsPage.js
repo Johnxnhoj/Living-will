@@ -93,7 +93,7 @@ export default props => {
         </div>
       </div>
 
-      <Link to="/CreateWillPage">DONE</Link>
+      {/* <Link to="/CreateWillPage">DONE</Link> */}
     </div>
   )
 }
