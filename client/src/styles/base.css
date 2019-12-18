@@ -260,7 +260,6 @@ select {
   color: white;
 }
 main {
-  height: 800px;
   background: rgba(255, 255, 255, 0);
   margin: 0px;
   display: flex;
@@ -268,7 +267,7 @@ main {
 }
 
 .foot {
-  margin-top: 30px;
+  margin-top: 700px;
   margin-bottom: 30px;
   background: rgba(211, 139, 91, 0);
 
@@ -371,16 +370,19 @@ h3.title {
   font-style: italic;
 }
 
+
 .AssetsSection span,
 .GuardianSection span,
 .GiftsSection span,
 .WitSection span,
 .ThoughtsSection span {
+
   /* background: lavender; */
   margin: 4px;
   border-bottom: 0.5px solid gray;
   margin: 4px;
   font-style: italic;
+
 }
 
 .adminGreeting {
@@ -404,7 +406,8 @@ textarea {
   .formspage,
   footer,
   .contain2,
-  #myVideo {
+  #myVideo,
+  .print-bro {
     display: none !important;
   }
 }

@@ -47,13 +47,15 @@ export default props => {
       <div className="container-will">
         {" "}
         <div className="BasicInfoShowing">
-          <h3 className="title">Last Will and Testament</h3>I
+
+          <h3 className="title">Last Will and Testament</h3> I
           <span>
             {" "}
             {user_info
               ? user_info.full_name
               : "Update your personal information"}
           </span>
+
           resident in the City of
           <span> {user_info ? user_info.city : ""} </span> County of{" "}
           <span> {user_info ? user_info.county : ""} </span> , State of{" "}
@@ -63,6 +65,7 @@ export default props => {
           thereof, do hereby make , publish, and declare this document to be my
           Last Will and Testament, and hereby revoke any and all other wills and
           codicls heretofore made by me.
+
         </div>
         {/* <div className="TAXES">
           <label>I. Expenses & Taxes</label>
@@ -86,6 +89,7 @@ export default props => {
         </div> */}
         <label> Personal Representative</label>
         <div className="executorSection">
+
           I nominate and appoint <span>{execute ? execute.full_name : ""}</span>
           of
           <span>{execute ? execute.city : ""}</span>, County of
@@ -96,7 +100,9 @@ export default props => {
           Representative fails or ceases to so serve, then I nominate
           <span>{care ? care.Guardian_Name : ""} </span> to serve.
         </div>
+
         <label>Disposition of Property</label>
+
         <div className="AssetsSection">
           I give
           <span>{infoEstate ? infoEstate.beni_name : ""} </span>currently of,{" "}
@@ -139,7 +145,9 @@ export default props => {
           <span>{witwit ? witwit.Date_W : ""}</span>
         </div>
       </div>
-      <button onClick={myFunction}>Print this page</button>
+      <div className="print-bro">
+        <button onClick={myFunction}>Print this page</button>
+      </div>
     </div>
   )
 }
