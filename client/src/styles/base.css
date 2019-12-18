@@ -267,7 +267,7 @@ main {
 }
 
 .foot {
-  margin-top: 700px;
+  margin-top: 100px;
   margin-bottom: 30px;
   background: rgba(211, 139, 91, 0);
 
@@ -370,19 +370,16 @@ h3.title {
   font-style: italic;
 }
 
-
 .AssetsSection span,
 .GuardianSection span,
 .GiftsSection span,
 .WitSection span,
 .ThoughtsSection span {
-
   /* background: lavender; */
   margin: 4px;
   border-bottom: 0.5px solid gray;
   margin: 4px;
   font-style: italic;
-
 }
 
 .adminGreeting {
@@ -424,7 +421,9 @@ textarea {
   margin-top: 10px;
   outline: none;
   cursor: pointer;
-  font-size: 20px;
-  border: 1px solid black;
+  font-size: 15px;
+  border: 1px solid white;
   border-radius: 10px;
+  background: transparent;
+  color: white;
 }
