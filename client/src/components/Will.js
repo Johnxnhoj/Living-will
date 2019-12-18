@@ -98,7 +98,9 @@ export default props => {
           <p>{witwit ? witwit.Date_W : ""} </p> Date they sigined E-Document{" "}
         </div>
       </div>
-      <button onClick={myFunction}>Print this page</button>
+      <div className="print-bro">
+        <button onClick={myFunction}>Print this page</button>
+      </div>
     </div>
   )
 }
