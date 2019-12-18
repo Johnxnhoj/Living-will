@@ -36,18 +36,19 @@ router.post("/login", (req, res, next) => {
 
         const sql = `SELECT id, count(1) as count FROM users WHERE username = ? AND password = ?`
 
+
         // console.log(
         //   `SELECT count(1) as count FROM users WHERE username = '${username}' and password = ${password}`
         // )
 
         db.query(sql, [username, password], (err, results, fields) => {
-          //console.log(results)
+          console.log(results)
           if (results[0].count > 0) {
             const token = jwt.sign(
               { id: results[0].id, username },
               config.get("secret")
             )
-            //console.log(token)
+            console.log(token)
             res.json({
               id: results[0].id,
               message: "Auothenticated",

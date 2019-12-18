@@ -7,10 +7,13 @@ const POST_CARE = "CareTaker/POST_CARE"
 const DELE_CARE = "CareTaker/DELE_CARE"
 const GET_CARE = "CareTaker/GET_CARE"
 
+
 // INITIAL STATE
 const initialState = {
+
   info: [],
   getBack: {}
+
 }
 
 //REDUCER
@@ -19,30 +22,35 @@ export default (state = initialState, action) => {
     case POST_CARE:
       return { ...state, info: action.payload }
     case GET_CARE:
+
       return { ...state, getBack: action.payload }
 
+    // case DELE_CARE:
+    //   return { ...state, info: info.filter(info => info.id !== action.payload) }
     default:
       return state
   }
 }
 
+
 ///action creators
 
 export function postToCare(input) {
-  return (dispatch) => {
-    Axios.post("/care_taker/CareTaker", { input }).then((resp) => {
+  return dispatch => {
+    Axios.post("/care_taker/CareTaker", { input }).then(resp => {
       dispatch({
         type: POST_CARE,
         payload: resp.data
       })
-      dispatch(getCare(input.user_Id))
     })
   }
 }
 
+
 export function getCare(id) {
-  return (dispatch) => {
-    Axios.get("/care_taker/CareTaker/" + id).then((resp) => {
+  return dispatch => {
+    Axios.get("/care_taker/CareTaker" + id).then(resp => {
+
       dispatch({
         type: GET_CARE,
         payload: resp.data[0]
@@ -51,17 +59,15 @@ export function getCare(id) {
   }
 }
 
-///hook
-export function useTakerInfo(id) {
-  const dispatch = useDispatch()
 
-  const care = useSelector((appState) => appState.CareTakerState.getBack)
-  // const recieve = id => dispatch(getCare(id))
-  const grabCareInfo = (info) => dispatch(postToCare(info))
-  useEffect(() => {
-    dispatch(getCare(id))
-  }, [dispatch])
-  return { grabCareInfo, care }
+///hook
+export function useTakerInfo() {
+  const dispatch = useDispatch()
+  const guardian = useSelector(appState => appState.CareTakerState.getBack)
+  const recieve = id => dispatch(getCare(id))
+  const grabCareInfo = info => dispatch(postToCare(info))
+  useEffect(() => {}, [dispatch])
+  return { grabCareInfo, guardian, recieve }
 }
 
 // export function asyncPostToCare(input) {
@@ -79,3 +85,4 @@ export function useTakerInfo(id) {
 // reducer
 // action creators
 // custom hooks
+

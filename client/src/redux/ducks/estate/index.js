@@ -31,15 +31,14 @@ export function postToEstate(input) {
         type: POST_ESTATE,
         payload: resp.data
       })
-      dispatch(getAssets(input.user_Id))
     })
   }
 }
 
 export function getAssets(id) {
   return dispatch => {
-    Axios.get("/estate/estateRouter?id=" + id).then(resp => {
-      // console.log(resp.data[0])
+    Axios.get("/estate/estate" + id).then(resp => {
+      console.log(resp.data[0])
       dispatch({
         type: GET_ESTATE,
         payload: resp.data[0]
@@ -50,11 +49,8 @@ export function getAssets(id) {
 export function useEstate() {
   const dispatch = useDispatch()
   const estate = useSelector(appState => appState.AssetsState.estate)
-  const infoEstate = useSelector(appState => appState.AssetsState.info)
   const getting = id => dispatch(getAssets(id))
   const grabEstateInfo = info => dispatch(postToEstate(info))
-  useEffect(() => {
-    getting()
-  }, [dispatch])
-  return { grabEstateInfo, estate, getting, infoEstate }
+  useEffect(() => {}, [dispatch])
+  return { grabEstateInfo, estate, getting }
 }

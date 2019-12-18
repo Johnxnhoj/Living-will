@@ -2,11 +2,7 @@ import React, { useState } from "react"
 // import validator from "validator"
 import { useBasicInfo, useAdmin } from "../hooks/index"
 import { decode } from "jsonwebtoken"
-import useInput from "./inputerror"
-// import validator from "./validator"
-
 //ACTION DEFINITIONS
-
 export default (props) => {
   const [fullName, setFullName] = useState("")
   const [cityName, setCityName] = useState("")
@@ -19,15 +15,9 @@ export default (props) => {
   const [home, setHome] = useState("")
   const [pets, setPets] = useState("")
   const { isAuthenticated, id } = useAdmin()
-
   const { grabUserInfo } = useBasicInfo()
-
   function handleSubmit(e) {
     e.preventDefault()
-
-    // if ((err = false)) {
-    //   props.history.push("/thankyou")
-    // }
     //console.log(childname, guardianName)
     //console.log(guardianName)
     //console.log(childname, guardianName, altGuardianName, extraGuardianName)
@@ -51,15 +41,16 @@ export default (props) => {
   return (
     <div className="container-1">
       <div className="container-2">
-        <h1>Tell Us About Yourself </h1>
+        <h1>Tell Us About Yourself {id} </h1>
         <form onSubmit={handleSubmit}>
-          <div className="container-30">
+          <div className="container-3">
             <div className="Input-1">
               <label className="name">Full Name</label>
               <input
                 onChange={(e) => setFullName(e.target.value)}
                 value={fullName}
                 type="text"
+                placeholder="Full Name"
               />
             </div>
             {/* //<div>
@@ -75,6 +66,7 @@ export default (props) => {
                 onChange={(e) => setMobile_number(e.target.value)}
                 value={mobile_number}
                 type="text"
+                placeholder="+1(808)702-2019"
               ></input>
             </div>
 
@@ -99,6 +91,7 @@ export default (props) => {
                 onChange={(e) => setCityName(e.target.value)}
                 value={cityName}
                 type="text"
+                placeholder="City Name"
               />
             </div>
             <div className="Input-1">
@@ -107,6 +100,7 @@ export default (props) => {
                 onChange={(e) => setCountyName(e.target.value)}
                 value={countyName}
                 type="text"
+                placeholder="County Name"
               />
             </div>
             <div className="Input-1">
@@ -115,6 +109,7 @@ export default (props) => {
                 onChange={(e) => setStateName(e.target.value)}
                 value={stateName}
                 type="text"
+                placeholder="State Name"
               />
             </div>
             <div className="Input-1">
@@ -123,6 +118,7 @@ export default (props) => {
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 type="email"
+                placeholder="email@gmail.com"
               />
             </div>
 
@@ -163,8 +159,8 @@ export default (props) => {
                 onChange={(e) => setHome(e.target.value)}
               >
                 <option value="home">Select One</option>
-                <option value="Yes">Yes</option>
-                <option value="NO">No</option>
+                <option value="yeah">Yes</option>
+                <option value="nah">No</option>
               </select>
             </div>
             <button className="button-go" type="submit" value={id}>
